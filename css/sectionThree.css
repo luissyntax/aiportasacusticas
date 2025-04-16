@@ -1,0 +1,80 @@
+.setionThree {
+    max-width: 980px;
+    margin: auto;
+    display: flex;
+    height: 100vh;
+}
+
+.descriptionSectionThree {
+    margin-top: 120px;
+}
+
+.descriptionSectionThree h1 {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.descriptionSectionThree h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 10px 0px 10px 0px;
+}
+
+.descriptionSectionThree p {
+    color: #a1a1a1;
+}
+
+.gridSectionThree {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
+    align-items: center;
+    justify-items: center;
+    padding: 40px 0px;
+}
+
+.itemGridSectionThree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 320px;
+}
+
+.itemGridSectionThree h4 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    height: 58px;
+}
+
+.itemGridSectionThree p {
+    margin-top: 20px;
+    text-align: center;
+    height: 96px;
+}
+
+.gridSectionThree img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+@media (max-width: 769px) {
+    .gridSectionThree{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 426px) {
+    .gridSectionThree{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .itemGridSectionThree h4{
+        padding: 20px;
+        font-size: 1.5rem;
+    }
+    .itemGridSectionThree p{
+        font-size: 1.3rem;
+    }
+}
