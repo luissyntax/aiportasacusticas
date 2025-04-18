@@ -1,0 +1,14 @@
+.containerFooter{
+    max-width: 980px;
+    margin: auto;   
+}
+.centerContentFooter{
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.centerContentFooter span , .centerContentFooter span a{
+    color: #a1a1a1;
+}
