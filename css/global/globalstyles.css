@@ -10,3 +10,6 @@
 body{
     padding-inline: 32px;
 }
+a:visited {
+    color: inherit;
+  }

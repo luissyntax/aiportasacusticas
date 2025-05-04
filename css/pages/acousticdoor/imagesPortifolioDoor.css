@@ -1,0 +1,26 @@
+.imagesPortifolioDoor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    padding: 40px 0px;
+}
+.imagesPortifolioDoor img{
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+}
+@media (max-width: 769px){
+    .imagesPortifolioDoor{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 426px){
+    .imagesPortifolioDoor{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .imagesPortifolioDoor img{
+        width: 250px;
+    }
+}
