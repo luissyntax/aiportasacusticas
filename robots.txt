@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Otimizado para SEO local Brasília DF
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquear arquivos desnecessários
+Disallow: /css/
+Disallow: /js/
+Disallow: /*.css$
+Disallow: /*.js$
+
+# Sitemap atualizado
+Sitemap: https://acusticaribeiro.github.io/sitemap.xml
+
+# Host preferido
+Host: https://acusticaribeiro.github.io/
