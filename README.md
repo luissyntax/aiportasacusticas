@@ -1,6 +1,6 @@
-# Acustica Ribeiro — Soluções acústicas
+# Arte Interiores - Soluções Acústicas
 
-Site moderno e responsivo da **Acustica Ribeiro**, especializada em isolamento acústico no DF e entorno.
+Site moderno e responsivo para a empresa Arte Interiores, especializada em soluções acústicas de alta qualidade.
 
 ## 🚀 Reformulação Completa com Tailwind CSS
 
@@ -62,9 +62,9 @@ aiportasacusticas/
 
 ### 📞 Contato
 
-- **Telefone**: (61) 9 9346-0719
+- **Telefone**: (61) 9 96305986
 - **Localização**: Valparaíso de Goiás / Goiás
-- **WhatsApp**: [Clique aqui para contato direto](https://wa.me/5561993460719)
+- **WhatsApp**: [Clique aqui para contato direto](https://wa.me/5561996305986)
 
 ---
 
