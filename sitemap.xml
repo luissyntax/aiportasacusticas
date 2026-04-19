@@ -6,56 +6,27 @@
   <!-- Página principal -->
   <url>
     <loc>https://aiportasacusticas.github.io/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://aiportasacusticas.github.io/images/backgrounds/pages/homePage/homepage.png</image:loc>
-      <image:title>Portas Acústicas em Brasília DF - Arte Interiores</image:title>
-      <image:caption>Especialistas em isolamento acústico em Brasília e região metropolitana</image:caption>
+      <image:title>Isolamento acústico, portas e paredes acústicas — Brasília DF e entorno | Arte Interiores</image:title>
+      <image:caption>Isolamento acústico, portas acústicas sob medida e soluções em paredes acústicas — Brasília DF e entorno</image:caption>
     </image:image>
   </url>
 
   <!-- Página de Portas Acústicas -->
   <url>
     <loc>https://aiportasacusticas.github.io/pages/acousticdoor.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://aiportasacusticas.github.io/images/backgrounds/pages/acousticDoor/acousticDoor.png</image:loc>
-      <image:title>Portas Acústicas Profissionais em Brasília</image:title>
-      <image:caption>Instalação profissional de portas acústicas com redução de ruído de 45+ dB</image:caption>
+      <image:title>Portas acústicas sob medida — isolamento acústico | Brasília DF e entorno</image:title>
+      <image:caption>Portas acústicas 45+ dB e isolamento em vãos — Brasília DF e entorno; complemento a paredes e tratamentos acústicos</image:caption>
     </image:image>
-  </url>
-
-  <!-- Seções da página principal -->
-  <url>
-    <loc>https://aiportasacusticas.github.io/#solutions</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://aiportasacusticas.github.io/#about</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://aiportasacusticas.github.io/#testimonials</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://aiportasacusticas.github.io/#contact</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
 </urlset>
