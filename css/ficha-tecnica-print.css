@@ -1,0 +1,430 @@
+/* Ficha técnica portas — impressão / Salvar como PDF (Arte Interiores) */
+
+/* Margem da folha: aplicada em *cada* página impressa */
+@page {
+  size: A4 portrait;
+  margin: 12mm 10mm 14mm 10mm;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: #2a241f;
+  background: #ddd8d0;
+  line-height: 1.45;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    -26deg,
+    transparent 0 100px,
+    rgba(26, 24, 22, 0.02) 100px 101px
+  );
+}
+
+.no-print {
+  display: block;
+}
+
+.print-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem 0.85rem;
+  background: linear-gradient(180deg, #1a1816 0%, #0f0d0b 100%);
+  color: #f5f1ea;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+.print-toolbar__hint {
+  flex: 1 1 220px;
+  max-width: 36rem;
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: rgba(245, 241, 234, 0.78);
+  text-align: center;
+}
+
+.print-toolbar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.print-toolbar button,
+.print-toolbar a.btn-print {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.45rem;
+  padding: 0.55rem 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.print-toolbar button:hover,
+.print-toolbar a.btn-print:hover {
+  opacity: 0.94;
+  transform: translateY(-1px);
+}
+
+.print-toolbar .btn-print--primary {
+  background: linear-gradient(145deg, #d8dde5, #9aa6b8);
+  color: #14100e;
+}
+
+.print-toolbar .btn-print--ghost {
+  background: transparent;
+  color: #f5f1ea;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.sheet {
+  position: relative;
+  z-index: 1;
+  max-width: 210mm;
+  margin: 1rem auto 2.5rem;
+  min-height: 280mm;
+  padding: 14mm 13mm 16mm;
+  background: #faf7f1;
+  border: 1px solid rgba(20, 16, 14, 0.1);
+  border-radius: 0.35rem;
+  box-shadow: 0 16px 48px -20px rgba(20, 14, 10, 0.22);
+  overflow: hidden;
+}
+
+/* Ficha única: altura só pelo conteúdo (evita “página” extra no PDF via html2canvas) */
+#ficha-pdf-root.sheet {
+  min-height: 0;
+  overflow: visible;
+}
+
+.sheet__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("../images/backgrounds/pages/acousticDoor/acousticDoor.png") center / cover no-repeat;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.sheet__watermark {
+  position: absolute;
+  inset: -5%;
+  z-index: 0;
+  background: url("../images/logos/logo-preta-transparente.png") 50% 45% / min(340px, 55%) no-repeat;
+  opacity: 0.038;
+  pointer-events: none;
+}
+
+.sheet__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.sheet-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem 1.5rem;
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 2px solid rgba(26, 24, 22, 0.12);
+}
+
+.sheet-logo {
+  height: 3.1rem;
+  width: auto;
+  display: block;
+}
+
+.sheet-header h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #1a1816;
+  line-height: 1.15;
+}
+
+.sheet-header .tagline {
+  margin: 0.2rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5f6a78;
+}
+
+.sheet-contact {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  color: #4a4540;
+  margin-bottom: 1rem;
+  padding: 0.55rem 0.75rem;
+  background: rgba(255, 253, 249, 0.72);
+  border: 1px solid rgba(20, 16, 14, 0.08);
+  border-radius: 0.4rem;
+}
+
+.sheet-contact strong {
+  color: #1a1816;
+  font-weight: 600;
+}
+
+.sheet-lead {
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  color: #5c534c;
+  max-width: 48rem;
+}
+
+.sheet h2 {
+  margin: 1.15rem 0 0.45rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a1816;
+  letter-spacing: -0.01em;
+}
+
+.sheet h2:first-of-type {
+  margin-top: 0.35rem;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  margin: 0.35rem 0 0.75rem;
+  background: rgba(255, 253, 249, 0.85);
+  border: 1px solid rgba(20, 16, 14, 0.1);
+  border-radius: 0.35rem;
+  overflow: hidden;
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 0.4rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(20, 16, 14, 0.07);
+}
+
+.spec-table th {
+  width: 32%;
+  font-weight: 600;
+  color: #3d3834;
+  background: rgba(216, 221, 229, 0.35);
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.kit-list {
+  margin: 0.25rem 0 0.75rem;
+  padding-left: 1.1rem;
+  font-size: 0.78rem;
+  color: #4a4540;
+}
+
+.kit-list li {
+  margin-bottom: 0.25rem;
+}
+
+.foot-note {
+  margin-top: 0.85rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(20, 16, 14, 0.1);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: #6b6258;
+}
+
+.sheet-section--page2 {
+  margin-top: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.figure-block {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0.65rem 0.75rem;
+  background: rgba(255, 253, 249, 0.88);
+  border: 1px solid rgba(20, 16, 14, 0.09);
+  border-radius: 0.4rem;
+}
+
+.figure-block > figcaption {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5f6a78;
+  margin-bottom: 0.35rem;
+}
+
+.figure-block > .title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1816;
+  margin: 0 0 0.45rem;
+}
+
+.figure-block svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+}
+
+.figure-block--chart svg {
+  max-height: 260px;
+}
+
+/* Croqui igual ao site (usa classes de site-acoustic.css) */
+.figure-block--croqui {
+  padding: 0.65rem 0.75rem 0.85rem;
+  overflow: visible;
+}
+
+.figure-block--croqui .door-croquis {
+  margin: 0;
+  padding: 0.5rem 0.25rem 0.35rem;
+  max-width: 100%;
+}
+
+.figure-block--croqui .door-croquis__board {
+  max-width: 100%;
+}
+
+.sources-mini {
+  margin: 0.45rem 0 0;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: #5c534c;
+  background: rgba(248, 246, 242, 0.95);
+  border-radius: 0.35rem;
+  border: 1px dashed rgba(20, 16, 14, 0.1);
+}
+
+.sources-mini ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1rem;
+}
+
+@media print {
+  .door-croquis__bar {
+    animation: none !important;
+    opacity: 0.9 !important;
+    transform: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  /*
+   * Margem na impressão: não depender só de @page (comportamento irregular em alguns
+   * diálogos “Guardar como PDF”). #ficha-pdf-root recebe margem lateral explícita no
+   * bloco e padding interno; @page acima define a área segura por página.
+   */
+  #ficha-pdf-root.sheet {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 9mm 7mm 10mm 7mm;
+    overflow: visible;
+    box-sizing: border-box;
+    page-break-after: auto;
+  }
+
+  .sheet__bg,
+  .sheet__watermark {
+    opacity: 1;
+  }
+
+  .sheet__bg {
+    opacity: 0.12;
+  }
+
+  .sheet__watermark {
+    opacity: 0.045;
+  }
+
+  /*
+   * Não usar page-break-before: always — se o bloco anterior passar um pouco de 1 página,
+   * o “sempre” empurra o croqui para uma 3.ª página quase vazia. auto + margem = 2 páginas.
+   */
+  .sheet-section--page2 {
+    page-break-before: auto;
+    break-before: auto;
+    margin-top: 0;
+    padding-top: 3mm;
+  }
+
+  .figure-block svg {
+    max-height: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .sheet {
+    margin: 0.5rem;
+    padding: 10mm 8mm;
+  }
+
+  .spec-table th {
+    width: 38%;
+  }
+}

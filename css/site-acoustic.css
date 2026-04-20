@@ -583,7 +583,117 @@ html {
   font-weight: 600;
 }
 
+/* Gráfico ilustrativo Rw (página portas — especificações) */
+.door-rw-chart {
+  margin: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: linear-gradient(165deg, #fffdf9 0%, #f4f1ec 55%, #ebe6df 100%);
+  border: 1px solid var(--ac-line);
+  border-radius: 1.15rem;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.75) inset,
+    0 18px 44px -28px rgba(20, 16, 14, 0.18);
+}
+
+.door-rw-chart__kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ac-accent);
+  margin: 0 0 0.35rem;
+}
+
+.door-rw-chart__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 600;
+  color: var(--ac-ink);
+  margin: 0 0 0.65rem;
+  line-height: 1.2;
+}
+
+.door-rw-chart__lead {
+  margin: 0 0 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ac-muted);
+  max-width: 42rem;
+}
+
+.door-rw-chart__lead strong {
+  color: var(--ac-ink-soft);
+  font-weight: 600;
+}
+
+.door-rw-chart__frame {
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  border: 1px solid rgba(20, 16, 14, 0.08);
+  padding: 0.5rem 0.35rem 0.15rem;
+  overflow: hidden;
+}
+
+.door-rw-chart__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(340px, 52vw);
+}
+
+.door-rw-chart__caption {
+  margin: 0.85rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(20, 16, 14, 0.08);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ac-muted);
+}
+
+.door-rw-chart__caption strong {
+  color: var(--ac-ink-soft);
+  font-weight: 600;
+}
+
+.door-rw-chart__sources {
+  margin-top: 0.85rem;
+  padding: 0.9rem 1rem 1rem;
+  border-radius: 0.7rem;
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.98) 0%, rgba(248, 245, 240, 0.96) 100%);
+  border: 1px solid rgba(20, 16, 14, 0.07);
+}
+
+.door-rw-chart__sources-title {
+  margin: 0 0 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ac-accent);
+}
+
+.door-rw-chart__sources-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ac-muted);
+}
+
+.door-rw-chart__sources-grid strong {
+  color: var(--ac-ink-soft);
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
+  .door-rw-chart__svg {
+    max-height: none;
+  }
+
   .door-croquis__board {
     gap: 1rem;
   }

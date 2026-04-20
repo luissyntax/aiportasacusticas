@@ -1,6 +1,6 @@
-# https://aiportasacusticas.github.io/
+# https://www.aiportasacusticas.com.br/
 User-agent: *
 Allow: /
 
 # Recursos estáticos NÃO devem ser bloqueados — o Google precisa deles para renderizar e avaliar experiência móvel.
-Sitemap: https://aiportasacusticas.github.io/sitemap.xml
+Sitemap: https://www.aiportasacusticas.com.br/sitemap.xml
