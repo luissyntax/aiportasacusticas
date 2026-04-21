@@ -2,7 +2,7 @@
 
 @page {
   size: A4 portrait;
-  margin: 12mm 10mm 14mm 10mm;
+  margin: 10mm 8mm 12mm 8mm;
 }
 
 *,
@@ -378,7 +378,7 @@ body::before {
     border: none;
     border-radius: 0;
     box-shadow: none;
-    padding: 4mm 5.5mm 5mm;
+    padding: 3.5mm 8mm 4.5mm;
     overflow: hidden;
     box-sizing: border-box;
     page-break-after: auto;
@@ -398,7 +398,7 @@ body::before {
   }
 
   .ar-ficha__chart svg {
-    max-height: 128px;
+    max-height: 108px;
   }
 }
 

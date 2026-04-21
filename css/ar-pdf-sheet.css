@@ -32,8 +32,8 @@
   --af-accent: #1e3d34;
   --af-gold: #9a7b4a;
   --af-line: rgba(12, 11, 10, 0.14);
-  --af-section-gap: 0.55rem;
-  --af-block-gap: 0.72rem;
+  --af-section-gap: 1rem;
+  --af-block-gap: 1.22rem;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -44,7 +44,7 @@
   max-width: 210mm;
   max-height: 297mm;
   margin: 0;
-  padding: 4mm 5.5mm 5mm;
+  padding: 3.5mm 8mm 4.5mm;
   display: flex;
   flex-direction: column;
   font-family: "Manrope", system-ui, sans-serif;
@@ -102,9 +102,9 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 0.65rem 1.25rem;
+  gap: 0.65rem 2rem;
   width: 100%;
-  padding-bottom: 0.65rem;
+  padding-bottom: 0.55rem;
   margin-bottom: var(--af-section-gap);
   border-bottom: 2px solid var(--af-ink);
 }
@@ -121,9 +121,9 @@
 
 #ar-pdf-sheet .ar-ficha__logo,
 #ficha-pdf-root .ar-ficha__logo {
-  height: 3.65rem;
+  height: 3.28rem;
   width: auto;
-  max-width: 11.6rem;
+  max-width: 11rem;
   display: block;
   object-fit: contain;
   object-position: left center;
@@ -152,7 +152,7 @@
 
 #ar-pdf-sheet .ar-ficha__doc-label,
 #ficha-pdf-root .ar-ficha__doc-label {
-  margin: 0.35rem 0 0.14rem;
+  margin: 0.75rem 0 0.68rem;
   text-align: left;
   font-size: 0.78rem;
   font-weight: 800;
@@ -163,36 +163,40 @@
 
 #ar-pdf-sheet .ar-ficha__title,
 #ficha-pdf-root .ar-ficha__title {
-  margin: 0 0 0.4rem;
+  margin: 0 0 1.05rem;
+  padding-bottom: 0.12rem;
   text-align: left;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.72rem;
+  font-size: 1.62rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--af-ink);
-  line-height: 1.12;
+  line-height: 1.16;
 }
 
 #ar-pdf-sheet .ar-ficha__intro,
 #ficha-pdf-root .ar-ficha__intro {
-  margin: 0 0 var(--af-block-gap);
+  margin: 0 0 calc(var(--af-block-gap) + 0.48rem);
+  padding-top: 0.38rem;
   text-align: left;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--af-muted);
   max-width: 100%;
+  line-height: 1.6;
 }
 
 #ar-pdf-sheet .ar-ficha__grid2,
 #ficha-pdf-root .ar-ficha__grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.55rem;
-  margin-bottom: 0;
+  column-gap: 1.15rem;
+  row-gap: 0.72rem;
+  margin-bottom: 0.68rem;
 }
 
 #ar-pdf-sheet .ar-ficha__box,
 #ficha-pdf-root .ar-ficha__box {
-  padding: 0.58rem 0.68rem;
+  padding: 0.62rem 0.95rem 0.65rem;
   background: var(--af-panel);
   border: 1px solid var(--af-line);
   border-radius: 3px;
@@ -213,7 +217,7 @@
 #ar-pdf-sheet .ar-ficha__box ul,
 #ficha-pdf-root .ar-ficha__box ul {
   margin: 0;
-  padding-left: 1.05rem;
+  padding-left: 1.2rem;
   font-size: 0.95rem;
   color: var(--af-ink-soft);
 }
@@ -231,8 +235,8 @@
 
 #ar-pdf-sheet .ar-ficha__chart,
 #ficha-pdf-root .ar-ficha__chart {
-  margin: var(--af-block-gap) 0;
-  padding: 0.52rem 0.65rem 0.58rem;
+  margin: calc(var(--af-block-gap) + 0.38rem) 0;
+  padding: 0.48rem 0.95rem 0.95rem;
   background: var(--af-panel);
   border: 1px solid var(--af-line);
   border-radius: 3px;
@@ -254,23 +258,23 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height: 128px;
+  max-height: 108px;
 }
 
 #ar-pdf-sheet .ar-ficha__chart-note,
 #ficha-pdf-root .ar-ficha__chart-note {
-  margin: 0.38rem 0 0;
+  margin: 0.42rem 0 0;
   text-align: left;
-  font-size: 0.84rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  line-height: 1.52;
   color: var(--af-muted);
 }
 
 #ar-pdf-sheet .ar-ficha__fine,
 #ficha-pdf-root .ar-ficha__fine {
-  margin: var(--af-block-gap) 0 0;
+  margin: calc(var(--af-block-gap) + 0.45rem) 0 0;
   text-align: left;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   line-height: 1.52;
   color: var(--af-muted);
 }
@@ -278,7 +282,8 @@
 #ar-pdf-sheet .ar-ficha__footer,
 #ficha-pdf-root .ar-ficha__footer {
   flex-shrink: 0;
-  padding-top: 0.42rem;
+  margin-top: 0.48rem;
+  padding: 0.58rem 0.75rem 0;
   border-top: 2px solid var(--af-gold);
   font-size: 0.72rem;
   font-weight: 700;
