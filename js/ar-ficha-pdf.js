@@ -189,7 +189,7 @@
       orientation: "portrait",
     });
     pdf.addImage(imgData, "JPEG", 0, 0, 210, 297);
-    pdf.save("acustica-ribeiro-ficha-portas-acusticas.pdf");
+    pdf.save("arte-interiores-ficha-tecnica-portas-acusticas.pdf");
   }
 
   window.saveArFichaPdf = async function () {
