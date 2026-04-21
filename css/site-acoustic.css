@@ -1,4 +1,4 @@
-/* Arte Interiores — identidade premium (logo: serif alta, coroa, monocromia + acento prata metálico) */
+/* Atelier acústico — canvas off-white, tipografia editorial, traços discretos */
 
 /* Evita rolagem horizontal por transforms/gradientes que ultrapassam 100% da viewport */
 html {
@@ -6,31 +6,31 @@ html {
 }
 
 :root {
-  --ac-ink: #14100e;
-  --ac-ink-soft: #2a241f;
-  --ac-slate: #5c534c;
-  --ac-muted: #6b6258;
-  --ac-bg: #f5f1ea;
-  --ac-panel: #fffdf9;
-  --ac-line: rgba(20, 16, 14, 0.1);
-  --ac-accent: #8f97a8;
-  --ac-accent-bright: #e4e8ef;
-  --ac-accent-dim: rgba(143, 151, 168, 0.2);
-  --ac-shadow-lg: 0 28px 56px -28px rgba(20, 14, 10, 0.2);
+  --ac-ink: #1a1714;
+  --ac-ink-soft: #3d3834;
+  --ac-slate: #575049;
+  --ac-muted: #6f665e;
+  --ac-bg: #f4f1eb;
+  --ac-panel: #faf8f4;
+  --ac-line: rgba(26, 23, 20, 0.09);
+  --ac-accent: #7a7268;
+  --ac-accent-bright: #e8e4dc;
+  --ac-accent-dim: rgba(122, 114, 104, 0.18);
+  --ac-shadow-lg: 0 24px 48px -24px rgba(26, 22, 18, 0.12);
   --ac-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --site-max: 1240px;
   --site-gutter: clamp(1.25rem, 4.5vw, 2.75rem);
   --section-y: clamp(3.5rem, 9vw, 6.5rem);
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
 }
 
 .site-body {
   font-family: "DM Sans", system-ui, sans-serif;
   background-color: var(--ac-bg);
   background-image:
-    radial-gradient(ellipse 90% 55% at 0% 0%, rgba(160, 170, 188, 0.1), transparent 52%),
-    radial-gradient(ellipse 70% 50% at 100% 8%, rgba(200, 208, 220, 0.07), transparent 48%),
-    radial-gradient(ellipse 120% 80% at 50% -15%, rgba(150, 160, 178, 0.06), transparent 55%),
-    linear-gradient(180deg, #faf7f1 0%, #f3ece3 55%, #efe8de 100%);
+    radial-gradient(ellipse 85% 50% at 0% 0%, rgba(200, 192, 178, 0.14), transparent 50%),
+    radial-gradient(ellipse 65% 45% at 100% 5%, rgba(220, 214, 204, 0.2), transparent 48%),
+    linear-gradient(180deg, #f7f4ee 0%, #f0ebe3 42%, #e8e3da 100%);
   color: var(--ac-ink-soft);
 }
 
@@ -38,7 +38,7 @@ html {
 .site-body h2,
 .site-body h3,
 .site-body .font-display {
-  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -64,13 +64,13 @@ html {
 }
 
 .site-header {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(18px) saturate(1.35);
-  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  background: rgba(250, 248, 244, 0.82);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
   border-bottom: 1px solid var(--ac-line);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.65) inset,
-    0 8px 32px -20px rgba(15, 23, 42, 0.12);
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 10px 36px -22px rgba(42, 36, 30, 0.08);
   transition: box-shadow 0.35s var(--ac-ease-out), background 0.35s ease;
 }
 
@@ -229,6 +229,74 @@ html {
   );
 }
 
+/* Hero claro — off-white como protagonista (home) */
+.hero-acoustic--atelier {
+  min-height: min(88vh, 820px);
+  display: flex;
+  align-items: center;
+  padding-top: clamp(3rem, 8vw, 5rem);
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+  background:
+    radial-gradient(ellipse 70% 55% at 92% 18%, rgba(232, 226, 216, 0.65), transparent 52%),
+    radial-gradient(ellipse 45% 40% at 8% 85%, rgba(220, 212, 200, 0.35), transparent 50%),
+    linear-gradient(165deg, #faf8f4 0%, #f3efe8 48%, #ebe6de 100%);
+  color: var(--ac-ink-soft);
+}
+
+.hero-acoustic--atelier::before {
+  background: radial-gradient(circle, rgba(200, 190, 176, 0.12) 0%, transparent 65%);
+}
+
+.hero-acoustic--atelier::after {
+  opacity: 0.55;
+  background-image:
+    linear-gradient(105deg, transparent 48%, rgba(180, 170, 156, 0.04) 48%, rgba(180, 170, 156, 0.04) 52%, transparent 52%);
+}
+
+.hero-acoustic--atelier h1,
+.hero-acoustic--atelier h2,
+.hero-acoustic--atelier h3,
+.hero-acoustic--atelier .font-display {
+  color: var(--ac-ink);
+}
+
+.hero-acoustic--atelier .hero-photo-card {
+  border-radius: 0.2rem;
+  border-color: rgba(42, 36, 30, 0.1);
+  box-shadow:
+    0 24px 56px -28px rgba(42, 36, 30, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.85) inset;
+}
+
+.hero-acoustic--atelier.acoustic-bg::before {
+  opacity: 0.35;
+  background-image: repeating-linear-gradient(
+    -12deg,
+    transparent,
+    transparent 22px,
+    rgba(120, 110, 98, 0.035) 22px,
+    rgba(120, 110, 98, 0.035) 23px
+  );
+}
+
+.atelier-kicker-line {
+  display: inline-block;
+  width: 2.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--ac-accent), transparent);
+  vertical-align: middle;
+  margin-right: 0.65rem;
+  opacity: 0.85;
+}
+
+.hero-acoustic--atelier .door-croquis {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--ac-line);
+  border-radius: 0.35rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
 .hero-acoustic--lux .hero-photo-card {
   border-radius: 0.125rem;
   border-color: rgba(190, 198, 212, 0.45);
@@ -299,7 +367,7 @@ html {
 }
 
 .door-croquis__title {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1rem, 2.4vw, 1.22rem);
   font-weight: 700;
   color: var(--ac-ink);
@@ -587,12 +655,12 @@ html {
 .door-rw-chart {
   margin: 0;
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: linear-gradient(165deg, #fffdf9 0%, #f4f1ec 55%, #ebe6df 100%);
+  background: linear-gradient(165deg, #faf8f4 0%, #f0ebe3 55%, #e5dfd6 100%);
   border: 1px solid var(--ac-line);
-  border-radius: 1.15rem;
+  border-radius: 0.4rem;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.75) inset,
-    0 18px 44px -28px rgba(20, 16, 14, 0.18);
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 18px 44px -28px rgba(42, 36, 30, 0.1);
 }
 
 .door-rw-chart__kicker {
@@ -605,7 +673,7 @@ html {
 }
 
 .door-rw-chart__title {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.35rem, 3vw, 1.85rem);
   font-weight: 600;
   color: var(--ac-ink);
@@ -767,7 +835,7 @@ html {
 
 .wall-diagram__title {
   margin: 0 0 1.25rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   font-weight: 700;
   color: var(--ac-ink);
@@ -1070,7 +1138,7 @@ html {
 
 .spec-card-pro__index {
   flex-shrink: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1;
@@ -1080,7 +1148,7 @@ html {
 
 .spec-card-pro__title {
   margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.05rem, 1.8vw, 1.2rem);
   font-weight: 700;
   color: var(--ac-ink);
@@ -1160,8 +1228,8 @@ html {
 /* Portfólio — página portas (grelha + destaque, overlay sempre legível) */
 .door-portfolio {
   position: relative;
-  background: linear-gradient(178deg, #faf8f5 0%, #ece8e2 38%, #e0dbd4 100%);
-  border-block: 1px solid rgba(26, 24, 22, 0.07);
+  background: linear-gradient(178deg, #f7f4ee 0%, #efeae2 40%, #e6e0d6 100%);
+  border-block: 1px solid var(--ac-line);
 }
 
 .door-portfolio::after {
@@ -1169,7 +1237,7 @@ html {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(216, 221, 229, 0.35), transparent 55%);
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.5), transparent 55%);
 }
 
 .door-portfolio .site-container {
@@ -1196,12 +1264,12 @@ html {
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #5f6a78;
+  color: var(--ac-accent);
 }
 
 .door-portfolio__title {
   margin: 0 0 0.65rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4.2vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -1383,16 +1451,16 @@ html {
   }
 }
 
-/* Ferragens — painel luxo (página portas) */
+/* Ferragens — painel editorial claro (página portas) */
 .door-kit {
   margin-top: clamp(2.5rem, 5vw, 3.25rem);
   padding: clamp(1.5rem, 3.5vw, 2.25rem);
-  border-radius: 1.15rem;
-  background: linear-gradient(152deg, #161412 0%, #1f1c19 42%, #12100e 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.35rem;
+  background: linear-gradient(168deg, #faf8f4 0%, #f2ede5 100%);
+  border: 1px solid var(--ac-line);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.04) inset,
-    0 28px 60px -34px rgba(0, 0, 0, 0.55);
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 20px 48px -28px rgba(42, 36, 30, 0.1);
 }
 
 .door-kit__head {
@@ -1400,7 +1468,7 @@ html {
   gap: 1rem;
   margin-bottom: clamp(1.25rem, 3vw, 1.65rem);
   padding-bottom: clamp(1.1rem, 2.5vw, 1.35rem);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--ac-line);
 }
 
 @media (min-width: 768px) {
@@ -1417,23 +1485,23 @@ html {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(216, 221, 229, 0.55);
+  color: var(--ac-muted);
 }
 
 .door-kit__title {
   margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.4vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #f2efe9;
+  color: var(--ac-ink);
 }
 
 .door-kit__lead {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.55;
-  color: rgba(232, 228, 220, 0.72);
+  color: var(--ac-muted);
 }
 
 .door-kit__list {
@@ -1471,9 +1539,9 @@ html {
   height: 100%;
   min-height: 0;
   padding: 1rem 1rem 1.05rem;
-  border-radius: 0.65rem;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--ac-line);
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
@@ -1481,8 +1549,8 @@ html {
 }
 
 .door-kit__card:hover {
-  background: rgba(255, 255, 255, 0.055);
-  border-color: rgba(216, 221, 229, 0.14);
+  background: #fffefb;
+  border-color: rgba(122, 114, 104, 0.22);
   transform: translateY(-2px);
 }
 
@@ -1492,15 +1560,15 @@ html {
   justify-content: center;
   width: 2.85rem;
   height: 2.85rem;
-  border-radius: 0.55rem;
-  background: linear-gradient(145deg, rgba(216, 221, 229, 0.14) 0%, rgba(95, 106, 120, 0.2) 100%);
-  color: #e8e4dc;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.45rem;
+  background: linear-gradient(145deg, #ebe6de 0%, #dcd5c8 100%);
+  color: var(--ac-ink-soft);
+  border: 1px solid rgba(42, 36, 30, 0.08);
   flex-shrink: 0;
 }
 
 .door-kit__icon--accent {
-  background: linear-gradient(145deg, rgba(216, 221, 229, 0.22) 0%, rgba(95, 106, 120, 0.28) 100%);
+  background: linear-gradient(145deg, #e0d8cc 0%, #c9c0b2 100%);
 }
 
 .door-kit__body {
@@ -1513,7 +1581,7 @@ html {
 .door-kit__name {
   font-size: 0.92rem;
   font-weight: 700;
-  color: #faf8f5;
+  color: var(--ac-ink);
   line-height: 1.25;
 }
 
@@ -1527,15 +1595,15 @@ html {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: rgba(216, 221, 229, 0.12);
-  color: rgba(232, 228, 220, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ac-slate);
+  border: 1px solid var(--ac-line);
 }
 
 .door-kit__pill--muted {
   background: transparent;
-  color: rgba(200, 195, 186, 0.85);
-  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--ac-muted);
+  border-color: var(--ac-line);
 }
 
 .door-kit__pill--detail {
@@ -1559,8 +1627,8 @@ html {
 /* Processo de instalação — página portas */
 .door-install {
   position: relative;
-  background: linear-gradient(172deg, #ebe8e2 0%, #e3dfda 38%, #d8d3cd 100%);
-  border-block: 1px solid rgba(26, 24, 22, 0.07);
+  background: linear-gradient(172deg, #f5f2ec 0%, #ebe6de 42%, #e2dcd3 100%);
+  border-block: 1px solid var(--ac-line);
 }
 
 .door-install::before {
@@ -1595,12 +1663,12 @@ html {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #5f6a78;
+  color: var(--ac-accent);
 }
 
 .door-install__title {
   margin: 0 0 0.65rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.65rem);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -1688,7 +1756,7 @@ html {
   width: 2.85rem;
   height: 2.85rem;
   flex-shrink: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -1723,12 +1791,12 @@ html {
   position: relative;
   margin-top: clamp(2rem, 4.5vw, 2.85rem);
   padding: clamp(1.4rem, 3.2vw, 2rem) clamp(1.25rem, 2.8vw, 1.75rem) clamp(1.35rem, 3vw, 1.85rem);
-  border-radius: 0.55rem;
-  background: linear-gradient(152deg, #161412 0%, #1f1c19 48%, #12100e 100%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 0.35rem;
+  background: linear-gradient(168deg, #faf8f4 0%, #ebe6de 100%);
+  border: 1px solid var(--ac-line);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.05) inset,
-    0 28px 64px -38px rgba(0, 0, 0, 0.58);
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 22px 50px -30px rgba(42, 36, 30, 0.1);
   overflow: hidden;
 }
 
@@ -1737,7 +1805,7 @@ html {
   position: absolute;
   inset: 0 0 auto 0;
   height: 3px;
-  background: linear-gradient(90deg, rgba(95, 106, 120, 0.2), rgba(216, 221, 229, 0.55), rgba(95, 106, 120, 0.2));
+  background: linear-gradient(90deg, transparent, rgba(122, 114, 104, 0.35), transparent);
   pointer-events: none;
 }
 
@@ -1746,7 +1814,7 @@ html {
   z-index: 1;
   margin-bottom: clamp(1.15rem, 2.5vw, 1.45rem);
   padding-bottom: clamp(1rem, 2vw, 1.2rem);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid var(--ac-line);
 }
 
 .door-install__time-kicker {
@@ -1755,7 +1823,7 @@ html {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(216, 221, 229, 0.55);
+  color: var(--ac-muted);
 }
 
 .door-install__time-head-row {
@@ -1773,24 +1841,24 @@ html {
 
 .door-install__time-title {
   margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(1.5rem, 2.6vw, 1.95rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: #faf8f5;
+  color: var(--ac-ink);
 }
 
 .door-install__time-intro {
   margin: 0;
   font-size: 0.84rem;
   line-height: 1.55;
-  color: rgba(232, 228, 220, 0.72);
+  color: var(--ac-muted);
 }
 
 .door-install__time-intro strong {
   font-weight: 700;
-  color: rgba(250, 248, 245, 0.95);
+  color: var(--ac-ink-soft);
 }
 
 .door-install__time-stats {
@@ -1808,9 +1876,9 @@ html {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     padding: 2px;
-    border-radius: 0.45rem;
+    border-radius: 0.35rem;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(42, 36, 30, 0.06);
   }
 }
 
@@ -1825,9 +1893,9 @@ html {
   gap: 0.75rem 1rem;
   min-height: 5.5rem;
   padding: 1rem 1.1rem;
-  border-radius: 0.45rem;
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--ac-line);
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
@@ -1843,13 +1911,13 @@ html {
   }
 
   .door-install__time-stat + .door-install__time-stat .door-install__time-stat-inner {
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(42, 36, 30, 0.08);
   }
 }
 
 .door-install__time-stat-inner:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(216, 221, 229, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(122, 114, 104, 0.2);
 }
 
 @media (min-width: 900px) {
@@ -1859,15 +1927,15 @@ html {
 }
 
 .door-install__time-stat--res .door-install__time-stat-inner {
-  box-shadow: inset 0 3px 0 0 rgba(180, 175, 168, 0.35);
+  box-shadow: inset 0 3px 0 0 rgba(200, 188, 172, 0.55);
 }
 
 .door-install__time-stat--stu .door-install__time-stat-inner {
-  box-shadow: inset 0 3px 0 0 rgba(216, 221, 229, 0.35);
+  box-shadow: inset 0 3px 0 0 rgba(180, 172, 160, 0.5);
 }
 
 .door-install__time-stat--full .door-install__time-stat-inner {
-  box-shadow: inset 0 3px 0 0 rgba(95, 106, 120, 0.45);
+  box-shadow: inset 0 3px 0 0 rgba(122, 114, 104, 0.4);
 }
 
 .door-install__time-stat-icon {
@@ -1876,10 +1944,10 @@ html {
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  border-radius: 0.5rem;
-  background: linear-gradient(145deg, rgba(216, 221, 229, 0.12) 0%, rgba(95, 106, 120, 0.18) 100%);
-  color: rgba(240, 236, 230, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.45rem;
+  background: linear-gradient(145deg, #ebe6de 0%, #d8d0c4 100%);
+  color: var(--ac-ink-soft);
+  border: 1px solid rgba(42, 36, 30, 0.08);
   flex-shrink: 0;
 }
 
@@ -1893,7 +1961,7 @@ html {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(232, 228, 220, 0.88);
+  color: var(--ac-slate);
   margin-bottom: 0.25rem;
 }
 
@@ -1901,7 +1969,7 @@ html {
   display: block;
   font-size: 0.72rem;
   line-height: 1.4;
-  color: rgba(200, 195, 186, 0.78);
+  color: var(--ac-muted);
 }
 
 .door-install__time-stat-value {
@@ -1910,9 +1978,9 @@ html {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.08em;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-weight: 700;
-  color: #faf8f5;
+  color: var(--ac-ink);
   line-height: 1;
   text-align: right;
 }
@@ -1928,7 +1996,7 @@ html {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(216, 221, 229, 0.55);
+  color: var(--ac-muted);
   align-self: flex-end;
   padding-bottom: 0.2em;
 }
@@ -1944,7 +2012,7 @@ html {
     justify-content: flex-start;
     margin-top: 0.35rem;
     padding-top: 0.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid var(--ac-line);
   }
 }
 
@@ -1980,8 +2048,8 @@ html {
 /* Garantia completa — página portas */
 .door-garantia {
   position: relative;
-  background: linear-gradient(168deg, #f4f1ec 0%, #ebe7e1 42%, #e0dbd4 100%);
-  border-block: 1px solid rgba(26, 24, 22, 0.07);
+  background: linear-gradient(168deg, #faf8f4 0%, #f0ebe3 45%, #e5e0d7 100%);
+  border-block: 1px solid var(--ac-line);
 }
 
 .door-garantia::before {
@@ -2016,12 +2084,12 @@ html {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #5f6a78;
+  color: var(--ac-accent);
 }
 
 .door-garantia__title {
   margin: 0 0 0.65rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.65rem);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -2030,7 +2098,7 @@ html {
 }
 
 .door-garantia__title-accent {
-  color: #5f6a78;
+  color: var(--ac-accent);
   font-style: italic;
   font-weight: 600;
 }
@@ -2169,7 +2237,7 @@ html {
 
 .door-garantia__card-title {
   margin: 0 0 0.45rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.55rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -2249,8 +2317,8 @@ html {
 /* Diferenciais — “O que nos torna únicos” (página portas) */
 .door-diff {
   position: relative;
-  background: linear-gradient(172deg, #f0ebe4 0%, #e8e2da 40%, #ded6cc 100%);
-  border-block: 1px solid rgba(26, 24, 22, 0.06);
+  background: linear-gradient(172deg, #f7f4ee 0%, #ebe6de 40%, #e0d9ce 100%);
+  border-block: 1px solid var(--ac-line);
 }
 
 .door-diff::before {
@@ -2285,12 +2353,12 @@ html {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #5f6a78;
+  color: var(--ac-accent);
 }
 
 .door-diff__title {
   margin: 0 0 0.75rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4.2vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -2301,7 +2369,7 @@ html {
 .door-diff__title-accent {
   font-style: italic;
   font-weight: 600;
-  color: #5f6a78;
+  color: var(--ac-accent);
 }
 
 .door-diff__lead {
@@ -2390,7 +2458,7 @@ html {
 }
 
 .door-diff__index {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1;
@@ -2434,7 +2502,7 @@ html {
 
 .door-diff__card-title {
   margin: 0 0 0.5rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.28rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -2463,7 +2531,7 @@ html {
 .testimonials-lux {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(168deg, #eceff4 0%, var(--ac-bg) 42%, #faf8f5 100%);
+  background: linear-gradient(168deg, #f2efe8 0%, var(--ac-bg) 45%, #ebe6de 100%);
 }
 
 .testimonials-lux::before {
@@ -2598,12 +2666,35 @@ html {
 }
 
 .testimonials-lux__deco {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-display);
   font-size: clamp(3rem, 8vw, 4.5rem);
   line-height: 0.85;
   color: rgba(148, 154, 168, 0.22);
   user-select: none;
   margin: -0.25rem 0 0;
+}
+
+/* Rodapé — continuidade do canvas off-white */
+.site-footer {
+  background: linear-gradient(180deg, #ebe6de 0%, #e0dbd2 100%);
+  color: var(--ac-ink-soft);
+  border-top: 1px solid var(--ac-line);
+}
+
+.site-footer a:not([class*="bg-"]) {
+  color: var(--ac-slate);
+}
+
+.site-footer a:not([class*="bg-"]):hover {
+  color: var(--ac-ink);
+}
+
+.site-footer .site-footer__heading {
+  color: var(--ac-ink);
+}
+
+.site-footer .site-footer__muted {
+  color: var(--ac-muted);
 }
 
 /* Galeria modal — página portas (evita CSS inline no HTML) */

@@ -1,0 +1,290 @@
+/**
+ * Folha técnica rasterizada (html2canvas): #ar-pdf-sheet
+ * Visual alinhado ao tema “Studio” do site (off-white, verde, ouro).
+ * Marcação .ar-ficha-* partilhada com ficha-tecnica-portas-print.html (#ficha-pdf-root).
+ * Tipografias: a página das portas já carrega Manrope + Playfair; a ficha-impressão liga-as no HTML.
+ */
+
+#ar-pdf-sheet.ar-pdf-sheet-host {
+  position: fixed;
+  left: -12000px;
+  top: 0;
+  width: 210mm;
+  max-width: 210mm;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+#ar-pdf-sheet.ar-pdf-sheet-host *,
+#ar-pdf-sheet.ar-pdf-sheet-host *::before,
+#ar-pdf-sheet.ar-pdf-sheet-host *::after {
+  box-sizing: border-box;
+}
+
+.ar-ficha-sheet {
+  --af-ink: #0c0b0a;
+  --af-ink-soft: #3a3632;
+  --af-muted: #6b6560;
+  --af-paper: #faf9f5;
+  --af-panel: #ffffff;
+  --af-accent: #1e3d34;
+  --af-gold: #9a7b4a;
+  --af-line: rgba(12, 11, 10, 0.14);
+  --af-section-gap: 0.55rem;
+  --af-block-gap: 0.72rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  width: 210mm;
+  min-width: 210mm;
+  height: 297mm;
+  min-height: 297mm;
+  max-width: 210mm;
+  max-height: 297mm;
+  margin: 0;
+  padding: 4mm 5.5mm 5mm;
+  display: flex;
+  flex-direction: column;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  color: var(--af-ink-soft);
+  background: var(--af-paper);
+  border: 1px solid var(--af-line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#ar-pdf-sheet .ar-ficha__bg,
+#ficha-pdf-root .ar-ficha__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("../images/backgrounds/pages/acousticDoor/acousticDoor.png") center / cover no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+#ar-pdf-sheet .ar-ficha__wm,
+#ficha-pdf-root .ar-ficha__wm {
+  position: absolute;
+  inset: -4%;
+  z-index: 0;
+  background: url("../images/logos/logo-preta-transparente.png") 50% 42% / min(300px, 48%) no-repeat;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+#ar-pdf-sheet .ar-ficha__inner,
+#ficha-pdf-root .ar-ficha__inner {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  align-self: stretch;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#ar-pdf-sheet .ar-ficha__main,
+#ficha-pdf-root .ar-ficha__main {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#ar-pdf-sheet .ar-ficha__top,
+#ficha-pdf-root .ar-ficha__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.65rem 1.25rem;
+  width: 100%;
+  padding-bottom: 0.65rem;
+  margin-bottom: var(--af-section-gap);
+  border-bottom: 2px solid var(--af-ink);
+}
+
+#ar-pdf-sheet .ar-ficha__brand,
+#ficha-pdf-root .ar-ficha__brand {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  line-height: 0;
+  padding-top: 0.12rem;
+}
+
+#ar-pdf-sheet .ar-ficha__logo,
+#ficha-pdf-root .ar-ficha__logo {
+  height: 3.65rem;
+  width: auto;
+  max-width: 11.6rem;
+  display: block;
+  object-fit: contain;
+  object-position: left center;
+}
+
+#ar-pdf-sheet .ar-ficha__contact,
+#ficha-pdf-root .ar-ficha__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.32rem;
+  flex: 0 1 auto;
+  text-align: right;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--af-gold);
+  letter-spacing: 0.03em;
+  max-width: 17rem;
+}
+
+#ar-pdf-sheet .ar-ficha__contact p,
+#ficha-pdf-root .ar-ficha__contact p {
+  margin: 0;
+}
+
+#ar-pdf-sheet .ar-ficha__doc-label,
+#ficha-pdf-root .ar-ficha__doc-label {
+  margin: 0.35rem 0 0.14rem;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--af-gold);
+}
+
+#ar-pdf-sheet .ar-ficha__title,
+#ficha-pdf-root .ar-ficha__title {
+  margin: 0 0 0.4rem;
+  text-align: left;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.72rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--af-ink);
+  line-height: 1.12;
+}
+
+#ar-pdf-sheet .ar-ficha__intro,
+#ficha-pdf-root .ar-ficha__intro {
+  margin: 0 0 var(--af-block-gap);
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--af-muted);
+  max-width: 100%;
+}
+
+#ar-pdf-sheet .ar-ficha__grid2,
+#ficha-pdf-root .ar-ficha__grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  margin-bottom: 0;
+}
+
+#ar-pdf-sheet .ar-ficha__box,
+#ficha-pdf-root .ar-ficha__box {
+  padding: 0.58rem 0.68rem;
+  background: var(--af-panel);
+  border: 1px solid var(--af-line);
+  border-radius: 3px;
+  min-height: 0;
+}
+
+#ar-pdf-sheet .ar-ficha__box-title,
+#ficha-pdf-root .ar-ficha__box-title {
+  margin: 0 0 0.38rem;
+  text-align: left;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--af-gold);
+}
+
+#ar-pdf-sheet .ar-ficha__box ul,
+#ficha-pdf-root .ar-ficha__box ul {
+  margin: 0;
+  padding-left: 1.05rem;
+  font-size: 0.95rem;
+  color: var(--af-ink-soft);
+}
+
+#ar-pdf-sheet .ar-ficha__box li,
+#ficha-pdf-root .ar-ficha__box li {
+  margin-bottom: 0.24rem;
+}
+
+#ar-pdf-sheet .ar-ficha__box p,
+#ficha-pdf-root .ar-ficha__box p {
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+}
+
+#ar-pdf-sheet .ar-ficha__chart,
+#ficha-pdf-root .ar-ficha__chart {
+  margin: var(--af-block-gap) 0;
+  padding: 0.52rem 0.65rem 0.58rem;
+  background: var(--af-panel);
+  border: 1px solid var(--af-line);
+  border-radius: 3px;
+}
+
+#ar-pdf-sheet .ar-ficha__chart-kicker,
+#ficha-pdf-root .ar-ficha__chart-kicker {
+  margin: 0 0 0.4rem;
+  text-align: left;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--af-gold);
+}
+
+#ar-pdf-sheet .ar-ficha__chart svg,
+#ficha-pdf-root .ar-ficha__chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 128px;
+}
+
+#ar-pdf-sheet .ar-ficha__chart-note,
+#ficha-pdf-root .ar-ficha__chart-note {
+  margin: 0.38rem 0 0;
+  text-align: left;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--af-muted);
+}
+
+#ar-pdf-sheet .ar-ficha__fine,
+#ficha-pdf-root .ar-ficha__fine {
+  margin: var(--af-block-gap) 0 0;
+  text-align: left;
+  font-size: 0.84rem;
+  line-height: 1.52;
+  color: var(--af-muted);
+}
+
+#ar-pdf-sheet .ar-ficha__footer,
+#ficha-pdf-root .ar-ficha__footer {
+  flex-shrink: 0;
+  padding-top: 0.42rem;
+  border-top: 2px solid var(--af-gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--af-gold);
+  line-height: 1.4;
+}

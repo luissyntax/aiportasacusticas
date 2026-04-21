@@ -1,6 +1,5 @@
-/* Ficha técnica portas — impressão / Salvar como PDF (Arte Interiores) */
+/* Ficha técnica portas — impressão / Salvar como PDF */
 
-/* Margem da folha: aplicada em *cada* página impressa */
 @page {
   size: A4 portrait;
   margin: 12mm 10mm 14mm 10mm;
@@ -20,9 +19,9 @@ html {
 
 body {
   margin: 0;
-  font-family: "DM Sans", system-ui, sans-serif;
-  color: #2a241f;
-  background: #ddd8d0;
+  font-family: "Manrope", system-ui, sans-serif;
+  color: #3a3632;
+  background: linear-gradient(180deg, #f3f0e8 0%, #e8e4dc 100%);
   line-height: 1.45;
 }
 
@@ -35,7 +34,7 @@ body::before {
   background: repeating-linear-gradient(
     -26deg,
     transparent 0 100px,
-    rgba(26, 24, 22, 0.02) 100px 101px
+    rgba(42, 36, 30, 0.02) 100px 101px
   );
 }
 
@@ -53,10 +52,10 @@ body::before {
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1rem 0.85rem;
-  background: linear-gradient(180deg, #1a1816 0%, #0f0d0b 100%);
-  color: #f5f1ea;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, #f4f1eb 0%, #ebe6de 100%);
+  color: #3d3834;
+  border-bottom: 1px solid rgba(42, 36, 30, 0.1);
+  box-shadow: 0 6px 24px rgba(42, 36, 30, 0.06);
 }
 
 .print-toolbar__hint {
@@ -65,7 +64,7 @@ body::before {
   margin: 0;
   font-size: 0.72rem;
   line-height: 1.45;
-  color: rgba(245, 241, 234, 0.78);
+  color: #575049;
   text-align: center;
 }
 
@@ -83,7 +82,7 @@ body::before {
   font-weight: 600;
   cursor: pointer;
   border: none;
-  border-radius: 0.45rem;
+  border-radius: 0.35rem;
   padding: 0.55rem 1rem;
   text-decoration: none;
   display: inline-flex;
@@ -99,14 +98,14 @@ body::before {
 }
 
 .print-toolbar .btn-print--primary {
-  background: linear-gradient(145deg, #d8dde5, #9aa6b8);
-  color: #14100e;
+  background: linear-gradient(145deg, #292524, #1c1917);
+  color: #faf8f4;
 }
 
 .print-toolbar .btn-print--ghost {
-  background: transparent;
-  color: #f5f1ea;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.55);
+  color: #3d3834;
+  border: 1px solid rgba(42, 36, 30, 0.14);
 }
 
 .sheet {
@@ -116,17 +115,16 @@ body::before {
   margin: 1rem auto 2.5rem;
   min-height: 280mm;
   padding: 14mm 13mm 16mm;
-  background: #faf7f1;
-  border: 1px solid rgba(20, 16, 14, 0.1);
-  border-radius: 0.35rem;
-  box-shadow: 0 16px 48px -20px rgba(20, 14, 10, 0.22);
+  background: #f7f4ee;
+  border: 1px solid rgba(42, 36, 30, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: 0 14px 40px -18px rgba(42, 36, 30, 0.12);
   overflow: hidden;
 }
 
-/* Ficha única: altura só pelo conteúdo (evita “página” extra no PDF via html2canvas) */
-#ficha-pdf-root.sheet {
-  min-height: 0;
-  overflow: visible;
+#ficha-pdf-root.ar-ficha-sheet {
+  margin: 1rem auto 2.5rem;
+  box-shadow: 0 14px 40px -18px rgba(12, 11, 10, 0.1);
 }
 
 .sheet__bg {
@@ -134,7 +132,7 @@ body::before {
   inset: 0;
   z-index: 0;
   background: url("../images/backgrounds/pages/acousticDoor/acousticDoor.png") center / cover no-repeat;
-  opacity: 0.1;
+  opacity: 0.08;
   pointer-events: none;
 }
 
@@ -143,7 +141,7 @@ body::before {
   inset: -5%;
   z-index: 0;
   background: url("../images/logos/logo-preta-transparente.png") 50% 45% / min(340px, 55%) no-repeat;
-  opacity: 0.038;
+  opacity: 0.034;
   pointer-events: none;
 }
 
@@ -159,7 +157,7 @@ body::before {
   gap: 1rem 1.5rem;
   padding-bottom: 0.85rem;
   margin-bottom: 0.85rem;
-  border-bottom: 2px solid rgba(26, 24, 22, 0.12);
+  border-bottom: 2px solid rgba(42, 36, 30, 0.1);
 }
 
 .sheet-logo {
@@ -170,11 +168,11 @@ body::before {
 
 .sheet-header h1 {
   margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Newsreader", Georgia, serif;
   font-size: 1.65rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #1a1816;
+  color: #1a1714;
   line-height: 1.15;
 }
 
@@ -184,7 +182,7 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #5f6a78;
+  color: #6b635a;
 }
 
 .sheet-contact {
@@ -194,29 +192,29 @@ body::before {
   color: #4a4540;
   margin-bottom: 1rem;
   padding: 0.55rem 0.75rem;
-  background: rgba(255, 253, 249, 0.72);
-  border: 1px solid rgba(20, 16, 14, 0.08);
-  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(42, 36, 30, 0.08);
+  border-radius: 0.35rem;
 }
 
 .sheet-contact strong {
-  color: #1a1816;
+  color: #1a1714;
   font-weight: 600;
 }
 
 .sheet-lead {
   margin: 0 0 1rem;
   font-size: 0.82rem;
-  color: #5c534c;
+  color: #575049;
   max-width: 48rem;
 }
 
 .sheet h2 {
   margin: 1.15rem 0 0.45rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Newsreader", Georgia, serif;
   font-size: 1.15rem;
   font-weight: 600;
-  color: #1a1816;
+  color: #1a1714;
   letter-spacing: -0.01em;
 }
 
@@ -229,9 +227,9 @@ body::before {
   border-collapse: collapse;
   font-size: 0.78rem;
   margin: 0.35rem 0 0.75rem;
-  background: rgba(255, 253, 249, 0.85);
-  border: 1px solid rgba(20, 16, 14, 0.1);
-  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(42, 36, 30, 0.09);
+  border-radius: 0.3rem;
   overflow: hidden;
 }
 
@@ -240,14 +238,14 @@ body::before {
   padding: 0.4rem 0.55rem;
   text-align: left;
   vertical-align: top;
-  border-bottom: 1px solid rgba(20, 16, 14, 0.07);
+  border-bottom: 1px solid rgba(42, 36, 30, 0.06);
 }
 
 .spec-table th {
   width: 32%;
   font-weight: 600;
-  color: #3d3834;
-  background: rgba(216, 221, 229, 0.35);
+  color: #44403c;
+  background: rgba(212, 204, 192, 0.35);
 }
 
 .spec-table tr:last-child th,
@@ -269,10 +267,10 @@ body::before {
 .foot-note {
   margin-top: 0.85rem;
   padding-top: 0.65rem;
-  border-top: 1px solid rgba(20, 16, 14, 0.1);
+  border-top: 1px solid rgba(42, 36, 30, 0.09);
   font-size: 0.68rem;
   line-height: 1.5;
-  color: #6b6258;
+  color: #6f665e;
 }
 
 .sheet-section--page2 {
@@ -283,9 +281,9 @@ body::before {
 .figure-block {
   margin: 0.5rem 0 0.75rem;
   padding: 0.65rem 0.75rem;
-  background: rgba(255, 253, 249, 0.88);
-  border: 1px solid rgba(20, 16, 14, 0.09);
-  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(42, 36, 30, 0.08);
+  border-radius: 0.35rem;
 }
 
 .figure-block > figcaption {
@@ -293,15 +291,15 @@ body::before {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #5f6a78;
+  color: #6b635a;
   margin-bottom: 0.35rem;
 }
 
 .figure-block > .title {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Newsreader", Georgia, serif;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #1a1816;
+  color: #1a1714;
   margin: 0 0 0.45rem;
 }
 
@@ -316,7 +314,6 @@ body::before {
   max-height: 260px;
 }
 
-/* Croqui igual ao site (usa classes de site-acoustic.css) */
 .figure-block--croqui {
   padding: 0.65rem 0.75rem 0.85rem;
   overflow: visible;
@@ -337,10 +334,10 @@ body::before {
   padding: 0.45rem 0.55rem;
   font-size: 0.68rem;
   line-height: 1.45;
-  color: #5c534c;
-  background: rgba(248, 246, 242, 0.95);
-  border-radius: 0.35rem;
-  border: 1px dashed rgba(20, 16, 14, 0.1);
+  color: #575049;
+  background: rgba(247, 244, 238, 0.95);
+  border-radius: 0.3rem;
+  border: 1px dashed rgba(42, 36, 30, 0.1);
 }
 
 .sources-mini ul {
@@ -370,58 +367,49 @@ body::before {
     display: none;
   }
 
-  /*
-   * Margem na impressão: não depender só de @page (comportamento irregular em alguns
-   * diálogos “Guardar como PDF”). #ficha-pdf-root recebe margem lateral explícita no
-   * bloco e padding interno; @page acima define a área segura por página.
-   */
-  #ficha-pdf-root.sheet {
+  #ficha-pdf-root.ar-ficha-sheet {
     margin: 0 auto;
     max-width: 100%;
-    width: 100%;
-    min-height: 0;
+    width: 210mm;
+    min-width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    padding: 9mm 7mm 10mm 7mm;
-    overflow: visible;
+    padding: 4mm 5.5mm 5mm;
+    overflow: hidden;
     box-sizing: border-box;
     page-break-after: auto;
   }
 
-  .sheet__bg,
-  .sheet__watermark {
+  .ar-ficha__bg,
+  .ar-ficha__wm {
     opacity: 1;
   }
 
-  .sheet__bg {
-    opacity: 0.12;
+  .ar-ficha__bg {
+    opacity: 0.1;
   }
 
-  .sheet__watermark {
-    opacity: 0.045;
+  .ar-ficha__wm {
+    opacity: 0.04;
   }
 
-  /*
-   * Não usar page-break-before: always — se o bloco anterior passar um pouco de 1 página,
-   * o “sempre” empurra o croqui para uma 3.ª página quase vazia. auto + margem = 2 páginas.
-   */
-  .sheet-section--page2 {
-    page-break-before: auto;
-    break-before: auto;
-    margin-top: 0;
-    padding-top: 3mm;
-  }
-
-  .figure-block svg {
-    max-height: none;
+  .ar-ficha__chart svg {
+    max-height: 128px;
   }
 }
 
 @media screen and (max-width: 520px) {
-  .sheet {
+  .sheet,
+  #ficha-pdf-root.ar-ficha-sheet {
     margin: 0.5rem;
-    padding: 10mm 8mm;
+  }
+
+  #ficha-pdf-root .ar-ficha__grid2 {
+    grid-template-columns: 1fr;
   }
 
   .spec-table th {
