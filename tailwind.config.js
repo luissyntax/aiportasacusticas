@@ -12,11 +12,11 @@ module.exports = {
       },
       colors: {
         arte: {
-          DEFAULT: '#222222',
-          dark: '#141414',
-          light: '#404040',
-          muted: '#f4f4f5',
-          soft: '#e7e5e4',
+          DEFAULT: '#314c53',
+          dark: '#010300',
+          light: '#5a7f78',
+          muted: '#bbdec6',
+          soft: '#f7f8fc',
         },
       },
     },

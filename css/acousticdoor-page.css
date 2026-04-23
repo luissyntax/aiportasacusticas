@@ -1,0 +1,1050 @@
+/**
+ * Página Portas acústicas — alinhada a home-premium.css (ai-page + door-* em site-acoustic.css)
+ */
+
+.acousticdoor-page {
+  --font-display: var(--ai-font-display);
+}
+
+/* Cabeçalhos de secção — mesmos padrões da home (ai-section__head), sem estilos inline */
+.acousticdoor-page .ai-section__head.ai-section__head--center.ai-door-head--portfolio,
+.acousticdoor-page .ai-section__head.ai-section__head--center.ai-door-head--install,
+.acousticdoor-page .ai-section__head.ai-section__head--center.ai-door-head--garantia {
+  max-width: 40rem;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.acousticdoor-page .ai-section__head.ai-section__head--center.ai-door-head--diff {
+  max-width: 38rem;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.acousticdoor-page .ai-section__head.ai-section__head--center.ai-door-head--specs {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.acousticdoor-page .ai-section__head.ai-section__head--center.ai-door-head--chart {
+  max-width: 46rem;
+  margin-bottom: 1.5rem;
+}
+
+.acousticdoor-page .ai-door-prose-lead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* Fichas técnicas — tokens da paleta premium (home) em vez de --ac-* do legado */
+.acousticdoor-page .spec-card-pro {
+  border: 1px solid rgba(49, 76, 83, 0.1);
+  box-shadow: 0 16px 40px -22px rgba(1, 3, 0, 0.1);
+}
+
+.acousticdoor-page .spec-card-pro:hover {
+  border-color: rgba(49, 76, 83, 0.22);
+  box-shadow: 0 22px 48px -20px rgba(49, 76, 83, 0.16);
+}
+
+.acousticdoor-page .spec-card-pro__title {
+  font-family: var(--ai-font-display);
+  font-weight: 500;
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .spec-card-pro__subtitle {
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .spec-card-pro__row {
+  border-color: rgba(49, 76, 83, 0.08);
+}
+
+.acousticdoor-page .spec-card-pro__row dt {
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .spec-card-pro__row dd {
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .spec-card-pro__hint {
+  color: rgba(90, 127, 120, 0.88);
+}
+
+.acousticdoor-page .spec-card-pro__foot {
+  color: var(--ai-sage);
+  border-color: rgba(49, 76, 83, 0.08);
+}
+
+.acousticdoor-page .spec-card-pro__top {
+  border-color: rgba(49, 76, 83, 0.08);
+}
+
+/* Hero estático: mesma lógica visual do hero da home, com foto do produto */
+.acousticdoor-page .ai-hero--still .ai-hero__video-wrap {
+  background-image:
+    linear-gradient(105deg, rgba(1, 3, 0, 0.88) 0%, rgba(1, 3, 0, 0.55) 45%, rgba(49, 76, 83, 0.42) 100%),
+    url("../images/backgrounds/pages/acousticDoor/acousticDoor.png");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+/* .site-container substituído por .ai-wrap nos blocos door-* (site-acoustic) */
+.door-portfolio .ai-wrap,
+.door-diff .ai-wrap,
+.door-install .ai-wrap,
+.door-garantia .ai-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Grelha fichas técnicas (substitui utilitários Tailwind) */
+.ai-door-spec-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-top: 2.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .ai-door-spec-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+/* Botão PDF com estilo ai-btn */
+button.ai-btn {
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Paleta premium nos fundos herdados de site-acoustic */
+.acousticdoor-page .door-diff {
+  background: linear-gradient(168deg, #e2eef1 0%, #d5e3e8 45%, #c8d9df 100%);
+  border-block-color: rgba(49, 76, 83, 0.12);
+}
+
+.acousticdoor-page .door-install {
+  background: linear-gradient(172deg, var(--ai-canvas) 0%, #e8eef2 45%, #dce5ea 100%);
+  border-block-color: rgba(49, 76, 83, 0.1);
+}
+
+.acousticdoor-page .door-garantia {
+  background: linear-gradient(168deg, #f0f4f7 0%, #e5ecf1 45%, #d9e3e8 100%);
+  border-block-color: rgba(49, 76, 83, 0.1);
+}
+
+/* —— Portfólio: redesign premium (substitui cartões escuros de site-acoustic) —— */
+.acousticdoor-page .door-portfolio {
+  background: linear-gradient(178deg, #f7f8fc 0%, #eef3f6 42%, #e3ecf1 100%);
+  border-block: 1px solid rgba(49, 76, 83, 0.1);
+}
+
+.acousticdoor-page .door-portfolio::after {
+  background:
+    radial-gradient(ellipse 85% 60% at 50% -5%, rgba(49, 76, 83, 0.07), transparent 55%),
+    radial-gradient(ellipse 50% 45% at 100% 80%, rgba(90, 127, 120, 0.1), transparent 52%);
+}
+
+.acousticdoor-page .door-portfolio__grid {
+  gap: clamp(0.8rem, 2.2vw, 1.2rem);
+}
+
+@media (min-width: 900px) {
+  .acousticdoor-page .door-portfolio__grid {
+    gap: 1.15rem;
+  }
+}
+
+.acousticdoor-page .door-portfolio__cell {
+  padding: 0.35rem;
+  border-radius: 14px;
+  background: var(--ai-white);
+  border: 1px solid rgba(49, 76, 83, 0.1);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.88) inset,
+    0 16px 40px -26px rgba(1, 3, 0, 0.12);
+}
+
+.acousticdoor-page .door-portfolio__cell:hover {
+  transform: translateY(-5px);
+  border-color: rgba(49, 76, 83, 0.22);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 26px 52px -22px rgba(49, 76, 83, 0.2);
+}
+
+.acousticdoor-page .door-portfolio__cell:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--ai-white),
+    0 0 0 5px rgba(49, 76, 83, 0.38),
+    0 20px 44px -24px rgba(1, 3, 0, 0.12);
+}
+
+.acousticdoor-page .door-portfolio__frame {
+  border-radius: 11px;
+  border: none;
+  background: linear-gradient(180deg, #fafcfd 0%, #eef3f5 100%);
+  box-shadow: inset 0 0 0 1px rgba(49, 76, 83, 0.07);
+}
+
+.acousticdoor-page .door-portfolio__cell:hover .door-portfolio__frame {
+  box-shadow: inset 0 0 0 1px rgba(49, 76, 83, 0.14);
+}
+
+.acousticdoor-page .door-portfolio__cell--spotlight {
+  padding: 0.4rem;
+}
+
+.acousticdoor-page .door-portfolio__img {
+  transition: transform 0.55s var(--ai-ease, cubic-bezier(0.22, 1, 0.36, 1));
+}
+
+.acousticdoor-page .door-portfolio__cell:hover .door-portfolio__img {
+  transform: scale(1.04);
+}
+
+.acousticdoor-page .door-portfolio__open {
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  color: var(--ai-white);
+  background: linear-gradient(145deg, rgba(49, 76, 83, 0.78), rgba(1, 3, 0, 0.55));
+  border: 1px solid rgba(187, 222, 198, 0.45);
+  box-shadow: 0 6px 16px -4px rgba(1, 3, 0, 0.25);
+}
+
+.acousticdoor-page .door-portfolio__open svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acousticdoor-page .door-portfolio__cell:hover {
+    transform: none;
+  }
+
+  .acousticdoor-page .door-portfolio__cell:hover .door-portfolio__img {
+    transform: none;
+  }
+}
+
+/* —— Especificações: blocos croqui + gráfico —— */
+.acousticdoor-page .ai-door-block {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.acousticdoor-page .ai-door-block--chart {
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.acousticdoor-page .ai-door-subhead {
+  margin: 0 0 0.65rem;
+  font-family: var(--ai-font-display);
+  font-size: clamp(1.35rem, 3vw, 1.95rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ai-ink);
+}
+
+/* Croqui — cartão na paleta premium (alinhado ao gráfico Rw / spec cards) */
+.acousticdoor-page .ai-door-block--croqui {
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  border-radius: 14px;
+  border: 1px solid rgba(49, 76, 83, 0.12);
+  background: var(--ai-white);
+  box-shadow: 0 20px 48px -24px rgba(1, 3, 0, 0.1);
+}
+
+.acousticdoor-page #especificacoes .ai-door-block--croqui .door-croquis.door-croquis--spec-section {
+  margin: 0 auto;
+  max-width: 52rem;
+  gap: 1.15rem;
+  padding: 0;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis {
+  font-family: var(--ai-font-sans);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__title {
+  font-family: var(--ai-font-display);
+  font-weight: 500;
+  color: var(--ai-ink);
+}
+
+/* —— Croqui explodido: teal / sage / mint / canvas —— */
+.acousticdoor-page .ai-door-block--croqui .door-croquis__side-title {
+  font-family: var(--ai-font-sans);
+  font-weight: 700;
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__wavepanel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  min-height: 88px;
+  padding: 0.5rem 0.75rem 0.45rem;
+  border-radius: 10px;
+  border: 1px solid rgba(49, 76, 83, 0.1);
+  background: linear-gradient(180deg, #fafcfd 0%, rgba(187, 222, 198, 0.22) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  color: var(--ai-teal);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__wavepanel--out {
+  background: linear-gradient(180deg, rgba(247, 248, 252, 0.95) 0%, rgba(187, 222, 198, 0.12) 100%);
+  color: rgba(49, 76, 83, 0.45);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__wave-svg {
+  width: 100%;
+  height: auto;
+  max-height: 48px;
+  overflow: visible;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__wave-path {
+  animation: door-croqui-wave-shift 2.4s ease-in-out infinite;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__wave-path--2 {
+  animation-delay: 0.25s;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__wave-path--3 {
+  animation-delay: 0.5s;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__wave-svg--out .door-croquis__wave-path--fade {
+  animation: door-croqui-wave-fade 2.8s ease-in-out infinite;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__wave-svg--out .door-croquis__wave-path--fade:nth-of-type(2) {
+  animation-delay: 0.35s;
+}
+
+@keyframes door-croqui-wave-shift {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes door-croqui-wave-fade {
+  0%,
+  100% {
+    opacity: 0.28;
+  }
+
+  50% {
+    opacity: 0.58;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acousticdoor-page .ai-door-block--croqui .door-croquis__wave-path,
+  .acousticdoor-page .ai-door-block--croqui .door-croquis__wave-svg--out .door-croquis__wave-path--fade {
+    animation: none;
+  }
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__atten-label {
+  margin: 0.35rem 0 0;
+  font-family: var(--ai-font-sans);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.35;
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__badge span {
+  font-family: var(--ai-font-sans);
+  font-weight: 600;
+  font-size: 0.64rem;
+  color: var(--ai-ink);
+  border: 1px solid rgba(49, 76, 83, 0.14);
+  background: rgba(247, 248, 252, 0.95);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__main--exploded {
+  gap: 0.75rem;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__exploded {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 0.55rem 0.85rem;
+  align-items: stretch;
+  padding: 0.65rem 0.7rem 0.75rem;
+  border-radius: 16px;
+  border: 1px solid rgba(49, 76, 83, 0.1);
+  background: linear-gradient(168deg, #ffffff 0%, #f4f8f7 42%, #eef4f5 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 18px 44px -28px rgba(49, 76, 83, 0.12);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__attenuation-col {
+  position: relative;
+  min-height: 120px;
+  border-radius: 8px;
+  background: rgba(247, 248, 252, 0.92);
+  border: 1px solid rgba(49, 76, 83, 0.08);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__attenuation-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layers--exploded {
+  display: flex;
+  flex-direction: column;
+  gap: 0.62rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layers--exploded .door-croquis__layer {
+  display: grid;
+  grid-template-columns: minmax(108px, 26%) minmax(0, 1fr);
+  gap: 0.5rem 0.85rem;
+  align-items: start;
+  padding: 0.42rem 0.35rem 0.5rem 0.25rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(49, 76, 83, 0.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__plate {
+  position: relative;
+  perspective: 520px;
+  transform-style: preserve-3d;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layers--exploded .door-croquis__swatch {
+  min-height: 48px;
+  border-radius: 8px;
+  border: 1px solid rgba(49, 76, 83, 0.14);
+  transform: rotateX(14deg) skewX(-10deg);
+  transform-origin: 50% 80%;
+  box-shadow:
+    0 10px 18px -10px rgba(49, 76, 83, 0.2),
+    0 2px 0 rgba(255, 255, 255, 0.45) inset;
+  transition: transform 0.35s var(--ai-ease, ease);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layers--exploded .door-croquis__layer:hover .door-croquis__swatch {
+  transform: rotateX(10deg) skewX(-8deg) translateY(-2px);
+}
+
+/* Revestimento — veios em cinzas esverdeados (madeira + paleta) */
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layer--mdf .door-croquis__swatch {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, transparent 44%),
+    repeating-linear-gradient(-14deg, #e4ebe8, #e4ebe8 3px, #cfd9d6 3px, #cfd9d6 6px),
+    repeating-linear-gradient(
+      -12deg,
+      rgba(49, 76, 83, 0.06) 0 5px,
+      transparent 5px 11px
+    );
+}
+
+/* Amortecimento — mint → sage (textura suave) */
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layer--damp .door-croquis__swatch {
+  background:
+    radial-gradient(circle at 22% 28%, rgba(255, 255, 255, 0.5) 0, transparent 40%),
+    radial-gradient(circle at 78% 62%, rgba(187, 222, 198, 0.35) 0, transparent 42%),
+    repeating-linear-gradient(125deg, rgba(49, 76, 83, 0.05) 0 2px, transparent 2px 5px),
+    linear-gradient(165deg, rgba(187, 222, 198, 0.55) 0%, rgba(90, 127, 120, 0.42) 52%, rgba(49, 76, 83, 0.38) 100%);
+}
+
+/* Núcleo — faixas em sage / teal */
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layer--core .door-croquis__swatch {
+  background:
+    linear-gradient(180deg, rgba(187, 222, 198, 0.2), transparent 50%),
+    repeating-linear-gradient(0deg, #5a7f78, #5a7f78 2px, #314c53 2px, #314c53 4px),
+    repeating-linear-gradient(90deg, rgba(1, 3, 0, 0.05) 0 3px, transparent 3px 7px);
+  border-color: rgba(49, 76, 83, 0.22);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layer-body {
+  min-width: 0;
+  padding-top: 0.08rem;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__pointer {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 0.38rem;
+  min-height: 1.1rem;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__pointer-line {
+  flex: 0 1 2.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(49, 76, 83, 0.28), rgba(49, 76, 83, 0.04));
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__pointer-cap {
+  font-family: var(--ai-font-sans);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ai-sage);
+  line-height: 1.25;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layers--exploded .door-croquis__layer-name {
+  display: block;
+  margin: 0 0 0.28rem;
+  font-family: var(--ai-font-display);
+  font-size: clamp(0.82rem, 1vw + 0.55rem, 0.98rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  text-align: left;
+  line-height: 1.22;
+  color: var(--ai-ink);
+  min-height: 0;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layers--exploded .door-croquis__layer-hint {
+  display: inline;
+  font-family: var(--ai-font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__layer-benefit {
+  margin: 0;
+  font-family: var(--ai-font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.48;
+  letter-spacing: 0.01em;
+  color: rgba(1, 3, 0, 0.78);
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__legend {
+  border-color: rgba(49, 76, 83, 0.12);
+  color: var(--ai-sage);
+  font-family: var(--ai-font-sans);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.acousticdoor-page .ai-door-block--croqui .door-croquis__legend strong {
+  color: var(--ai-teal);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .acousticdoor-page .ai-door-block--croqui .door-croquis__exploded {
+    grid-template-columns: 1fr;
+  }
+
+  .acousticdoor-page .ai-door-block--croqui .door-croquis__attenuation-col {
+    max-height: 56px;
+    min-height: 0;
+  }
+
+  .acousticdoor-page .ai-door-block--croqui .door-croquis__attenuation-svg {
+    min-height: 52px;
+  }
+
+  .acousticdoor-page .ai-door-block--croqui .door-croquis__layers--exploded .door-croquis__layer {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .acousticdoor-page .ai-door-block--croqui .door-croquis__plate {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .acousticdoor-page .ai-door-block--croqui .door-croquis__pointer {
+    flex-wrap: wrap;
+  }
+}
+
+.acousticdoor-page .door-rw-chart {
+  margin: 0 auto;
+  max-width: 56rem;
+  background: var(--ai-white);
+  border: 1px solid rgba(49, 76, 83, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 20px 48px -24px rgba(1, 3, 0, 0.1);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.acousticdoor-page .door-rw-chart__frame {
+  background: linear-gradient(180deg, #fafcfd 0%, #f4f7f8 100%);
+  border: 1px solid rgba(49, 76, 83, 0.1);
+  border-radius: 10px;
+}
+
+.acousticdoor-page .door-rw-chart__caption,
+.acousticdoor-page .door-rw-chart__sources-grid {
+  font-family: var(--ai-font-sans);
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .door-rw-chart__sources-grid strong {
+  color: var(--ai-teal);
+}
+
+.acousticdoor-page .door-rw-chart__sources {
+  background: linear-gradient(180deg, #f7fafb 0%, #eef3f5 100%);
+  border-color: rgba(49, 76, 83, 0.1);
+}
+
+.acousticdoor-page .door-rw-chart__sources-title {
+  font-family: var(--ai-font-sans);
+  color: var(--ai-teal);
+  letter-spacing: 0.2em;
+}
+
+.acousticdoor-page .door-rw-chart__caption strong {
+  color: var(--ai-teal);
+}
+
+.acousticdoor-page .door-rw-chart__svg text {
+  font-family: var(--ai-font-sans), "Outfit", system-ui, sans-serif;
+}
+
+/* —— Fichas técnicas —— */
+.acousticdoor-page .spec-card-pro {
+  background: var(--ai-white);
+  border: 1px solid rgba(49, 76, 83, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 16px 40px -22px rgba(1, 3, 0, 0.1);
+}
+
+.acousticdoor-page .spec-card-pro:hover {
+  border-color: rgba(49, 76, 83, 0.22);
+  box-shadow: 0 22px 50px -20px rgba(49, 76, 83, 0.15);
+}
+
+.acousticdoor-page .spec-card-pro__index {
+  color: rgba(49, 76, 83, 0.28);
+}
+
+.acousticdoor-page .spec-card-pro__row {
+  border-color: rgba(49, 76, 83, 0.08);
+}
+
+.acousticdoor-page .spec-card-pro__row dt {
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .spec-card-pro__row dd {
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .spec-card-pro__foot {
+  color: var(--ai-sage);
+  border-color: rgba(49, 76, 83, 0.08);
+}
+
+/* —— Ferragens (door-hw) —— */
+.acousticdoor-page .door-hw__shell {
+  border-color: rgba(49, 76, 83, 0.14);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 26px 56px -32px rgba(49, 76, 83, 0.28);
+}
+
+.acousticdoor-page .door-hw__hero {
+  background: linear-gradient(168deg, #152428 0%, var(--ai-teal) 48%, #1f3439 100%);
+}
+
+.acousticdoor-page .door-hw__eyebrow {
+  color: rgba(187, 222, 198, 0.85);
+}
+
+.acousticdoor-page .door-hw__title {
+  font-family: var(--ai-font-display);
+  font-weight: 500;
+}
+
+.acousticdoor-page .door-hw__badge {
+  color: var(--ai-ink);
+  background: linear-gradient(135deg, #e8f4ef 0%, #bbdec6 100%);
+  border-color: rgba(49, 76, 83, 0.12);
+}
+
+.acousticdoor-page .door-hw__list {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f6f7 100%);
+}
+
+.acousticdoor-page .door-hw__row {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(49, 76, 83, 0.1);
+}
+
+.acousticdoor-page .door-hw__row:hover {
+  border-color: rgba(90, 127, 120, 0.22);
+}
+
+.acousticdoor-page .door-hw__name {
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .door-hw__detail {
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .door-hw__row--portal {
+  --dh-row-accent: #b85a2e;
+}
+
+.acousticdoor-page .door-hw__row--hinge {
+  --dh-row-accent: var(--ai-teal);
+}
+
+.acousticdoor-page .door-hw__row--rubber {
+  --dh-row-accent: #5a6b8a;
+}
+
+.acousticdoor-page .door-hw__row--drop {
+  --dh-row-accent: #a64d28;
+}
+
+.acousticdoor-page .door-hw__row--lock {
+  --dh-row-accent: #314c53;
+}
+
+.acousticdoor-page .door-install__step-title {
+  font-family: var(--ai-font-display);
+  font-weight: 500;
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .door-install__step-text {
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .door-install__steps {
+  background: rgba(49, 76, 83, 0.06);
+}
+
+@media (min-width: 1024px) {
+  .acousticdoor-page .door-install__steps {
+    background: rgba(49, 76, 83, 0.1);
+    box-shadow: 0 18px 44px -30px rgba(1, 3, 0, 0.1);
+  }
+}
+
+.acousticdoor-page .door-install__step {
+  background: linear-gradient(165deg, #ffffff 0%, #f7fafb 100%);
+  border-color: rgba(49, 76, 83, 0.1);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.88) inset,
+    0 16px 40px -28px rgba(49, 76, 83, 0.12);
+}
+
+.acousticdoor-page .door-install__step:hover {
+  border-color: rgba(49, 76, 83, 0.22);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.92) inset,
+    0 22px 48px -26px rgba(49, 76, 83, 0.16);
+}
+
+@media (min-width: 1024px) {
+  .acousticdoor-page .door-install__step:hover {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.92) inset,
+      0 0 0 1px rgba(49, 76, 83, 0.14),
+      0 20px 50px -24px rgba(49, 76, 83, 0.12);
+  }
+}
+
+.acousticdoor-page .door-install__step-index {
+  font-family: var(--ai-font-display);
+  font-weight: 600;
+  color: var(--ai-white);
+  background: linear-gradient(145deg, #3f6168 0%, var(--ai-teal) 48%, #1f2f33 100%);
+  border-color: rgba(187, 222, 198, 0.22);
+  box-shadow: 0 4px 14px -4px rgba(1, 3, 0, 0.22);
+}
+
+.acousticdoor-page .door-install__note {
+  color: var(--ai-ink);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(49, 76, 83, 0.1);
+  font-family: var(--ai-font-sans);
+}
+
+.acousticdoor-page .door-install__note-highlight {
+  color: var(--ai-teal);
+}
+
+/* —— Diferenciais (door-uq) —— */
+.acousticdoor-page .door-uq__aside {
+  background: linear-gradient(168deg, #152428 0%, var(--ai-teal) 50%, #1f3439 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 22px 50px -28px rgba(49, 76, 83, 0.35);
+}
+
+.acousticdoor-page .door-uq__aside-kicker {
+  color: rgba(187, 222, 198, 0.65);
+}
+
+.acousticdoor-page .door-uq__pillar {
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.acousticdoor-page .door-uq__pillar::before {
+  background: linear-gradient(180deg, #bbdec6, #5a7f78);
+}
+
+.acousticdoor-page .door-uq__band {
+  background: linear-gradient(110deg, #ffffff 0%, #f5fafb 55%, #eaf2f4 100%);
+  border-color: rgba(49, 76, 83, 0.1);
+  box-shadow: 0 12px 34px -24px rgba(49, 76, 83, 0.18);
+}
+
+.acousticdoor-page .door-uq__band:hover {
+  border-color: rgba(90, 127, 120, 0.24);
+}
+
+.acousticdoor-page .door-uq__band--acab {
+  --duq-accent: var(--ai-sage);
+}
+
+.acousticdoor-page .door-uq__band--contract {
+  --duq-accent: var(--ai-teal);
+}
+
+.acousticdoor-page .door-uq__band--measure {
+  --duq-accent: #3d6b5c;
+}
+
+.acousticdoor-page .door-uq__band--color {
+  --duq-accent: #5a4d72;
+}
+
+.acousticdoor-page .door-uq__band-icon {
+  border-color: rgba(49, 76, 83, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.acousticdoor-page .door-uq__band-title {
+  font-family: var(--ai-font-display);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .door-uq__band-text {
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .door-uq__band-text strong {
+  color: var(--ai-teal);
+}
+
+/* —— Instalação: cronograma (chrono) —— */
+.acousticdoor-page .door-install-chrono__shell {
+  border-color: rgba(49, 76, 83, 0.16);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 28px 64px -36px rgba(49, 76, 83, 0.35);
+}
+
+.acousticdoor-page .door-install-chrono__head {
+  background: linear-gradient(165deg, #152428 0%, var(--ai-teal) 48%, #1f3439 100%);
+}
+
+.acousticdoor-page .door-install-chrono__eyebrow {
+  color: rgba(187, 222, 198, 0.65);
+}
+
+.acousticdoor-page .door-install-chrono__title {
+  font-family: var(--ai-font-display);
+  font-weight: 500;
+}
+
+.acousticdoor-page .door-install-chrono__lede strong {
+  color: #bbdec6;
+}
+
+.acousticdoor-page .door-install-chrono__board {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8f9 50%, #e8f0f2 100%);
+}
+
+.acousticdoor-page .door-install-chrono__lane {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(49, 76, 83, 0.1);
+}
+
+.acousticdoor-page .door-install-chrono__lane:hover {
+  border-color: rgba(90, 127, 120, 0.28);
+}
+
+.acousticdoor-page .door-install-chrono__lane-name {
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .door-install-chrono__lane-spec {
+  color: var(--ai-sage);
+}
+
+.acousticdoor-page .door-install-chrono__lane--res .door-install-chrono__fill {
+  background: linear-gradient(90deg, var(--ai-teal) 0%, #5a7f78 100%);
+}
+
+.acousticdoor-page .door-install-chrono__lane--stu .door-install-chrono__fill {
+  background: linear-gradient(90deg, #3d5c5a 0%, var(--ai-sage) 100%);
+}
+
+.acousticdoor-page .door-install-chrono__lane--full .door-install-chrono__fill {
+  background: linear-gradient(90deg, #1f3439 0%, var(--ai-teal) 55%, #5a7f78 100%);
+}
+
+.acousticdoor-page .door-install-chrono__duration-num {
+  font-family: var(--ai-font-display);
+  font-weight: 600;
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .door-install-chrono__duration-unit {
+  color: var(--ai-sage);
+}
+
+/* —— Garantia —— */
+.acousticdoor-page .door-garantia__card {
+  background: linear-gradient(165deg, #ffffff 0%, #f7fafb 100%);
+  border-color: rgba(49, 76, 83, 0.1);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.85) inset,
+    0 18px 42px -28px rgba(49, 76, 83, 0.12);
+}
+
+.acousticdoor-page .door-garantia__card::before {
+  background: linear-gradient(90deg, rgba(90, 127, 120, 0.45), rgba(49, 76, 83, 0.55));
+}
+
+.acousticdoor-page .door-garantia__card:hover {
+  border-color: rgba(49, 76, 83, 0.22);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 22px 48px -24px rgba(49, 76, 83, 0.14);
+}
+
+.acousticdoor-page .door-garantia__card--featured {
+  border-color: rgba(49, 76, 83, 0.18);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.88) inset,
+    0 22px 50px -22px rgba(49, 76, 83, 0.12),
+    0 0 0 1px rgba(90, 127, 120, 0.14);
+}
+
+.acousticdoor-page .door-garantia__card--featured::before {
+  background: linear-gradient(90deg, #bbdec6, #5a7f78, #314c53);
+}
+
+.acousticdoor-page .door-garantia__pill {
+  font-family: var(--ai-font-sans);
+  color: var(--ai-teal);
+  background: rgba(49, 76, 83, 0.06);
+  border-color: rgba(49, 76, 83, 0.1);
+}
+
+.acousticdoor-page .door-garantia__pill--accent {
+  color: var(--ai-white);
+  background: linear-gradient(135deg, #314c53 0%, #1a2a2e 100%);
+  border-color: rgba(49, 76, 83, 0.28);
+}
+
+.acousticdoor-page .door-garantia__icon {
+  border-color: rgba(49, 76, 83, 0.12);
+  color: var(--ai-white);
+}
+
+.acousticdoor-page .door-garantia__icon--ink {
+  background: linear-gradient(145deg, #314c53 0%, #1a2a2e 100%);
+}
+
+.acousticdoor-page .door-garantia__icon--accent {
+  background: linear-gradient(145deg, #5a7f78 0%, #314c53 100%);
+  border-color: rgba(187, 222, 198, 0.25);
+}
+
+.acousticdoor-page .door-garantia__icon--slate {
+  background: linear-gradient(145deg, #3f6168 0%, #263a3f 100%);
+}
+
+.acousticdoor-page .door-garantia__card-title {
+  font-family: var(--ai-font-display);
+  font-weight: 500;
+  color: var(--ai-ink);
+}
+
+.acousticdoor-page .door-garantia__card-text {
+  color: var(--ai-sage);
+  font-family: var(--ai-font-sans);
+}
+
+.acousticdoor-page .door-garantia__list {
+  border-color: rgba(49, 76, 83, 0.08);
+}
+
+.acousticdoor-page .door-garantia__list li {
+  color: var(--ai-sage);
+  font-family: var(--ai-font-sans);
+}
+
+.acousticdoor-page .door-garantia__check {
+  background: rgba(49, 76, 83, 0.1);
+  border-color: rgba(49, 76, 83, 0.18);
+}
+
+.acousticdoor-page .door-garantia__check::after {
+  border-color: var(--ai-teal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acousticdoor-page .door-uq__band:hover,
+  .acousticdoor-page .door-garantia__card:hover,
+  .acousticdoor-page .door-install__step:hover {
+    transform: none;
+  }
+}

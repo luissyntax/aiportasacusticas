@@ -14,7 +14,7 @@
     <meta name="geo.placename" content="Brasília">
     <meta name="geo.position" content="-15.7801;-47.9292">
     <meta name="ICBM" content="-15.7801, -47.9292">
-    <meta name="theme-color" content="#1e3d34">
+    <meta name="theme-color" content="#314c53">
     <meta name="color-scheme" content="light dark">
     <link rel="canonical" href="https://www.aiportasacusticas.com.br/pages/acousticdoor.html">
     <meta property="og:type" content="website">
@@ -28,49 +28,18 @@
     <meta name="twitter:description" content="Sob medida, instalação em toda a Brasília DF e entorno.">
     <meta name="twitter:image" content="https://www.aiportasacusticas.com.br/images/backgrounds/pages/acousticDoor/acousticDoor.png">
     <link rel="icon" href="../images/icons/favicon/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="preload" href="../images/backgrounds/pages/acousticDoor/acousticDoor.png" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Manrope', 'system-ui', 'sans-serif'],
-                        display: ['Playfair Display', 'Georgia', 'serif'],
-                    },
-                    colors: {
-                        arte: {
-                            DEFAULT: '#292524',
-                            dark: '#1c1917',
-                            light: '#44403c',
-                            muted: '#f0ebe3',
-                            soft: '#e8e2d9',
-                        },
-                        lux: {
-                            gold: '#c9c2b4',
-                            bronze: '#6b635a',
-                            ink: '#1c1917',
-                            paper: '#f4f1eb',
-                            cream: '#ebe6de',
-                        },
-                    },
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="../css/home-premium.css">
     <link rel="stylesheet" href="../css/site-acoustic.css">
-    <link rel="stylesheet" href="../css/site-rebrand.css">
-    <link rel="stylesheet" href="../css/ar-pdf-sheet.css">
+    <link rel="stylesheet" href="../css/acousticdoor-page.css">
+    <link rel="stylesheet" href="../css/door-gallery-modal.css">
 
     <script defer src="../js/header.js"></script>
-    <script defer src="../js/ar-ficha-pdf.js"></script>
 
     <!-- Schema.org Structured Data for Product/Service -->
     <script type="application/ld+json">
@@ -188,138 +157,81 @@
     <title>Portas acústicas em toda a Brasília DF e entorno | Arte Interiores</title>
 </head>
 
-<body class="font-sans site-body site-rebrand text-stone-900 antialiased">
+<body class="ai-page acousticdoor-page">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCLSQJW5"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <!-- Header -->
-    <header class="site-header sticky top-0 z-50">
-        <nav class="site-container py-4 md:py-5">
-            <div class="flex items-center justify-between gap-4">
-                <a href="../index.html" class="flex items-center gap-3 group">
-                    <img src="../images/logos/logo-preta-transparente.png" alt="Arte Interiores" class="h-11 md:h-[3.25rem] w-auto transition-opacity duration-300 group-hover:opacity-90" width="168" height="52" decoding="async" fetchpriority="high">
-                    <span class="sr-logo-tag hidden sm:block leading-tight">Toda a Brasília<br>e o entorno</span>
+    <header class="ai-top">
+        <div class="ai-wrap">
+            <nav class="ai-top__nav" aria-label="Principal">
+                <a href="../index.html" class="ai-brand">
+                    <img src="../images/logos/logo-preta-transparente.png" alt="Arte Interiores" width="168" height="52" decoding="async" fetchpriority="high">
+                    <span class="ai-brand__tag">Brasília &amp;<br>entorno</span>
                 </a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-10">
-                    <a href="#portfolio" class="sr-nav-link">Portfólio</a>
-                    <a href="#especificacoes" class="sr-nav-link">Especificações</a>
-                    <a href="#diferencial" class="sr-nav-link">Diferenciais</a>
-                    <a href="https://wa.me/5561996305986" class="sr-nav-cta">Contato</a>
+                <div class="ai-nav">
+                    <a href="../index.html#craft">Como fazemos</a>
+                    <a href="../index.html#solutions">Soluções</a>
+                    <a href="acousticdoor.html" aria-current="page">Portas acústicas</a>
+                    <a href="../index.html#about">Sobre</a>
+                    <a href="https://wa.me/5561996305986" class="ai-nav-cta">WhatsApp</a>
                 </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2 rounded-sm hover:bg-stone-100/80 transition-colors duration-300 cursor-pointer border border-transparent hover:border-stone-900/10" id="mobile-menu-button" aria-label="Abrir menu de navegação">
-                    <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button type="button" class="ai-burger" id="mobile-menu-button" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
+            </nav>
+            <div class="ai-mobile hidden" id="mobile-menu">
+                <a href="../index.html">Início</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#especificacoes">Especificações</a>
+                <a href="#diferencial">Diferenciais</a>
+                <a href="#instalacao">Instalação</a>
+                <a href="#garantia">Garantia</a>
+                <a href="../index.html#faq">FAQ</a>
+                <a href="https://wa.me/5561996305986" class="ai-nav-cta">WhatsApp</a>
             </div>
-            
-            <!-- Mobile Navigation -->
-            <div class="md:hidden hidden mt-4 pb-4 border-t border-stone-900/10 pt-4" id="mobile-menu">
-                <div class="flex flex-col space-y-4">
-                    <a href="#portfolio" class="sr-nav-link text-sm">Portfólio</a>
-                    <a href="#especificacoes" class="sr-nav-link text-sm">Especificações</a>
-                    <a href="#diferencial" class="sr-nav-link text-sm">Diferenciais</a>
-                    <a href="https://wa.me/5561996305986" class="sr-nav-cta text-center">Contato</a>
-                </div>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <main class="min-h-screen">
-        <section class="site-section sr-hero" aria-label="Portas acústicas">
-            <div class="sr-hero__bg" aria-hidden="true"></div>
-            <div class="site-container sr-hero__inner">
-                <div class="sr-hero__text">
-                    <p class="sr-hero__kicker">Rw teórico · residencial ≈30 dB · estúdio 35–38 dB</p>
-                    <h1 class="sr-hero__headline">Portas acústicas <em>em toda a Brasília</em> e no entorno</h1>
-                    <p class="sr-hero__sub">
-                        Lâmina multicamadas, vedações e ferragens para bloquear ruído de impacto e ar. <strong>Trabalhos em todo o Distrito Federal e no entorno</strong> — medição, fabricação sob medida e instalação.
-                    </p>
-                    <ul class="sr-hero__chips" aria-label="Prazos e garantia">
-                        <li>Entrega a partir de 7 dias</li>
-                        <li>Garantia 1 ano</li>
-                    </ul>
-                    <div class="sr-hero__actions">
-                        <a href="https://wa.me/5561996305986" class="sr-btn sr-btn--primary">Fale conosco</a>
-                        <a href="#portfolio" class="sr-btn sr-btn--ghost">Ver portfólio</a>
-                    </div>
+    <main>
+        <section class="ai-hero ai-hero--still" aria-label="Portas acústicas">
+            <div class="ai-hero__video-wrap" aria-hidden="true">
+                <div class="ai-hero__veil"></div>
+            </div>
+            <div class="ai-wrap ai-hero__content">
+                <p class="ai-kicker">Sob medida · vedação perimetral · instalação no DF e entorno</p>
+                <h1>Portas acústicas <span>em toda a Brasília</span> e no entorno</h1>
+                <p class="ai-lead">Lâmina multicamadas, vedações e ferragens para bloquear ruído de impacto. <strong>Trabalhos em todo o Distrito Federal e no entorno</strong> — medição, fabricação sob medida e instalação.</p>
+                <div class="ai-hero__cta">
+                    <a href="https://wa.me/5561996305986" class="ai-btn ai-btn--solid">Fale conosco</a>
+                    <a href="#portfolio" class="ai-btn ai-btn--ghost">Ver portfólio</a>
                 </div>
-                <div class="sr-hero__media">
-                    <div class="sr-hero__figure">
-                        <figure class="door-croquis" aria-label="Corte esquemático de porta acústica">
-                            <p class="door-croquis__kicker">Desenho técnico simplificado</p>
-                            <figcaption class="door-croquis__title">Seção típica — camadas de atenuação</figcaption>
-                            <div class="door-croquis__board" role="group" aria-label="Diagrama: ondas sonoras, camadas da folha e atenuação">
-                                <div class="door-croquis__sides-row">
-                                    <div class="door-croquis__side door-croquis__side--in">
-                                        <p class="door-croquis__side-title">Incidência</p>
-                                        <div class="door-croquis__waves" aria-hidden="true">
-                                            <span class="door-croquis__bar"></span>
-                                            <span class="door-croquis__bar"></span>
-                                            <span class="door-croquis__bar"></span>
-                                            <span class="door-croquis__bar"></span>
-                                            <span class="door-croquis__bar"></span>
-                                        </div>
-                                    </div>
-                                    <div class="door-croquis__side door-croquis__side--out">
-                                        <p class="door-croquis__side-title">Resultado</p>
-                                        <div class="door-croquis__result" aria-hidden="true">
-                                            <span class="door-croquis__result-icon"></span>
-                                            <span class="door-croquis__result-text">Menos<br>energia sonora</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="door-croquis__main">
-                                    <p class="door-croquis__badge"><span>42 mm · linha residencial · 50 mm · linha estúdio</span></p>
-                                    <div class="door-croquis__layers" role="presentation">
-                                        <div class="door-croquis__layer door-croquis__layer--mdf">
-                                            <span class="door-croquis__layer-name">Revestimento</span>
-                                            <div class="door-croquis__swatch"></div>
-                                        </div>
-                                        <div class="door-croquis__layer door-croquis__layer--damp">
-                                            <span class="door-croquis__layer-name">Amortecimento</span>
-                                            <div class="door-croquis__swatch"></div>
-                                        </div>
-                                        <div class="door-croquis__layer door-croquis__layer--core">
-                                            <span class="door-croquis__layer-name">Núcleo</span>
-                                            <div class="door-croquis__swatch"></div>
-                                        </div>
-                                        <div class="door-croquis__layer door-croquis__layer--damp">
-                                            <span class="door-croquis__layer-name">Amortecimento</span>
-                                            <div class="door-croquis__swatch"></div>
-                                        </div>
-                                        <div class="door-croquis__layer door-croquis__layer--mdf">
-                                            <span class="door-croquis__layer-name">Revestimento</span>
-                                            <div class="door-croquis__swatch"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="door-croquis__legend">
-                                <span><strong>Nota:</strong> proporções ilustrativas; valores de <strong>Rw</strong> são <strong>estimativas por cálculo teórico</strong> (indicativos). O desempenho em obra depende do conjunto completo e da execução.</span>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="sr-hero__stamp">Corte esquemático · camadas de atenuação</div>
+                <div class="ai-hero__trust">
+                    <div><strong>7 d+</strong><span>entrega típica</span></div>
+                    <div><strong>1 ano</strong><span>garantia</span></div>
+                    <div><strong>42–50 mm</strong><span>folhas residencial e estúdio</span></div>
+                    <div><strong>Brasília</strong><span>e entorno</span></div>
                 </div>
+            </div>
+            <div class="ai-hero__scroll" aria-hidden="true"></div>
+        </section>
+
+        <section class="ai-strip" aria-label="Resumo do produto">
+            <div class="ai-wrap ai-strip__grid">
+                <div><div class="ai-strip__num">42</div><div class="ai-strip__label">mm · linha residencial</div></div>
+                <div><div class="ai-strip__num">50</div><div class="ai-strip__label">mm · linha estúdio</div></div>
+                <div><div class="ai-strip__num">1 ano</div><div class="ai-strip__label">garantia</div></div>
+                <div><div class="ai-strip__num">7 d+</div><div class="ai-strip__label">prazo típico</div></div>
             </div>
         </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="door-portfolio site-section acoustic-bg" aria-labelledby="door-portfolio-heading">
-            <div class="site-container">
-                <header class="door-portfolio__intro">
-                    <p class="door-portfolio__eyebrow">Obra real · Brasília e entorno</p>
-                    <h2 id="door-portfolio-heading" class="door-portfolio__title">Portfólio</h2>
-                    <p class="door-portfolio__lead">
-                        Seleção de ambientes com portas acústicas e vedações executadas pela equipe — clique para ampliar na galeria.
-                    </p>
+        <section id="portfolio" class="door-portfolio ai-section" aria-labelledby="door-portfolio-heading">
+            <div class="ai-wrap">
+                <header class="ai-section__head ai-section__head--center ai-door-head--portfolio">
+                    <span class="ai-eyebrow">Obra real · Brasília e entorno</span>
+                    <h2 id="door-portfolio-heading" class="ai-h2">Portfólio</h2>
+                    <p class="ai-prose">Seleção de ambientes com portas acústicas e vedações executadas pela equipe — clique para ampliar na galeria.</p>
                 </header>
                 <div class="door-portfolio__grid">
                     <button type="button" class="door-portfolio__cell door-portfolio__cell--spotlight" onclick="openGallery(0)" aria-label="Ampliar imagem 1 do portfólio na galeria">
@@ -407,71 +319,119 @@
         </section>
 
         <!-- Especificações Técnicas Section -->
-        <section id="especificacoes" class="site-section bg-lux-paper border-y border-stone-200/60">
-            <div class="site-container">
-                <div class="text-center mb-14 lg:mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        <span class="text-arte">Especificações</span> técnicas
-                    </h2>
-                    <p class="text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
-                        Croqui de referência da folha e fichas alinhadas à especificação técnica do produto (Rw por cálculo teórico, indicativo).
-                    </p>
-                    <div class="mt-6 flex justify-center max-w-3xl mx-auto">
-                        <button type="button" id="arSavePdfBtn" class="inline-flex items-center justify-center gap-2 rounded-xl bg-arte text-white px-5 py-3 text-sm font-semibold shadow-lg shadow-slate-900/15 hover:bg-arte-dark transition-colors border-0 cursor-pointer">
-                            <svg class="w-5 h-5 shrink-0 opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                            Salvar ficha em PDF
-                        </button>
-                    </div>
-                    <p class="mt-3 text-center text-sm text-zinc-500 max-w-2xl mx-auto">O ficheiro PDF é criado no seu próprio computador ao guardar — não passa por nenhum servidor.</p>
-                </div>
+        <section id="especificacoes" class="ai-section ai-section--muted">
+            <div class="ai-wrap">
+                <header class="ai-section__head ai-section__head--center ai-door-head--specs">
+                    <span class="ai-eyebrow">Documentação</span>
+                    <h2 class="ai-h2">Especificações <em>técnicas</em></h2>
+                    <p class="ai-prose">Croqui de referência da folha e fichas alinhadas à especificação técnica do produto (Rw por cálculo teórico, indicativo).</p>
+                </header>
 
-                <!-- Croqui principal da folha (inalterado) -->
-                <div class="mb-14 lg:mb-16 flex w-full justify-center">
-                    <figure class="door-croquis door-croquis--spec-section w-full max-w-3xl" aria-label="Referência visual de corte de porta acústica">
-                        <p class="door-croquis__kicker">Referência de projeto</p>
-                        <figcaption class="door-croquis__title">Mesma lógica de camadas aplicada nas nossas folhas</figcaption>
-                        <div class="door-croquis__board" role="group" aria-label="Diagrama: ondas, camadas e atenuação">
-                            <div class="door-croquis__sides-row">
-                                <div class="door-croquis__side door-croquis__side--in">
-                                    <p class="door-croquis__side-title">Incidência</p>
-                                    <div class="door-croquis__waves" aria-hidden="true">
-                                        <span class="door-croquis__bar"></span>
-                                        <span class="door-croquis__bar"></span>
-                                        <span class="door-croquis__bar"></span>
-                                        <span class="door-croquis__bar"></span>
-                                        <span class="door-croquis__bar"></span>
-                                    </div>
-                                </div>
-                                <div class="door-croquis__side door-croquis__side--out">
-                                    <p class="door-croquis__side-title">Resultado</p>
-                                    <div class="door-croquis__result" aria-hidden="true">
-                                        <span class="door-croquis__result-icon"></span>
-                                        <span class="door-croquis__result-text">Menos<br>energia sonora</span>
-                                    </div>
+                <!-- Croqui principal da folha -->
+                <div class="ai-door-block ai-door-block--croqui">
+                    <figure class="door-croquis door-croquis--spec-section door-croquis--acoustic-exploded" role="group" aria-label="Referência visual em explodido — ondas sonoras, camadas da folha e atenuação">
+                        <figcaption class="sr-only">Diagrama de incidência sonora, camadas da folha em perspectiva e atenuação</figcaption>
+                        <div class="door-croquis__sides-row">
+                            <div class="door-croquis__side door-croquis__side--in">
+                                <p class="door-croquis__side-title">Incidência</p>
+                                <div class="door-croquis__wavepanel" aria-hidden="true">
+                                    <svg class="door-croquis__wave-svg door-croquis__wave-svg--in" viewBox="0 0 140 52" preserveAspectRatio="xMidYMid meet" focusable="false">
+                                        <path class="door-croquis__wave-path" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" d="M0,26 Q10,6 20,26 T40,26 T60,26 T80,26 T100,26 T120,26 T140,26" />
+                                        <path class="door-croquis__wave-path door-croquis__wave-path--2" fill="none" stroke="currentColor" stroke-width="0.85" stroke-linecap="round" opacity="0.55" d="M0,30 Q12,14 24,30 T48,30 T72,30 T96,30 T120,30 T140,30" />
+                                        <path class="door-croquis__wave-path door-croquis__wave-path--3" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" opacity="0.4" d="M0,22 Q11,38 22,22 T44,22 T66,22 T88,22 T110,22 T132,22" />
+                                    </svg>
                                 </div>
                             </div>
-                            <div class="door-croquis__main">
-                                <p class="door-croquis__badge"><span>Vedação + amortecimento + massa</span></p>
-                                <div class="door-croquis__layers" role="presentation">
+                            <div class="door-croquis__side door-croquis__side--out">
+                                <p class="door-croquis__side-title">Resultado</p>
+                                <div class="door-croquis__wavepanel door-croquis__wavepanel--out" aria-hidden="true">
+                                    <svg class="door-croquis__wave-svg door-croquis__wave-svg--out" viewBox="0 0 140 52" preserveAspectRatio="xMidYMid meet" focusable="false">
+                                        <path class="door-croquis__wave-path door-croquis__wave-path--fade" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" d="M0,26 Q18,22 36,26 T72,26 T108,26 T140,26" />
+                                        <path class="door-croquis__wave-path door-croquis__wave-path--fade" fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" opacity="0.45" d="M0,32 Q22,30 44,32 T88,32 T140,32" />
+                                    </svg>
+                                    <p class="door-croquis__atten-label">Menos energia sonora transmitida</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="door-croquis__main door-croquis__main--exploded">
+                            <p class="door-croquis__badge"><span>Vedação + amortecimento + massa</span></p>
+                            <div class="door-croquis__exploded" role="presentation" aria-label="Camadas da folha em visão explodida, do exterior ao interior">
+                                <div class="door-croquis__attenuation-col" aria-hidden="true">
+                                    <svg class="door-croquis__attenuation-svg" viewBox="0 0 36 260" preserveAspectRatio="xMidYMin slice" focusable="false">
+                                        <line x1="6" y1="4" x2="30" y2="4" stroke="rgba(49, 76, 83, 0.18)" stroke-width="0.5" />
+                                        <path fill="none" stroke="rgba(90, 127, 120, 0.45)" stroke-width="0.65" stroke-linecap="round" d="M6,18 Q14,6 22,18 T30,18" />
+                                        <path fill="none" stroke="rgba(90, 127, 120, 0.4)" stroke-width="0.6" stroke-linecap="round" d="M6,52 Q15,40 24,52 T30,52" />
+                                        <path fill="none" stroke="rgba(90, 127, 120, 0.34)" stroke-width="0.55" stroke-linecap="round" d="M6,92 Q15,84 24,92 T30,92" />
+                                        <path fill="none" stroke="rgba(90, 127, 120, 0.28)" stroke-width="0.5" stroke-linecap="round" d="M6,136 Q15,130 24,136 T30,136" />
+                                        <path fill="none" stroke="rgba(90, 127, 120, 0.22)" stroke-width="0.45" stroke-linecap="round" d="M6,182 Q15,178 24,182 T30,182" />
+                                        <path fill="none" stroke="rgba(90, 127, 120, 0.16)" stroke-width="0.4" stroke-linecap="round" d="M6,228 Q15,226 24,228 T30,228" />
+                                    </svg>
+                                </div>
+                                <div class="door-croquis__layers door-croquis__layers--exploded">
                                     <div class="door-croquis__layer door-croquis__layer--mdf">
-                                        <span class="door-croquis__layer-name">Revestimento</span>
-                                        <div class="door-croquis__swatch"></div>
+                                        <div class="door-croquis__plate">
+                                            <div class="door-croquis__swatch" aria-hidden="true"></div>
+                                        </div>
+                                        <div class="door-croquis__layer-body">
+                                            <div class="door-croquis__pointer" aria-hidden="true">
+                                                <span class="door-croquis__pointer-line"></span>
+                                                <span class="door-croquis__pointer-cap">Primeira barreira ao ruído incidente</span>
+                                            </div>
+                                            <span class="door-croquis__layer-name">Revestimento <span class="door-croquis__layer-hint">face exterior</span></span>
+                                            <p class="door-croquis__layer-benefit">Superfície estável para acabamento durável e proteção das camadas internas.</p>
+                                        </div>
                                     </div>
                                     <div class="door-croquis__layer door-croquis__layer--damp">
-                                        <span class="door-croquis__layer-name">Amortecimento</span>
-                                        <div class="door-croquis__swatch"></div>
+                                        <div class="door-croquis__plate">
+                                            <div class="door-croquis__swatch" aria-hidden="true"></div>
+                                        </div>
+                                        <div class="door-croquis__layer-body">
+                                            <div class="door-croquis__pointer" aria-hidden="true">
+                                                <span class="door-croquis__pointer-line"></span>
+                                                <span class="door-croquis__pointer-cap">Dissipação de energia vibratória</span>
+                                            </div>
+                                            <span class="door-croquis__layer-name">Amortecimento</span>
+                                            <p class="door-croquis__layer-benefit">Absorção de vibrações estruturais — reduz ressonância na folha.</p>
+                                        </div>
                                     </div>
                                     <div class="door-croquis__layer door-croquis__layer--core">
-                                        <span class="door-croquis__layer-name">Núcleo</span>
-                                        <div class="door-croquis__swatch"></div>
+                                        <div class="door-croquis__plate">
+                                            <div class="door-croquis__swatch" aria-hidden="true"></div>
+                                        </div>
+                                        <div class="door-croquis__layer-body">
+                                            <div class="door-croquis__pointer" aria-hidden="true">
+                                                <span class="door-croquis__pointer-line"></span>
+                                                <span class="door-croquis__pointer-cap">Massa acústica central</span>
+                                            </div>
+                                            <span class="door-croquis__layer-name">Núcleo <span class="door-croquis__layer-hint">massa acústica</span></span>
+                                            <p class="door-croquis__layer-benefit">Massa acústica de alta densidade para bloqueio de baixas frequências.</p>
+                                        </div>
                                     </div>
                                     <div class="door-croquis__layer door-croquis__layer--damp">
-                                        <span class="door-croquis__layer-name">Amortecimento</span>
-                                        <div class="door-croquis__swatch"></div>
+                                        <div class="door-croquis__plate">
+                                            <div class="door-croquis__swatch" aria-hidden="true"></div>
+                                        </div>
+                                        <div class="door-croquis__layer-body">
+                                            <div class="door-croquis__pointer" aria-hidden="true">
+                                                <span class="door-croquis__pointer-line"></span>
+                                                <span class="door-croquis__pointer-cap">Segunda camada amortecedora</span>
+                                            </div>
+                                            <span class="door-croquis__layer-name">Amortecimento</span>
+                                            <p class="door-croquis__layer-benefit">Extinção de vibrações residuais antes da face interior habitável.</p>
+                                        </div>
                                     </div>
                                     <div class="door-croquis__layer door-croquis__layer--mdf">
-                                        <span class="door-croquis__layer-name">Revestimento</span>
-                                        <div class="door-croquis__swatch"></div>
+                                        <div class="door-croquis__plate">
+                                            <div class="door-croquis__swatch" aria-hidden="true"></div>
+                                        </div>
+                                        <div class="door-croquis__layer-body">
+                                            <div class="door-croquis__pointer" aria-hidden="true">
+                                                <span class="door-croquis__pointer-line"></span>
+                                                <span class="door-croquis__pointer-cap">Fechamento estético e acústico</span>
+                                            </div>
+                                            <span class="door-croquis__layer-name">Revestimento <span class="door-croquis__layer-hint">face interior</span></span>
+                                            <p class="door-croquis__layer-benefit">Acabamento simétrico e continuidade da barreira do lado do ambiente.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -483,11 +443,13 @@
                 </div>
 
                 <!-- Gráfico ilustrativo Rw (cálculo teórico) -->
-                <div class="mb-14 lg:mb-16 flex w-full justify-center">
-                    <figure class="door-rw-chart w-full max-w-4xl" aria-label="Gráfico ilustrativo: desempenho Rw residencial e estúdio, com faixas de referência para voz, caixas de som, motores e instrumentos">
-                        <p class="door-rw-chart__kicker">Curvas de referência</p>
-                        <figcaption class="door-rw-chart__title">Gráfico ilustrativo de desempenho acústico</figcaption>
-                        <p class="door-rw-chart__lead">Com base em <strong>cálculos teóricos</strong> — mesmos patamares das fichas abaixo: <strong>linha residencial</strong> (folha 42&nbsp;mm, Rw ≈30&nbsp;dB) e <strong>linha estúdio</strong> (folha 50&nbsp;mm, Rw 35–38&nbsp;dB, ±3&nbsp;dB). As colunas de cor dividem o eixo <strong>100&nbsp;Hz–5&nbsp;kHz</strong> em <strong>quatro faixas iguais em escala logarítmica</strong> (referência didática). Na prática, <strong>voz, música, caixas e instrumentos ocupam bandas largas e sobrepostas</strong>; os rótulos indicam onde cada tipo costuma ter <strong>énfase relativa</strong>, não exclusividade.</p>
+                <div class="ai-door-block ai-door-block--chart">
+                    <header class="ai-section__head ai-section__head--center ai-door-head--chart">
+                        <span class="ai-eyebrow">Curvas de referência</span>
+                        <h3 class="ai-door-subhead">Gráfico ilustrativo de desempenho acústico</h3>
+                        <p class="ai-prose ai-door-prose-lead">Com base em <strong>cálculos teóricos</strong> — mesmos patamares das fichas abaixo: <strong>linha residencial</strong> (folha 42&nbsp;mm, Rw ≈30&nbsp;dB) e <strong>linha estúdio</strong> (folha 50&nbsp;mm, Rw 35–38&nbsp;dB, ±3&nbsp;dB). As colunas de cor dividem o eixo <strong>100&nbsp;Hz–5&nbsp;kHz</strong> em <strong>quatro faixas iguais em escala logarítmica</strong> (referência didática). Na prática, <strong>voz, música, caixas e instrumentos ocupam bandas largas e sobrepostas</strong>; os rótulos indicam onde cada tipo costuma ter <strong>énfase relativa</strong>, não exclusividade.</p>
+                    </header>
+                    <figure class="door-rw-chart" aria-label="Gráfico ilustrativo: desempenho Rw residencial e estúdio, com faixas de referência para voz, caixas de som, motores e instrumentos">
                         <div class="door-rw-chart__frame">
                             <svg class="door-rw-chart__svg" viewBox="0 0 720 320" role="presentation" focusable="false" aria-hidden="true">
                                 <defs>
@@ -574,8 +536,8 @@
                 </div>
 
                 <!-- Fichas técnicas (novo layout de cards) -->
-                <div class="mt-14 lg:mt-16 grid grid-cols-1 gap-6 items-stretch md:grid-cols-2 md:gap-8">
-                    <article class="spec-card-pro h-full min-h-0">
+                <div class="ai-door-spec-grid">
+                    <article class="spec-card-pro">
                         <div class="spec-card-pro__top">
                             <span class="spec-card-pro__index" aria-hidden="true">01</span>
                             <div class="spec-card-pro__head">
@@ -604,7 +566,7 @@
                         <p class="spec-card-pro__foot">Especificação para fins de orçamento; valores finais conforme proposta e condições de montagem em obra.</p>
                     </article>
 
-                    <article class="spec-card-pro h-full min-h-0">
+                    <article class="spec-card-pro">
                         <div class="spec-card-pro__top">
                             <span class="spec-card-pro__index" aria-hidden="true">02</span>
                             <div class="spec-card-pro__head">
@@ -635,142 +597,139 @@
                 </div>
 
                 <!-- Ferragens e acessórios -->
-                <div class="door-kit" aria-labelledby="door-kit-heading">
-                    <div class="door-kit__head">
-                        <div>
-                            <p class="door-kit__eyebrow">Composição do vão</p>
-                            <h3 id="door-kit-heading" class="door-kit__title">Ferragens e acessórios</h3>
-                        </div>
-                        <p class="door-kit__lead">Componentes inclusos nas linhas residencial e estúdio, conforme ficha técnica. Ferragens de acionamento combinadas na proposta.</p>
+                <div class="door-hw" aria-labelledby="door-hw-heading">
+                    <div class="door-hw__shell">
+                        <header class="door-hw__hero">
+                            <p class="door-hw__eyebrow">Composição do vão</p>
+                            <h3 id="door-hw-heading" class="door-hw__title">Ferragens e acessórios</h3>
+                            <p class="door-hw__lede">Componentes previstos nas linhas residencial e estúdio, conforme ficha técnica. Ferragens de acionamento combinadas na proposta.</p>
+                            <span class="door-hw__badge">Residencial · Estúdio</span>
+                        </header>
+                        <ol class="door-hw__list">
+                            <li class="door-hw__row door-hw__row--portal">
+                                <span class="door-hw__index" aria-hidden="true">01</span>
+                                <span class="door-hw__glyph" aria-hidden="true">
+                                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                </span>
+                                <div class="door-hw__body">
+                                    <span class="door-hw__name">Portal e alizares</span>
+                                    <span class="door-hw__detail">Batente e guarnições</span>
+                                </div>
+                            </li>
+                            <li class="door-hw__row door-hw__row--hinge">
+                                <span class="door-hw__index" aria-hidden="true">02</span>
+                                <span class="door-hw__glyph" aria-hidden="true">
+                                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                </span>
+                                <div class="door-hw__body">
+                                    <span class="door-hw__name">Dobradiças</span>
+                                    <span class="door-hw__detail">4× rolamentadas · inox reforçado</span>
+                                </div>
+                            </li>
+                            <li class="door-hw__row door-hw__row--rubber">
+                                <span class="door-hw__index" aria-hidden="true">03</span>
+                                <span class="door-hw__glyph" aria-hidden="true">
+                                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                </span>
+                                <div class="door-hw__body">
+                                    <span class="door-hw__name">Borrachas perimetrais</span>
+                                    <span class="door-hw__detail">Vedação contínua ao perímetro</span>
+                                </div>
+                            </li>
+                            <li class="door-hw__row door-hw__row--drop">
+                                <span class="door-hw__index" aria-hidden="true">04</span>
+                                <span class="door-hw__glyph" aria-hidden="true">
+                                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                                </span>
+                                <div class="door-hw__body">
+                                    <span class="door-hw__name">Veda-porta automático</span>
+                                    <span class="door-hw__detail">Embutido na inferior da folha</span>
+                                </div>
+                            </li>
+                            <li class="door-hw__row door-hw__row--lock">
+                                <span class="door-hw__index" aria-hidden="true">05</span>
+                                <span class="door-hw__glyph" aria-hidden="true">
+                                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+                                </span>
+                                <div class="door-hw__body">
+                                    <span class="door-hw__name">Fechadura e maçaneta</span>
+                                    <span class="door-hw__detail">Conforme projeto / orçamento</span>
+                                </div>
+                            </li>
+                        </ol>
                     </div>
-                    <ul class="door-kit__list">
-                        <li>
-                            <div class="door-kit__card">
-                                <span class="door-kit__icon door-kit__icon--accent" aria-hidden="true">
-                                    <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                                </span>
-                                <div class="door-kit__body">
-                                    <span class="door-kit__name">Portal e alizares</span>
-                                    <span class="door-kit__pill">Batente e guarnições</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="door-kit__card">
-                                <span class="door-kit__icon" aria-hidden="true">
-                                    <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                                </span>
-                                <div class="door-kit__body">
-                                    <span class="door-kit__name">Dobradiças</span>
-                                    <span class="door-kit__pill">4× rolamentadas · inox reforçado</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="door-kit__card">
-                                <span class="door-kit__icon" aria-hidden="true">
-                                    <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                                </span>
-                                <div class="door-kit__body">
-                                    <span class="door-kit__name">Borrachas perimetrais</span>
-                                    <span class="door-kit__pill">Vedação</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="door-kit__card">
-                                <span class="door-kit__icon" aria-hidden="true">
-                                    <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                                </span>
-                                <div class="door-kit__body">
-                                    <span class="door-kit__name">Veda-porta automático</span>
-                                    <span class="door-kit__pill door-kit__pill--detail">Embutido na inferior da folha</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="door-kit__card">
-                                <span class="door-kit__icon" aria-hidden="true">
-                                    <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
-                                </span>
-                                <div class="door-kit__body">
-                                    <span class="door-kit__name">Fechadura e maçaneta</span>
-                                    <span class="door-kit__pill door-kit__pill--detail">Conforme projeto / orçamento</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Diferenciais Section -->
-        <section id="diferencial" class="door-diff site-section acoustic-bg" aria-labelledby="door-diff-heading">
-            <div class="site-container">
-                <header class="door-diff__intro">
-                    <p class="door-diff__eyebrow">Porque confiar na gente</p>
-                    <h2 id="door-diff-heading" class="door-diff__title">O que nos torna <span class="door-diff__title-accent">únicos</span></h2>
-                    <p class="door-diff__lead">Excelência não é um slogan — é compromisso com projeto, prazos e acabamento. Sob medida, com contrato claro e entrega pensada para a sua obra.</p>
+        <section id="diferencial" class="door-diff ai-section" aria-labelledby="door-diff-heading">
+            <div class="ai-wrap">
+                <header class="ai-section__head ai-section__head--center ai-door-head--diff">
+                    <span class="ai-eyebrow">Porque confiar na gente</span>
+                    <h2 id="door-diff-heading" class="ai-h2">O que nos torna <em>únicos</em></h2>
+                    <p class="ai-prose">Excelência não é um slogan — é compromisso com projeto, prazos e acabamento. Sob medida, com contrato claro e entrega pensada para a sua obra.</p>
                 </header>
 
-                <div class="door-diff__grid">
-                    <article class="door-diff__card">
-                        <div class="door-diff__card-head">
-                            <span class="door-diff__index" aria-hidden="true">01</span>
-                            <div class="door-diff__icon door-diff__icon--ink" aria-hidden="true">
-                                <img src="../images/icons/gridSectionThree/porta-aberta.png" alt="" class="door-diff__icon-img" width="40" height="40" loading="lazy" decoding="async">
+                <div class="door-uq">
+                    <aside class="door-uq__aside" aria-label="Resumo dos compromissos">
+                        <p class="door-uq__aside-kicker">O que sustenta o serviço</p>
+                        <ul class="door-uq__pillars">
+                            <li class="door-uq__pillar">Entrega com prazo referenciado</li>
+                            <li class="door-uq__pillar">Contrato e escopo transparentes</li>
+                            <li class="door-uq__pillar">Fabricação ao vão — sem adaptação genérica</li>
+                            <li class="door-uq__pillar">Cor e acabamento alinhados ao projeto</li>
+                        </ul>
+                    </aside>
+                    <div class="door-uq__main">
+                        <article class="door-uq__band door-uq__band--acab">
+                            <div class="door-uq__band-icon" aria-hidden="true">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                             </div>
-                        </div>
-                        <h3 class="door-diff__card-title">Acabamento completo</h3>
-                        <p class="door-diff__card-text">Portal e alizares inclusos. Entregamos <strong class="text-stone-800 font-semibold">a partir de 7 dias</strong> após a confirmação — conjunto pronto para instalar com padrão de obra limpa.</p>
-                    </article>
-
-                    <article class="door-diff__card">
-                        <div class="door-diff__card-head">
-                            <span class="door-diff__index" aria-hidden="true">02</span>
-                            <div class="door-diff__icon door-diff__icon--slate" aria-hidden="true">
-                                <img src="../images/icons/gridSectionThree/contrato.png" alt="" class="door-diff__icon-img" width="40" height="40" loading="lazy" decoding="async">
+                            <div class="door-uq__band-copy">
+                                <h3 class="door-uq__band-title">Acabamento completo</h3>
+                                <p class="door-uq__band-text">Portal e alizares inclusos. Entregamos <strong>a partir de 7 dias</strong> após a confirmação — conjunto pronto para instalar com padrão de obra limpa.</p>
                             </div>
-                        </div>
-                        <h3 class="door-diff__card-title">Contrato e segurança</h3>
-                        <p class="door-diff__card-text">Formalização com escopo e valores claros. Tudo combinado fica documentado — sem surpresas, só confiança para você e para o condomínio ou empresa.</p>
-                    </article>
-
-                    <article class="door-diff__card door-diff__card--accent">
-                        <div class="door-diff__card-head">
-                            <span class="door-diff__index" aria-hidden="true">03</span>
-                            <div class="door-diff__icon door-diff__icon--bronze" aria-hidden="true">
-                                <img src="../images/icons/gridSectionThree/a-medida.png" alt="" class="door-diff__icon-img" width="40" height="40" loading="lazy" decoding="async">
+                        </article>
+                        <article class="door-uq__band door-uq__band--contract">
+                            <div class="door-uq__band-icon" aria-hidden="true">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             </div>
-                        </div>
-                        <h3 class="door-diff__card-title">Fabricação sob medida</h3>
-                        <p class="door-diff__card-text">Sem adaptações genéricas: medidas, estilo e acabamento alinhados ao vão e ao projeto. A folha certa para o isolamento que você precisa.</p>
-                    </article>
-
-                    <article class="door-diff__card">
-                        <div class="door-diff__card-head">
-                            <span class="door-diff__index" aria-hidden="true">04</span>
-                            <div class="door-diff__icon door-diff__icon--ink" aria-hidden="true">
-                                <img src="../images/icons/gridSectionThree/paleta-de-cores.png" alt="" class="door-diff__icon-img" width="40" height="40" loading="lazy" decoding="async">
+                            <div class="door-uq__band-copy">
+                                <h3 class="door-uq__band-title">Contrato e segurança</h3>
+                                <p class="door-uq__band-text">Formalização com escopo e valores claros. Tudo combinado fica documentado — sem surpresas, só confiança para você e para o condomínio ou empresa.</p>
                             </div>
-                        </div>
-                        <h3 class="door-diff__card-title">Cor e personalização</h3>
-                        <p class="door-diff__card-text">Opções de cor e acabamento para integrar a porta ao ambiente — combinamos na visita e no fechamento técnico, sem perder desempenho acústico.</p>
-                    </article>
+                        </article>
+                        <article class="door-uq__band door-uq__band--measure">
+                            <div class="door-uq__band-icon" aria-hidden="true">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z"></path></svg>
+                            </div>
+                            <div class="door-uq__band-copy">
+                                <h3 class="door-uq__band-title">Fabricação sob medida</h3>
+                                <p class="door-uq__band-text">Sem adaptações genéricas: medidas, estilo e acabamento alinhados ao vão e ao projeto. A folha certa para o isolamento que você precisa.</p>
+                            </div>
+                        </article>
+                        <article class="door-uq__band door-uq__band--color">
+                            <div class="door-uq__band-icon" aria-hidden="true">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 3v18M3 12h18M5.636 5.636l12.728 12.728M18.364 5.636L5.636 18.364"></path></svg>
+                            </div>
+                            <div class="door-uq__band-copy">
+                                <h3 class="door-uq__band-title">Cor e personalização</h3>
+                                <p class="door-uq__band-text">Opções de cor e acabamento para integrar a porta ao ambiente — combinamos na visita e no fechamento técnico, sem perder desempenho acústico.</p>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
 
     <!-- Processo de Instalação Section -->
-    <section id="instalacao" class="door-install site-section acoustic-bg" aria-labelledby="door-install-heading">
-        <div class="site-container">
-            <header class="door-install__intro">
-                <p class="door-install__eyebrow">Obra limpa · padrão de acabamento</p>
-                <h2 id="door-install-heading" class="door-install__title">Processo de instalação</h2>
-                <p class="door-install__lead">
-                    Sequência planejada para extrair o máximo de desempenho acústico: medição correta, preparo do vão, posicionamento da folha com vedações e teste antes da entrega.
-                </p>
+    <section id="instalacao" class="door-install ai-section" aria-labelledby="door-install-heading">
+        <div class="ai-wrap">
+            <header class="ai-section__head ai-section__head--center ai-door-head--install">
+                <span class="ai-eyebrow">Obra limpa · padrão de acabamento</span>
+                <h2 id="door-install-heading" class="ai-h2">Processo de <em>instalação</em></h2>
+                <p class="ai-prose">Sequência planejada para extrair o máximo de desempenho acústico: medição correta, preparo do vão, posicionamento da folha com vedações e teste antes da entrega.</p>
             </header>
 
             <ol class="door-install__steps">
@@ -804,58 +763,66 @@
                 </li>
             </ol>
 
-            <div class="door-install__time" id="tempo-instalacao" aria-labelledby="door-install-time-heading">
-                <div class="door-install__time-head">
-                    <p class="door-install__time-kicker">Cronograma em obra</p>
-                    <div class="door-install__time-head-row">
-                        <h3 id="door-install-time-heading" class="door-install__time-title">Tempo de instalação</h3>
-                        <p class="door-install__time-intro">Médias de referência por tipo de solução. O <strong class="text-stone-200 font-semibold">prazo real</strong> e deslocamentos constam no orçamento, conforme escopo e logística.</p>
+            <div class="door-install__time door-install-chrono" id="tempo-instalacao" aria-labelledby="door-install-time-heading">
+                <div class="door-install-chrono__shell">
+                    <header class="door-install-chrono__head">
+                        <p class="door-install-chrono__eyebrow">Cronograma em obra</p>
+                        <h3 id="door-install-time-heading" class="door-install-chrono__title">Tempo de instalação</h3>
+                        <p class="door-install-chrono__lede">Médias de referência por tipo de solução. O <strong>prazo real</strong>, deslocamentos e janelas de agenda constam no orçamento.</p>
+                    </header>
+                    <div class="door-install-chrono__board">
+                        <div class="door-install-chrono__ruler" aria-hidden="true">
+                            <span class="door-install-chrono__ruler-label">Escala ilustrativa (1 turno ≈ 8&nbsp;h)</span>
+                            <div class="door-install-chrono__ruler-track">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="door-install-chrono__ruler-ticks">
+                                <span>0</span>
+                                <span>8&nbsp;h</span>
+                                <span>16&nbsp;h</span>
+                                <span>2&nbsp;dias</span>
+                            </div>
+                        </div>
+                        <ol class="door-install-chrono__lanes">
+                            <li class="door-install-chrono__lane door-install-chrono__lane--res">
+                                <div class="door-install-chrono__lane-meta">
+                                    <span class="door-install-chrono__lane-name">Linha residencial</span>
+                                    <span class="door-install-chrono__lane-spec">42&nbsp;mm · vão único · instalação típica</span>
+                                </div>
+                                <div class="door-install-chrono__lane-viz">
+                                    <div class="door-install-chrono__bar" role="presentation">
+                                        <span class="door-install-chrono__fill" style="width: 18%"></span>
+                                    </div>
+                                    <p class="door-install-chrono__duration" title="Duas a três horas"><span class="door-install-chrono__duration-num">2–3</span><span class="door-install-chrono__duration-unit">horas</span></p>
+                                </div>
+                            </li>
+                            <li class="door-install-chrono__lane door-install-chrono__lane--stu">
+                                <div class="door-install-chrono__lane-meta">
+                                    <span class="door-install-chrono__lane-name">Linha estúdio</span>
+                                    <span class="door-install-chrono__lane-spec">50&nbsp;mm · folha mais pesada e vedações reforçadas</span>
+                                </div>
+                                <div class="door-install-chrono__lane-viz">
+                                    <div class="door-install-chrono__bar" role="presentation">
+                                        <span class="door-install-chrono__fill" style="width: 34%"></span>
+                                    </div>
+                                    <p class="door-install-chrono__duration" title="Quatro a seis horas"><span class="door-install-chrono__duration-num">4–6</span><span class="door-install-chrono__duration-unit">horas</span></p>
+                                </div>
+                            </li>
+                            <li class="door-install-chrono__lane door-install-chrono__lane--full">
+                                <div class="door-install-chrono__lane-meta">
+                                    <span class="door-install-chrono__lane-name">Projeto completo</span>
+                                    <span class="door-install-chrono__lane-spec">Vários vãos, batentes e acabamentos coordenados</span>
+                                </div>
+                                <div class="door-install-chrono__lane-viz">
+                                    <div class="door-install-chrono__bar" role="presentation">
+                                        <span class="door-install-chrono__fill" style="width: 100%"></span>
+                                    </div>
+                                    <p class="door-install-chrono__duration" title="Um a dois dias"><span class="door-install-chrono__duration-num">1–2</span><span class="door-install-chrono__duration-unit">dias</span></p>
+                                </div>
+                            </li>
+                        </ol>
                     </div>
                 </div>
-                <ul class="door-install__time-stats">
-                    <li class="door-install__time-stat door-install__time-stat--res">
-                        <div class="door-install__time-stat-inner">
-                            <span class="door-install__time-stat-icon" aria-hidden="true">
-                                <svg class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </span>
-                            <div class="door-install__time-stat-copy">
-                                <span class="door-install__time-stat-label">Linha residencial</span>
-                                <span class="door-install__time-stat-hint">42&nbsp;mm · vão único, instalação típica</span>
-                            </div>
-                            <div class="door-install__time-stat-value" title="Duas a três horas">
-                                <span class="door-install__time-stat-range">2–3</span><span class="door-install__time-stat-unit">h</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="door-install__time-stat door-install__time-stat--stu">
-                        <div class="door-install__time-stat-inner">
-                            <span class="door-install__time-stat-icon" aria-hidden="true">
-                                <svg class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </span>
-                            <div class="door-install__time-stat-copy">
-                                <span class="door-install__time-stat-label">Linha estúdio</span>
-                                <span class="door-install__time-stat-hint">50&nbsp;mm · folha mais pesada e vedações reforçadas</span>
-                            </div>
-                            <div class="door-install__time-stat-value" title="Quatro a seis horas">
-                                <span class="door-install__time-stat-range">4–6</span><span class="door-install__time-stat-unit">h</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="door-install__time-stat door-install__time-stat--full">
-                        <div class="door-install__time-stat-inner">
-                            <span class="door-install__time-stat-icon" aria-hidden="true">
-                                <svg class="w-7 h-7 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                            </span>
-                            <div class="door-install__time-stat-copy">
-                                <span class="door-install__time-stat-label">Projeto completo</span>
-                                <span class="door-install__time-stat-hint">Vários vãos, batentes e acabamentos coordenados</span>
-                            </div>
-                            <div class="door-install__time-stat-value" title="Um a dois dias">
-                                <span class="door-install__time-stat-range">1–2</span><span class="door-install__time-stat-unit">dias</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
             </div>
 
             <p class="door-install__note">
@@ -865,12 +832,12 @@
     </section>
 
     <!-- Garantia Detalhada Section -->
-    <section id="garantia" class="door-garantia site-section acoustic-bg" aria-labelledby="door-garantia-heading">
-        <div class="site-container">
-            <header class="door-garantia__intro">
-                <p class="door-garantia__eyebrow">1 ano · produto e obra</p>
-                <h2 id="door-garantia-heading" class="door-garantia__title">Garantia <span class="door-garantia__title-accent">completa</span></h2>
-                <p class="door-garantia__lead">Estrutura, desempenho acústico e instalação — o mesmo padrão de transparência da proposta, do fabrico ao pós-obra.</p>
+    <section id="garantia" class="door-garantia ai-section" aria-labelledby="door-garantia-heading">
+        <div class="ai-wrap">
+            <header class="ai-section__head ai-section__head--center ai-door-head--garantia">
+                <span class="ai-eyebrow">1 ano · produto e obra</span>
+                <h2 id="door-garantia-heading" class="ai-h2">Garantia <em>completa</em></h2>
+                <p class="ai-prose">Estrutura, desempenho acústico e instalação — o mesmo padrão de transparência da proposta, do fabrico ao pós-obra.</p>
             </header>
 
             <div class="door-garantia__grid">
@@ -878,7 +845,7 @@
                     <div class="door-garantia__card-head">
                         <span class="door-garantia__pill">Fabrico</span>
                         <div class="door-garantia__icon door-garantia__icon--ink" aria-hidden="true">
-                            <svg class="h-7 w-7 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                     </div>
                     <h3 class="door-garantia__card-title">Estrutural</h3>
@@ -894,7 +861,7 @@
                     <div class="door-garantia__card-head">
                         <span class="door-garantia__pill door-garantia__pill--accent">Desempenho</span>
                         <div class="door-garantia__icon door-garantia__icon--accent" aria-hidden="true">
-                            <svg class="h-7 w-7 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                         </div>
                     </div>
                     <h3 class="door-garantia__card-title">Acústica</h3>
@@ -910,7 +877,7 @@
                     <div class="door-garantia__card-head">
                         <span class="door-garantia__pill">Obra</span>
                         <div class="door-garantia__icon door-garantia__icon--slate" aria-hidden="true">
-                            <svg class="h-7 w-7 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                         </div>
                     </div>
                     <h3 class="door-garantia__card-title">Instalação</h3>
@@ -925,135 +892,72 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="site-footer py-16 md:py-20">
-        <div class="site-container">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Company Info -->
-                <div class="lg:col-span-2">
-                    <div class="mb-6">
-                        <h3 class="site-footer__heading text-2xl font-bold mb-2 font-display">Arte Interiores</h3>
-                        <p class="site-footer__muted text-lg">Soluções Acústicas Especializadas</p>
-                    </div>
-                        <p class="site-footer__muted mb-6 max-w-md leading-relaxed">
-                            Especialistas em isolamento acústico com 4 anos de experiência. <strong class="text-stone-800 font-semibold">Trabalhos em toda a Brasília DF e no entorno</strong> — qualidade, confiabilidade e excelência em cada projeto.
-                        </p>
-                    <div class="flex space-x-4">
-                        <a href="https://wa.me/5561996305986" class="w-12 h-12 bg-stone-900 rounded-full flex items-center justify-center text-white hover:bg-stone-800 transition-all duration-300 transform hover:scale-110" aria-label="WhatsApp">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+    </main>
 
-                <!-- Quick Links -->
+    <footer class="ai-footer">
+        <div class="ai-wrap">
+            <div class="ai-footer-grid">
+                <div class="ai-footer-brand">
+                    <h3 class="ai-footer-brand-title">Arte Interiores</h3>
+                    <p class="ai-footer-brand-lead">Portas acústicas e isolamento · <strong>Brasília e entorno</strong>.</p>
+                    <a href="https://wa.me/5561996305986" class="ai-nav-cta ai-footer-cta-inline">WhatsApp</a>
+                </div>
                 <div>
-                    <h4 class="site-footer__heading text-lg font-semibold mb-6">Links Rápidos</h4>
-                    <ul class="space-y-3">
-                        <li><a href="../index.html" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Início</a></li>
-                        <li><a href="acousticdoor.html" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Portas Acústicas</a></li>
-                        <li><a href="../index.html#about" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Sobre Nós</a></li>
-                        <li><a href="../index.html#contact" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Contato</a></li>
-                        <li><a href="../index.html#testimonials" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Depoimentos</a></li>
+                    <h4 class="ai-footer-heading">Navegação</h4>
+                    <ul class="ai-footer-list">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="acousticdoor.html">Portas acústicas</a></li>
+                        <li><a href="../index.html#craft">Como fazemos</a></li>
+                        <li><a href="../index.html#contact">Contato</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
                 <div>
-                    <h4 class="site-footer__heading text-lg font-semibold mb-6">Contato</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 bg-arte rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="site-footer__heading font-semibold">Telefone</p>
-                                <p class="site-footer__muted">(61) 9 96305-986</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 bg-arte rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="site-footer__heading font-semibold">Horário</p>
-                                <p class="site-footer__muted">Seg-Sex: 8h às 18h</p>
-                                <p class="site-footer__muted">Sáb: 8h às 12h</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 class="ai-footer-heading">Atendimento</h4>
+                    <p class="ai-footer-phone">(61) 9 96305-986</p>
+                    <p class="ai-footer-hours">Seg–Sex 8–18h · Sáb 8–12h</p>
                 </div>
             </div>
-
-            <!-- Bottom Bar -->
-            <div class="border-t border-stone-300/80 mt-12 pt-8">
-                <div class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-                    <div class="text-center lg:text-left">
-                        <p class="site-footer__muted text-sm mb-2">
-                            © 2026 Arte Interiores. Todos os direitos reservados.
-                        </p>
-                        <p class="site-footer__muted text-xs">
-                            CNPJ: 59.040.631/0001-87
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap justify-center lg:justify-end space-x-6 text-sm">
-                        <a href="#" class="text-stone-600 hover:text-stone-900 transition-colors duration-300">Política de Privacidade</a>
-                        <a href="#" class="text-stone-600 hover:text-stone-900 transition-colors duration-300">Termos de Uso</a>
-                        <a href="#" class="text-stone-600 hover:text-stone-900 transition-colors duration-300">Garantia</a>
-                    </div>
-                </div>
+            <div class="ai-footer-bar">
+                <span>© 2026 Arte Interiores · CNPJ 59.040.631/0001-87</span>
+                <span><a href="#">Privacidade</a> · <a href="#">Termos</a></span>
             </div>
         </div>
     </footer>
 
     <!-- Gallery Modal -->
-    <div id="galleryModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center">
-        <div class="relative w-full h-full flex flex-col">
-            <!-- Header -->
-            <div class="flex items-center justify-between p-4 bg-black/50 backdrop-blur-sm gap-4">
-                <span id="galleryCounter" class="text-gray-200 text-sm bg-white/10 px-3 py-1 rounded-full tabular-nums"></span>
-                <button onclick="closeGallery()" class="bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors duration-300 cursor-pointer ml-auto shrink-0" aria-label="Fechar galeria">
-                    <svg class="w-6 h-6 shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <div id="galleryModal" class="door-gallery-modal hidden" role="dialog" aria-modal="true" aria-label="Galeria de obras">
+        <div class="door-gallery-modal__inner">
+            <div class="door-gallery-modal__head">
+                <span id="galleryCounter" class="door-gallery-modal__counter"></span>
+                <button type="button" onclick="closeGallery()" class="door-gallery-modal__close" aria-label="Fechar galeria">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
-            
-            <!-- Image Container -->
-            <div class="flex-1 flex items-center justify-center p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 relative">
-                <!-- Navigation Buttons -->
-                <button onclick="previousImage()" class="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 md:p-3 transition-colors duration-300 cursor-pointer" aria-label="Imagem anterior">
-                    <svg class="w-5 h-5 md:w-6 md:h-6 shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div class="door-gallery-modal__stage">
+                <button type="button" onclick="previousImage()" class="door-gallery-modal__nav door-gallery-modal__nav--prev" aria-label="Imagem anterior">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
-                
-                <button onclick="nextImage()" class="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-2 md:p-3 transition-colors duration-300 cursor-pointer" aria-label="Próxima imagem">
-                    <svg class="w-5 h-5 md:w-6 md:h-6 shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <button type="button" onclick="nextImage()" class="door-gallery-modal__nav door-gallery-modal__nav--next" aria-label="Próxima imagem">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
-                
-                <!-- Image -->
-                <img id="galleryImage" src="" alt="" class="w-full h-full max-w-none max-h-none sm:max-w-xl sm:max-h-[50vh] md:max-w-2xl md:max-h-[55vh] lg:max-w-3xl lg:max-h-[60vh] xl:max-w-4xl xl:max-h-[65vh] object-contain rounded-lg shadow-2xl" width="1200" height="800" decoding="async">
+                <img id="galleryImage" src="" alt="" class="door-gallery-modal__img" width="1200" height="800" decoding="async">
             </div>
-            
-            <!-- Footer -->
-            <div class="bg-black/50 backdrop-blur-sm p-4">
-                <div class="flex items-center justify-center space-x-3">
-                    <button onclick="downloadImage()" class="bg-arte hover:bg-arte-dark text-white px-4 py-2 rounded-lg text-sm transition-colors duration-300 flex items-center space-x-2 cursor-pointer">
-                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div class="door-gallery-modal__foot">
+                <div class="door-gallery-modal__actions">
+                    <button type="button" onclick="downloadImage()" class="door-gallery-modal__btn-arte">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         <span>Download</span>
                     </button>
-                    <button onclick="shareImage()" class="bg-arte hover:bg-arte-dark text-white px-4 py-2 rounded-lg text-sm transition-colors duration-300 flex items-center space-x-2 cursor-pointer">
-                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <button type="button" onclick="shareImage()" class="door-gallery-modal__btn-arte">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
                         </svg>
                         <span>Compartilhar</span>
@@ -1191,95 +1095,6 @@
             }
         });
     </script>
-<div id="ar-pdf-sheet" class="ar-pdf-sheet-host" aria-hidden="true" data-preload-images="../images/backgrounds/pages/acousticDoor/acousticDoor.png,../images/logos/logo-preta-transparente.png">
-  <article class="ar-ficha-sheet">
-        <div class="ar-ficha__bg" aria-hidden="true"></div>
-        <div class="ar-ficha__wm" aria-hidden="true"></div>
-        <div class="ar-ficha__inner">
-            <div class="ar-ficha__main">
-            <header class="ar-ficha__top">
-                <div class="ar-ficha__brand">
-                    <img src="../images/logos/logo-preta-transparente.png" alt="Arte Interiores" class="ar-ficha__logo" width="168" height="52" decoding="async">
-                </div>
-                <div class="ar-ficha__contact">
-                    <p>+55 (61) 99630-5986 · WhatsApp</p>
-                    <p>www.aiportasacusticas.com.br</p>
-                </div>
-            </header>
-
-            <p class="ar-ficha__doc-label">Documento de obra</p>
-            <h1 class="ar-ficha__title">Ficha técnica — Portas acústicas</h1>
-            <p class="ar-ficha__intro">Resumo para especificação e consulta de desempenho indicativo. Valores de <strong>Rw</strong> obtidos por <strong>cálculo teórico</strong>. O resultado em obra depende do conjunto completo: folha, batente, vedações, piso e execução.</p>
-
-            <div class="ar-ficha__grid2">
-                <section class="ar-ficha__box" aria-labelledby="ar-pdf-rw">
-                    <h2 class="ar-ficha__box-title" id="ar-pdf-rw">Isolamento Rw</h2>
-                    <ul>
-                        <li>Linha residencial ≈30 dB</li>
-                        <li>Linha estúdio 35–38 dB (±3)</li>
-                    </ul>
-                </section>
-                <section class="ar-ficha__box" aria-labelledby="ar-pdf-esp">
-                    <h2 class="ar-ficha__box-title" id="ar-pdf-esp">Espessura da folha</h2>
-                    <ul>
-                        <li>Residencial 42 mm</li>
-                        <li>Estúdio 50 mm</li>
-                    </ul>
-                </section>
-            </div>
-
-            <section class="ar-ficha__chart" aria-labelledby="ar-pdf-chart-h">
-                <h2 class="ar-ficha__chart-kicker" id="ar-pdf-chart-h">Índice de atenuação (cálculos teóricos)</h2>
-                <svg viewBox="0 0 640 138" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparativo ilustrativo Rw em dB, escala 0 a 45">
-                    <defs>
-                        <linearGradient id="arPdfBarGrad" x1="0" y1="0" x2="1" y2="0">
-                            <stop offset="0%" stop-color="#1e3d34" />
-                            <stop offset="55%" stop-color="#2d5a4a" />
-                            <stop offset="100%" stop-color="#9a7b4a" />
-                        </linearGradient>
-                    </defs>
-                    <line x1="108" y1="114" x2="600" y2="114" stroke="#0c0b0a" stroke-width="1.35" opacity="0.2" />
-                    <text x="108" y="132" text-anchor="middle" font-size="12" fill="#6b6560" font-family="Manrope, system-ui, sans-serif">0</text>
-                    <text x="272" y="132" text-anchor="middle" font-size="12" fill="#6b6560" font-family="Manrope, system-ui, sans-serif">15</text>
-                    <text x="436" y="132" text-anchor="middle" font-size="12" fill="#6b6560" font-family="Manrope, system-ui, sans-serif">30</text>
-                    <text x="600" y="132" text-anchor="end" font-size="12" fill="#6b6560" font-family="Manrope, system-ui, sans-serif">45</text>
-                    <text x="100" y="50" text-anchor="end" font-size="14" font-weight="700" fill="#0c0b0a" font-family="Manrope, system-ui, sans-serif">Residencial</text>
-                    <rect x="108" y="28" width="328" height="28" rx="3" fill="url(#arPdfBarGrad)" />
-                    <text x="444" y="48" font-size="12" font-weight="700" fill="#3a3632" font-family="Manrope, system-ui, sans-serif">≈30 dB · 42 mm</text>
-                    <text x="100" y="98" text-anchor="end" font-size="14" font-weight="700" fill="#0c0b0a" font-family="Manrope, system-ui, sans-serif">Estúdio</text>
-                    <rect x="108" y="76" width="415" height="28" rx="3" fill="url(#arPdfBarGrad)" opacity="0.88" />
-                    <text x="532" y="96" font-size="12" font-weight="700" fill="#3a3632" font-family="Manrope, system-ui, sans-serif">35–38 dB · 50 mm</text>
-                </svg>
-                <p class="ar-ficha__chart-note">Escala indicativa 0–45 dB. Barra do estúdio representa o patamar superior do intervalo declarado (38 dB no eixo). Desempenho real varia com o sistema portas + batente + instalação.</p>
-            </section>
-
-            <div class="ar-ficha__grid2">
-                <section class="ar-ficha__box" aria-labelledby="ar-pdf-dim">
-                    <h2 class="ar-ficha__box-title" id="ar-pdf-dim">Dimensões de referência</h2>
-                    <p><strong>Altura padrão:</strong> 2,10&nbsp;m.</p>
-                    <p><strong>Larguras padrão:</strong> 0,60 · 0,70 · 0,80 · 0,90 · 1,00&nbsp;m.</p>
-                    <p><strong>Sob medida:</strong> dimensões conforme projeto; auxílio técnico para casos especiais.</p>
-                    <p><strong>Estratégia:</strong> vedação + amortecimento + massa.</p>
-                </section>
-                <section class="ar-ficha__box" aria-labelledby="ar-pdf-kit">
-                    <h2 class="ar-ficha__box-title" id="ar-pdf-kit">Inclusos</h2>
-                    <ul>
-                        <li>Portal (batente) e alizares (guarnições)</li>
-                        <li>4 dobradiças rolamentadas, aço inox reforçado</li>
-                        <li>Borrachas perimetrais de vedação</li>
-                        <li>Veda-porta automático na inferior da folha</li>
-                        <li>Fechadura e maçaneta conforme projeto / orçamento</li>
-                    </ul>
-                </section>
-            </div>
-
-            <p class="ar-ficha__fine"><strong>CNPJ</strong> 59.040.631/0001-87 · Entrega a partir de 7 dias após confirmação · Garantia 1 ano · Atendimento em toda a Brasília DF e entorno. Documento para fins de especificação; sujeito a ajustes conforme proposta assinada.</p>
-            </div>
-
-            <footer class="ar-ficha__footer">Arte Interiores — documento gerado a partir do site institucional — não substitui projeto ou proposta assinada.</footer>
-        </div>
-      </article>
-</div>
 
     <script>
     (function (w, d) {

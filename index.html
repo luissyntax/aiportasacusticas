@@ -14,7 +14,7 @@
     <meta name="geo.placename" content="Brasília">
     <meta name="geo.position" content="-15.7801;-47.9292">
     <meta name="ICBM" content="-15.7801, -47.9292">
-    <meta name="theme-color" content="#1e3d34">
+    <meta name="theme-color" content="#314c53">
     <meta name="color-scheme" content="light dark">
     <link rel="canonical" href="https://www.aiportasacusticas.com.br/">
     <meta property="og:type" content="website">
@@ -27,47 +27,14 @@
     <meta name="twitter:title" content="Arte Interiores — Isolamento acústico em Brasília e entorno">
     <meta name="twitter:description" content="Portas acústicas sob medida, visita técnica e instalação profissional no DF e entorno.">
     <meta name="twitter:image" content="https://www.aiportasacusticas.com.br/images/backgrounds/pages/homePage/homepage.png">
-    <link rel="preload" href="https://www.aiportasacusticas.com.br/images/backgrounds/pages/homePage/homepage.png" as="image" fetchpriority="high">
+    <link rel="preload" href="images/backgrounds/pages/homePage/homepage.png" as="image" fetchpriority="high">
     <link rel="icon" href="images/icons/favicon/favicon.svg" type="image/svg+xml" sizes="any">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Manrope', 'system-ui', 'sans-serif'],
-              display: ['Playfair Display', 'Georgia', 'serif'],
-            },
-            colors: {
-              arte: {
-                DEFAULT: '#292524',
-                dark: '#1c1917',
-                light: '#44403c',
-                muted: '#f0ebe3',
-                soft: '#e8e2d9',
-              },
-              lux: {
-                gold: '#c9c2b4',
-                bronze: '#6b635a',
-                ink: '#1c1917',
-                paper: '#f4f1eb',
-                cream: '#ebe6de',
-              },
-            },
-          }
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="css/site-acoustic.css">
-    <link rel="stylesheet" href="css/site-rebrand.css">
+    <link rel="stylesheet" href="css/home-premium.css">
 
     <script defer src="js/header.js"></script>
 
@@ -210,290 +177,243 @@
     <title>Isolamento acústico em toda a Brasília DF e entorno | Arte Interiores</title>
 </head>
 
-<body class="font-sans site-body site-rebrand text-stone-900 antialiased">
+<body class="ai-page">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCLSQJW5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <!-- Header -->
-    <header class="site-header sticky top-0 z-50">
-        <nav class="site-container py-4 md:py-5">
-            <div class="flex items-center justify-between gap-4">
-                <a href="/" class="flex items-center gap-3 group">
-                    <img src="images/logos/logo-preta-transparente.png" alt="Arte Interiores" class="h-11 md:h-[3.25rem] w-auto transition-opacity duration-300 group-hover:opacity-90" width="168" height="52" decoding="async" fetchpriority="high">
-                    <span class="sr-logo-tag hidden sm:block leading-tight">Toda a Brasília<br>e o entorno</span>
+    <header class="ai-top">
+        <div class="ai-wrap">
+            <nav class="ai-top__nav" aria-label="Principal">
+                <a href="/" class="ai-brand">
+                    <img src="images/logos/logo-preta-transparente.png" alt="Arte Interiores" width="168" height="52" decoding="async" fetchpriority="high">
+                    <span class="ai-brand__tag">Brasília &amp;<br>entorno</span>
                 </a>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-10">
-                    <a href="#solutions" class="sr-nav-link">Soluções</a>
-                    <a href="pages/acousticdoor.html" class="sr-nav-link">Portas acústicas</a>
-                    <a href="#about" class="sr-nav-link">Sobre</a>
-                    <a href="https://wa.me/5561996305986" class="sr-nav-cta">WhatsApp</a>
+                <div class="ai-nav">
+                    <a href="#craft">Como fazemos</a>
+                    <a href="#solutions">Soluções</a>
+                    <a href="pages/acousticdoor.html">Portas acústicas</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#contact" class="ai-nav-cta">WhatsApp</a>
                 </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2 rounded-sm hover:bg-stone-100 transition-colors duration-300 cursor-pointer border border-transparent hover:border-stone-200" id="mobile-menu-button" aria-label="Abrir menu de navegação">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button type="button" class="ai-burger" id="mobile-menu-button" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
+            </nav>
+            <div class="ai-mobile hidden" id="mobile-menu">
+                <a href="#craft">Como fazemos</a>
+                <a href="#solutions">Soluções</a>
+                <a href="pages/acousticdoor.html">Portas acústicas</a>
+                <a href="#about">Sobre</a>
+                <a href="#testimonials">Depoimentos</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://wa.me/5561996305986" class="ai-nav-cta">WhatsApp</a>
             </div>
-            
-            <!-- Mobile Navigation -->
-            <div class="md:hidden hidden mt-4 pb-4 border-t border-stone-900/15 pt-4" id="mobile-menu">
-                <div class="flex flex-col space-y-4">
-                    <a href="#solutions" class="sr-nav-link text-sm">Soluções</a>
-                    <a href="pages/acousticdoor.html" class="sr-nav-link text-sm">Portas acústicas</a>
-                    <a href="#about" class="sr-nav-link text-sm">Sobre</a>
-                    <a href="https://wa.me/5561996305986" class="sr-nav-cta text-center">WhatsApp</a>
-                </div>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <main class="min-h-screen">
-        <section class="site-section sr-hero" aria-label="Apresentação">
-            <div class="sr-hero__bg" aria-hidden="true"></div>
-            <div class="site-container sr-hero__inner">
-                <div class="sr-hero__text">
-                    <p class="sr-hero__kicker">Brasília DF · entorno</p>
-                    <h1 class="sr-hero__headline">Isolamento acústico <em>de alto padrão</em> em toda a região</h1>
-                    <p class="sr-hero__sub">
-                        Portas técnicas, vedações e multicamadas com acabamento impecável — engenharia de isolamento para residências, escritórios, estúdios e clínicas. <strong>Atuamos em todo o Distrito Federal e no entorno</strong>, com visita técnica e instalação.
-                    </p>
-                    <ul class="sr-hero__chips" aria-label="Áreas de atuação">
-                        <li>Todo o DF + entorno</li>
-                        <li>Brasília</li>
-                        <li>Valparaíso</li>
-                        <li>Águas Lindas</li>
-                        <li>Sobradinho</li>
-                        <li>Taguatinga</li>
-                    </ul>
-                    <div class="sr-hero__actions">
-                        <a href="https://wa.me/5561996305986" class="sr-btn sr-btn--primary">Agendar conversa</a>
-                        <a href="#solutions" class="sr-btn sr-btn--ghost">Ver soluções</a>
+    <section class="ai-hero" aria-label="Apresentação em vídeo">
+        <div class="ai-hero__video-wrap" aria-hidden="true">
+            <video class="ai-hero__video" autoplay muted playsinline loop preload="metadata" poster="images/backgrounds/pages/homePage/homepage.png">
+                <source src="videos/quero_que_crie_um_video_que_vo.mp4" type="video/mp4">
+            </video>
+            <div class="ai-hero__veil"></div>
+        </div>
+        <div class="ai-wrap ai-hero__content">
+            <p class="ai-kicker">Isolamento acústico · alto padrão</p>
+            <h1>Silêncio que se <span>sente</span>.<br>Engenharia que se <span>ouve</span>.</h1>
+            <p class="ai-lead">Portas e soluções sob medida para quem não abre mão de <strong>acústica real</strong> e acabamento impecável — <strong>todo o DF e o entorno</strong>, com visita técnica e instalação especializada.</p>
+            <div class="ai-hero__cta">
+                <a href="https://wa.me/5561996305986" class="ai-btn ai-btn--solid">Conversar no WhatsApp</a>
+                <a href="#craft" class="ai-btn ai-btn--ghost">Ver o processo</a>
+            </div>
+            <div class="ai-hero__trust">
+                <div><strong>1 ano</strong><span>garantia</span></div>
+                <div><strong>100+</strong><span>projetos</span></div>
+                <div><strong>4,9</strong><span>avaliação</span></div>
+                <div><strong>7 d+</strong><span>entrega típica</span></div>
+            </div>
+        </div>
+        <div class="ai-hero__scroll" aria-hidden="true"></div>
+    </section>
+
+    <main>
+        <section class="ai-strip" aria-label="Indicadores de confiança">
+            <div class="ai-wrap ai-strip__grid">
+                <div><div class="ai-strip__num">4,9</div><div class="ai-strip__label">média avaliações</div></div>
+                <div><div class="ai-strip__num">100+</div><div class="ai-strip__label">projetos</div></div>
+                <div><div class="ai-strip__num">1 ano</div><div class="ai-strip__label">garantia</div></div>
+                <div><div class="ai-strip__num">Brasília</div><div class="ai-strip__label">e entorno</div></div>
+            </div>
+        </section>
+
+        <section id="craft" class="ai-section ai-section--muted">
+            <div class="ai-wrap">
+                <header class="ai-section__head">
+                    <span class="ai-eyebrow">Engenharia &amp; execução</span>
+                    <h2 class="ai-h2">Qualidade que entra <em>pelos ouvidos</em> — e pelo olhar.</h2>
+                    <p class="ai-prose">Cada vão é medido, cada folha é fabricada sob medida e instalada com rigor. Nada de “porta genérica”: combinamos <strong>desempenho acústico</strong>, vedação e estética para o seu projeto.</p>
+                </header>
+                <div class="ai-pillars">
+                    <div class="ai-pillar">
+                        <h3>Diagnóstico</h3>
+                        <p>Visita técnica para mapear vazamentos sonoros, tipo de ruído e integração com o ambiente.</p>
                     </div>
-                </div>
-                <div class="sr-hero__media">
-                    <figure class="sr-hero__figure">
-                        <img src="images/backgrounds/pages/homePage/homepage.png" alt="Ambiente com soluções acústicas Arte Interiores" width="800" height="600" loading="eager" fetchpriority="high" decoding="async">
-                    </figure>
-                    <div class="sr-hero__stamp">Visita técnica · medição · obra em toda a Brasília e entorno</div>
+                    <div class="ai-pillar">
+                        <h3>Fabricação</h3>
+                        <p>Multicamadas, vedações e ferragens especificadas para o nível de isolamento combinado.</p>
+                    </div>
+                    <div class="ai-pillar">
+                        <h3>Instalação</h3>
+                        <p>Equipe própria, acabamento alinhado ao interiores e entrega com checklist de qualidade.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Solutions Section -->
-        <section id="solutions" class="site-section sr-section">
-            <div class="site-container">
-                <header class="sr-section-head">
-                    <span class="sr-label">Portas acústicas</span>
-                    <h2 class="sr-title">O ponto crítico do ruído — e a <span class="sr-accent">resposta técnica</span></h2>
-                    <p class="sr-lead mb-4">
-                        O vão da porta costuma ser o maior vazamento sonoro. Trabalhamos com <strong>portas técnicas sob medida</strong>, multicamadas, vedações e ferragens pensadas para desempenho acústico e para o seu projeto de interiores.
-                    </p>
-                    <p class="sr-lead">
-                        <strong>Trabalhos em toda a Brasília DF e no entorno</strong> — RAs e cidades vizinhas, com visita técnica, medição e instalação cuidadosa: residências, escritórios, estúdios e clínicas que precisam de silêncio real.
-                    </p>
+        <section id="solutions" class="ai-section">
+            <div class="ai-wrap">
+                <header class="ai-section__head">
+                    <span class="ai-eyebrow">Portas acústicas</span>
+                    <h2 class="ai-h2">O vão é o ponto fraco — <em>a nossa especialidade</em>.</h2>
+                    <p class="ai-prose">O maior vazamento sonoro costuma ser a porta. Resolvemos com <strong>portas técnicas sob medida</strong>, projeto e instalação em <strong>toda a Brasília DF e entorno</strong>.</p>
+                </header>
+                <div class="ai-grid2">
+                    <div class="ai-card-media">
+                        <img src="images/backgrounds/pages/acousticDoor/acousticDoor.png" alt="Porta acústica instalada com acabamento premium" width="800" height="520" loading="lazy" decoding="async">
+                    </div>
+                    <div class="ai-card-box">
+                        <h3>Linha residencial e estúdio</h3>
+                        <p>Especificações, Rw teórico, croquis e portfólio na página dedicada — tudo para você decidir com segurança.</p>
+                        <a href="pages/acousticdoor.html" class="ai-link">Explorar portas acústicas →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="ai-section ai-section--dark">
+            <div class="ai-wrap">
+                <header class="ai-section__head">
+                    <span class="ai-eyebrow">Arte Interiores</span>
+                    <h2 class="ai-h2">Quatro anos construindo <em>silêncio com padrão</em>.</h2>
+                    <p class="ai-prose">Referência em isolamento acústico com <strong>trabalhos em toda a Brasília e no entorno</strong> — portas técnicas, vedações e acompanhamento de obra do primeiro contato à entrega.</p>
+                </header>
+                <div class="ai-stats">
+                    <div class="ai-stat"><b>100+</b><span>projetos</span></div>
+                    <div class="ai-stat"><b>4</b><span>anos</span></div>
+                    <div class="ai-stat"><b>98%</b><span>satisfação</span></div>
+                </div>
+                <p style="margin-top:2rem;margin-bottom:0"><a href="https://wa.me/5561996305986" class="ai-btn ai-btn--solid">Pedir orçamento</a></p>
+            </div>
+        </section>
+
+        <section id="testimonials" class="ai-section ai-section--muted" aria-labelledby="testimonials-heading">
+            <div class="ai-wrap">
+                <header class="ai-section__head" style="text-align:center;max-width:36rem;margin-left:auto;margin-right:auto">
+                    <span class="ai-eyebrow">Depoimentos</span>
+                    <h2 id="testimonials-heading" class="ai-h2">Quem confiou no <em>resultado</em>.</h2>
+                    <p class="ai-prose">Conforto sonoro e acabamento em projetos reais no DF e entorno.</p>
+                </header>
+                <div class="ai-quotes">
+                    <article class="ai-quote ai-quote--accent ai-quote--lg">
+                        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0.75rem;margin-bottom:0.75rem">
+                            <span class="ai-stars" aria-label="5 de 5">★★★★★</span>
+                            <span class="ai-eyebrow" style="margin:0">Projeto integrado</span>
+                        </div>
+                        <p>Contratamos um <strong>pacote integrado de isolamento</strong> para sala e escritório. A diferença apareceu no primeiro dia — prazo cumprido e acabamento elegante.</p>
+                        <div class="ai-quote__meta">
+                            <div class="ai-avatar" aria-hidden="true">ML</div>
+                            <div>
+                                <strong style="display:block;color:var(--ai-ink)">Marina Lacerda</strong>
+                                <span style="font-size:0.8rem;color:var(--ai-sage)">Residência · Lago Sul, DF</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="ai-quote ai-quote--sm">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+                            <span class="ai-stars">★★★★★</span>
+                            <span class="ai-eyebrow" style="margin:0;font-size:0.6rem">Corporativo</span>
+                        </div>
+                        <p>Buscávamos <strong>privacidade de conversa</strong> em salas de reunião. Tratamento alinhado à estética do espaço e coordenação impecável.</p>
+                        <div class="ai-quote__meta">
+                            <div class="ai-avatar">PV</div>
+                            <div><strong style="display:block;color:var(--ai-ink)">Paulo Victor Nascimento</strong><span style="font-size:0.8rem;color:var(--ai-sage)">Coworking · Asa Norte</span></div>
+                        </div>
+                    </article>
+                    <article class="ai-quote ai-quote--sm">
+                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+                            <span class="ai-stars">★★★★★</span>
+                            <span class="ai-eyebrow" style="margin:0;font-size:0.6rem">Estúdio</span>
+                        </div>
+                        <p><strong>Controle de vazamento sonoro</strong> para gravações em apartamento — mais flexibilidade sem incômodo no condomínio.</p>
+                        <div class="ai-quote__meta">
+                            <div class="ai-avatar">IN</div>
+                            <div><strong style="display:block;color:var(--ai-ink)">Isadora Niemeyer</strong><span style="font-size:0.8rem;color:var(--ai-sage)">Vicente Pires, DF</span></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="ai-section">
+            <div class="ai-wrap">
+                <header class="ai-section__head" style="text-align:center;max-width:36rem;margin-left:auto;margin-right:auto;margin-bottom:2.5rem">
+                    <span class="ai-eyebrow">FAQ</span>
+                    <h2 class="ai-h2">Perguntas frequentes</h2>
+                    <p class="ai-prose">Garantia, formalização e pagamento — <strong>Brasília e entorno</strong>; detalhes no orçamento.</p>
                 </header>
 
-                <div class="sr-bento">
-                    <div class="sr-bento__visual">
-                        <img src="images/backgrounds/pages/acousticDoor/acousticDoor.png" alt="Portas acústicas sob medida" width="640" height="400" loading="lazy" decoding="async">
-                        <span class="sr-bento__tag">Sob medida · DF e entorno</span>
-                    </div>
-                    <article class="sr-bento__content">
-                        <h3>Portas acústicas Arte Interiores</h3>
-                        <p>
-                            Redução de ruído com engenharia de vedação, materiais multicamadas e acabamento refinado. Na página dedicada: especificações, croquis, portfólio e contato.
-                        </p>
-                        <a href="pages/acousticdoor.html" class="sr-link-arrow">
-                            Ver página de portas
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="site-section sr-section sr-section--dark">
-            <div class="site-container">
-                <div class="sr-about-grid">
-                    <div class="space-y-8">
-                        <header class="sr-section-head">
-                            <span class="sr-label">Sobre</span>
-                            <h2 class="sr-title text-white">4 anos de experiência em <span class="sr-accent">conforto sonoro</span></h2>
-                            <p class="sr-lead">
-                                Referência em isolamento acústico com <strong>trabalhos em toda a Brasília e no entorno</strong>: portas técnicas sob medida e vedações executadas com rigor, em projetos sob medida para cada necessidade de ruído e de arquitetura.
-                            </p>
-                        </header>
-                        <div class="space-y-4">
-                            <div class="sr-check-row">
-                                <span class="sr-check-icon" aria-hidden="true"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
-                                <p>Mais de <strong>100 projetos</strong> executados com sucesso</p>
-                            </div>
-                            <div class="sr-check-row">
-                                <span class="sr-check-icon" aria-hidden="true"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
-                                <p>Equipe técnica <strong>especializada</strong> e certificada</p>
-                            </div>
-                            <div class="sr-check-row">
-                                <span class="sr-check-icon" aria-hidden="true"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></span>
-                                <p>Garantia de <strong>1 ano</strong> em produtos e na instalação</p>
-                            </div>
-                        </div>
-                        <div class="pt-2">
-                            <a href="https://wa.me/5561996305986" class="sr-btn sr-btn--primary">Solicitar orçamento</a>
-                        </div>
-                    </div>
-                    <div class="sr-stat-row" aria-label="Números">
-                        <div class="sr-stat">
-                            <div class="sr-stat__num">100+</div>
-                            <div class="sr-stat__label">Projetos</div>
-                        </div>
-                        <div class="sr-stat">
-                            <div class="sr-stat__num">4</div>
-                            <div class="sr-stat__label">Anos</div>
-                        </div>
-                        <div class="sr-stat">
-                            <div class="sr-stat__num">98%</div>
-                            <div class="sr-stat__label">Satisfação</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="site-section sr-section" aria-labelledby="testimonials-heading">
-            <div class="site-container">
-                <header class="sr-section-head sr-section-head--center mb-12 md:mb-14">
-                    <span class="sr-label">Depoimentos</span>
-                    <h2 id="testimonials-heading" class="sr-title">Quem viveu o <span class="sr-accent">projeto</span> na prática</h2>
-                    <p class="sr-lead">
-                        Conforto sonoro, privacidade e acabamento — soluções pensadas para cada ambiente em toda a Brasília e entorno.
-                    </p>
-                </header>
-
-                <div class="sr-quote-grid max-w-6xl mx-auto">
-                    <article class="sr-quote sr-quote--feature">
-                        <div class="flex flex-wrap items-center justify-between gap-3">
-                            <div class="sr-stars" aria-label="Avaliação 5 de 5">★★★★★</div>
-                            <span class="sr-label" style="margin-bottom:0">Projeto integrado</span>
-                        </div>
-                        <p class="sr-quote__text">
-                            Contratamos um <strong>pacote integrado de isolamento</strong> para sala de estar e escritório em casa. A diferença de ruído de rua e de vizinho apareceu no primeiro dia. A equipe cumpriu prazo, explicou cada etapa com clareza e o resultado visual ficou elegante, sem sensação de obra pesada.
-                        </p>
-                        <div class="sr-quote__meta">
-                            <div class="sr-quote__avatar" aria-hidden="true">ML</div>
-                            <div>
-                                <p class="sr-quote__name">Marina Lacerda</p>
-                                <p class="sr-quote__role">Residência · Lago Sul, DF</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="sr-quote sr-quote--small">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <div class="sr-stars" aria-label="Avaliação 5 de 5">★★★★★</div>
-                            <span class="sr-label" style="margin-bottom:0">Corporativo</span>
-                        </div>
-                        <p class="sr-quote__text">
-                            Buscávamos <strong>privacidade de conversa</strong> em salas de reunião em relação ao corredor e à copa. O tratamento em paredes e portas ficou alinhado à estética industrial do espaço e a coordenação com o facility foi impecável.
-                        </p>
-                        <div class="sr-quote__meta">
-                            <div class="sr-quote__avatar" aria-hidden="true">PV</div>
-                            <div>
-                                <p class="sr-quote__name">Paulo Victor Nascimento</p>
-                                <p class="sr-quote__role">Coworking · Asa Norte, DF</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="sr-quote sr-quote--small">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <div class="sr-stars" aria-label="Avaliação 5 de 5">★★★★★</div>
-                            <span class="sr-label" style="margin-bottom:0">Estúdio</span>
-                        </div>
-                        <p class="sr-quote__text">
-                            Precisava <strong>controlar vazamento sonoro</strong> para gravações em apartamento. O projeto respeitou limitações estruturais e, depois da intervenção, ganhei flexibilidade de horário sem gerar incômodo no condomínio.
-                        </p>
-                        <div class="sr-quote__meta">
-                            <div class="sr-quote__avatar" aria-hidden="true">IN</div>
-                            <div>
-                                <p class="sr-quote__name">Isadora Niemeyer</p>
-                                <p class="sr-quote__role">Estúdio musical · Vicente Pires, DF</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="site-section sr-section">
-            <div class="site-container">
-                <header class="sr-section-head sr-section-head--center mb-12 md:mb-14">
-                    <span class="sr-label">FAQ</span>
-                    <h2 class="sr-title">Perguntas frequentes</h2>
-                    <p class="sr-lead">
-                        Garantia, formalização e pagamento — respostas diretas. Atuamos em <strong>toda a Brasília e no entorno</strong>; o restante combinamos no orçamento.
-                    </p>
-                </header>
-
-                <div class="sr-faq-list">
-                    <div class="sr-faq-item">
-                        <button type="button" class="sr-faq-btn" onclick="toggleFAQ('faq1')">
+                <div class="ai-faq">
+                    <div class="ai-faq-item">
+                        <button type="button" class="ai-faq-btn" onclick="toggleFAQ('faq1')">
                             <span>Como funciona a garantia?</span>
-                            <svg class="w-5 h-5 shrink-0" id="faq1-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg id="faq1-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="sr-faq-panel hidden" id="faq1-content">
+                        <div class="ai-faq-panel hidden" id="faq1-content">
                             <p>
                                 Oferecemos <strong>1 ano de garantia</strong> nos produtos e na execução do serviço, conforme o que estiver descrito na sua proposta. Cobrimos defeitos de fabricação e de instalação dentro do escopo acordado. Uso inadequado, alterações feitas por terceiros após a entrega ou desgaste natural de acabamentos podem ficar fora da cobertura — quando houver dúvida, esclarecemos na proposta e no fechamento do projeto. Durante o período de garantia, você conta com <strong>suporte técnico</strong> alinhado ao que foi contratado.
                             </p>
                         </div>
                     </div>
-                    <div class="sr-faq-item">
-                        <button type="button" class="sr-faq-btn" onclick="toggleFAQ('faq2')">
+                    <div class="ai-faq-item">
+                        <button type="button" class="ai-faq-btn" onclick="toggleFAQ('faq2')">
                             <span>Vocês fazem contrato ou documento formal?</span>
-                            <svg class="w-5 h-5 shrink-0" id="faq2-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg id="faq2-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="sr-faq-panel hidden" id="faq2-content">
+                        <div class="ai-faq-panel hidden" id="faq2-content">
                             <p>
                                 Sim. O projeto é <strong>formalizado por proposta comercial</strong> (e, quando aplicável, instrumento contratual ou termos complementares) com escopo, especificações, prazos, valores e condições acordadas. Assim fica registrado o que será entregue, evitando ambiguidade entre as partes. Se precisar de modelo específico para empresa, condomínio ou obra, indicamos no atendimento o que costuma ser necessário.
                             </p>
                         </div>
                     </div>
-                    <div class="sr-faq-item">
-                        <button type="button" class="sr-faq-btn" onclick="toggleFAQ('faq3')">
+                    <div class="ai-faq-item">
+                        <button type="button" class="ai-faq-btn" onclick="toggleFAQ('faq3')">
                             <span>Preciso pagar tudo de uma vez?</span>
-                            <svg class="w-5 h-5 shrink-0" id="faq3-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg id="faq3-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="sr-faq-panel hidden" id="faq3-content">
+                        <div class="ai-faq-panel hidden" id="faq3-content">
                             <p>
                                 <strong>Não há regra fixa</strong> publicada no site: as condições de pagamento são <strong>combinadas por projeto</strong> e descritas claramente na proposta (por exemplo, sinal, etapas e saldo, conforme o tipo de serviço e o cronograma). O objetivo é equilibrar segurança para ambas as partes sem surpresas na obra. No orçamento, você recebe o detalhamento para avaliar com calma antes de fechar.
                             </p>
                         </div>
                     </div>
-                    <div class="sr-faq-item">
-                        <button type="button" class="sr-faq-btn" onclick="toggleFAQ('faq4')">
+                    <div class="ai-faq-item">
+                        <button type="button" class="ai-faq-btn" onclick="toggleFAQ('faq4')">
                             <span>Como funciona o orçamento?</span>
-                            <svg class="w-5 h-5 shrink-0" id="faq4-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg id="faq4-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="sr-faq-panel hidden" id="faq4-content">
+                        <div class="ai-faq-panel hidden" id="faq4-content">
                             <p>
                                 O orçamento é <strong>gratuito e sem compromisso</strong>. Analisamos o local e as necessidades, e devolvemos proposta com valores, prazos e o que está incluso — inclusive garantia e forma de pagamento, para você decidir com transparência.
                             </p>
                         </div>
                     </div>
-                    <div class="sr-faq-item">
-                        <button type="button" class="sr-faq-btn" onclick="toggleFAQ('faq5')">
+                    <div class="ai-faq-item">
+                        <button type="button" class="ai-faq-btn" onclick="toggleFAQ('faq5')">
                             <span>Prazo de instalação e personalização</span>
-                            <svg class="w-5 h-5 shrink-0" id="faq5-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg id="faq5-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="sr-faq-panel hidden" id="faq5-content">
+                        <div class="ai-faq-panel hidden" id="faq5-content">
                             <p>
                                 O tempo de instalação depende do escopo: trocas pontuais de porta ou vedações costumam ser concluídas em poucas horas; projetos maiores podem levar mais dias, sempre com cronograma informado na proposta. Quanto a <strong>cores e acabamentos</strong>, trabalhamos com opções para integrar o isolamento acústico ao seu ambiente — combinamos na visita e no fechamento técnico.
                             </p>
@@ -503,216 +423,129 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
 
-        <!-- Contact Form Section -->
-        <section id="contact" class="site-section sr-contact">
-            <div class="site-container">
-                <div class="sr-contact__grid max-w-6xl mx-auto">
-                    <div class="sr-contact__intro">
-                        <span class="sr-label">Contato</span>
-                        <h2>Orçamento via WhatsApp</h2>
-                        <p>
-                            Preencha o formulário e fale com a equipe no WhatsApp. <strong>Trabalhos em toda a Brasília DF e no entorno</strong> — indique bairro e cidade na mensagem.
-                        </p>
-                        <div class="sr-contact__box">
-                            <h3>Telefone</h3>
-                            <p class="sr-lead" style="margin:0">(61) 9 96305-986</p>
-                        </div>
-                        <div class="sr-contact__box">
-                            <h3>Área de atuação</h3>
-                            <p class="sr-lead" style="margin:0">Toda a Brasília DF e entorno — visita técnica e obra. Base: Valparaíso de Goiás / GO.</p>
-                        </div>
-                        <div class="sr-contact__box">
-                            <h3>Horário</h3>
-                            <p class="sr-lead" style="margin:0">Seg–Sex: 8h–18h · Sáb: 8h–12h</p>
-                        </div>
-                        <div class="sr-contact__box">
-                            <h3>Por que a Arte Interiores</h3>
-                            <ul class="space-y-2 sr-lead" style="margin:0;padding-left:1.1rem">
-                                <li>Cobertura em <strong>toda a Brasília e no entorno</strong></li>
-                                <li>Orçamento gratuito e sem compromisso</li>
-                                <li>Garantia de 1 ano</li>
-                                <li>Instalação profissional</li>
-                                <li>Suporte técnico especializado</li>
-                            </ul>
-                        </div>
+        <section id="contact" class="ai-contact">
+            <div class="ai-wrap ai-contact-grid">
+                <div class="ai-contact-intro">
+                    <span class="ai-eyebrow">Contato</span>
+                    <h2>Orçamento no WhatsApp</h2>
+                    <p class="ai-prose">Envie os dados e já abrimos a conversa com a equipe. <strong>DF e entorno</strong> — cite bairro e cidade.</p>
+                    <div class="ai-box">
+                        <h3>Telefone</h3>
+                        <p>(61) 9 96305-986</p>
                     </div>
-                    <div class="sr-form-card">
-                        <form class="space-y-5" onsubmit="handleFormSubmit(event)">
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="name" class="block text-xs font-bold uppercase tracking-wider mb-1.5">Nome completo *</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
-                                <div>
-                                    <label for="phone" class="block text-xs font-bold uppercase tracking-wider mb-1.5">Telefone *</label>
-                                    <input type="tel" id="phone" name="phone" required>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="email" class="block text-xs font-bold uppercase tracking-wider mb-1.5">E-mail *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div>
-                                <label for="service" class="block text-xs font-bold uppercase tracking-wider mb-1.5">Tipo de serviço *</label>
-                                <select id="service" name="service" required>
-                                    <option value="">Selecione</option>
-                                    <option value="portas-acusticas">Portas acústicas</option>
-                                    <option value="outros">Outros / projeto integrado</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="message" class="block text-xs font-bold uppercase tracking-wider mb-1.5">Mensagem *</label>
-                                <textarea id="message" name="message" rows="4" required placeholder="Descreva seu projeto..."></textarea>
-                            </div>
-                            <button type="submit" class="sr-form-submit">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
-                                Enviar via WhatsApp
-                            </button>
-                            <p class="sr-form-note">* Campos obrigatórios. Seus dados estão seguros conosco.</p>
-                        </form>
+                    <div class="ai-box">
+                        <h3>Área</h3>
+                        <p>Toda a Brasília DF e entorno · base Valparaíso de Goiás / GO.</p>
                     </div>
+                    <div class="ai-box">
+                        <h3>Horário</h3>
+                        <p>Seg–Sex 8h–18h · Sáb 8h–12h</p>
+                    </div>
+                    <div class="ai-box">
+                        <h3>Diferenciais</h3>
+                        <p>Orçamento gratuito · garantia 1 ano · instalação profissional · suporte técnico.</p>
+                    </div>
+                </div>
+                <div class="ai-form-wrap">
+                    <form class="ai-form-stack" onsubmit="handleFormSubmit(event)">
+                        <div class="ai-form-row">
+                            <div>
+                                <label for="name">Nome completo *</label>
+                                <input type="text" id="name" name="name" required autocomplete="name">
+                            </div>
+                            <div>
+                                <label for="phone">Telefone *</label>
+                                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+                        <div>
+                            <label for="service">Tipo de serviço *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Selecione</option>
+                                <option value="portas-acusticas">Portas acústicas</option>
+                                <option value="outros">Outros / projeto integrado</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message">Mensagem *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Descreva seu projeto..."></textarea>
+                        </div>
+                        <button type="submit" class="ai-form-submit">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+                            Enviar via WhatsApp
+                        </button>
+                        <p class="ai-form-note">* Obrigatório. Seus dados são usados apenas para retorno do orçamento.</p>
+                    </form>
                 </div>
             </div>
         </section>
 
-        <!-- SEO Local Section -->
-        <section class="site-section sr-section">
-            <div class="site-container">
-                <div class="max-w-6xl mx-auto">
-                    <header class="sr-section-head sr-section-head--center mb-12 md:mb-16">
-                        <span class="sr-label">Cobertura</span>
-                        <h2 class="sr-title">Toda a Brasília DF <span class="sr-accent">e o entorno</span></h2>
-                        <p class="sr-lead">
-                            Projetos e instalações em <strong>todo o Distrito Federal</strong> e em <strong>cidades do entorno</strong>, com o mesmo padrão técnico — da Asa Sul a Vicente Pires, Valparaíso, Águas Lindas e demais localidades da área.
-                        </p>
-                    </header>
-
-                    <div class="sr-loc-grid mb-12 md:mb-16">
-                        <article class="sr-loc-card">
-                            <h3>Brasília DF — inteira</h3>
-                            <p><strong>Trabalhos em toda a Brasília</strong>: isolamento e tratamento sonoro em todas as regiões administrativas — Plano Piloto, Lago Sul, Lago Norte, Taguatinga, Ceilândia, Samambaia, Gama, Riacho Fundo e demais RAs.</p>
-                            <div>
-                                <span class="sr-loc-pill">Asa Norte</span>
-                                <span class="sr-loc-pill">Asa Sul</span>
-                                <span class="sr-loc-pill">Taguatinga</span>
-                                <span class="sr-loc-pill">Ceilândia</span>
-                                <span class="sr-loc-pill">Sobradinho</span>
-                            </div>
-                        </article>
-                        <article class="sr-loc-card">
-                            <h3>Valparaíso de Goiás</h3>
-                            <p>Base operacional na cidade. Os <strong>trabalhos cobrem todo o DF e o entorno</strong> — logística e agilidade para o Entorno Sul.</p>
-                            <span class="sr-loc-pill">Sede principal</span>
-                        </article>
-                        <article class="sr-loc-card">
-                            <h3>Entorno e RIDE</h3>
-                            <p><strong>Todo o DF</strong> e <strong>municípios vizinhos na RIDE</strong> — mesma equipe e qualidade.</p>
-                            <div>
-                                <span class="sr-loc-pill">Águas Lindas</span>
-                                <span class="sr-loc-pill">Luziânia</span>
-                                <span class="sr-loc-pill">Cidade Ocidental</span>
-                                <span class="sr-loc-pill">Novo Gama</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="sr-cta-wide">
-                        <h3>Isolamento acústico em toda a região</h3>
-                        <p>
-                            Portas sob medida e vedações de alto desempenho para residências, escritórios, clínicas e consultórios — <strong>silêncio e acabamento de alto padrão</strong> onde você estiver.
-                        </p>
-                        <div class="sr-cta-actions">
-                            <a href="https://wa.me/5561996305986" class="sr-btn sr-btn--primary">Solicitar orçamento</a>
-                            <a href="tel:+5561996305986" class="sr-btn sr-btn--ghost">Ligar agora</a>
-                        </div>
+        <section class="ai-section ai-section--muted" aria-label="Cobertura geográfica">
+            <div class="ai-wrap">
+                <header class="ai-section__head" style="text-align:center;max-width:38rem;margin-left:auto;margin-right:auto;margin-bottom:2.5rem">
+                    <span class="ai-eyebrow">Cobertura</span>
+                    <h2 class="ai-h2">Brasília DF <em>e o entorno</em></h2>
+                    <p class="ai-prose">Mesmo padrão técnico do Plano Piloto ao Entorno — <strong>projeto, fabricação e instalação</strong>.</p>
+                </header>
+                <div class="ai-loc-grid" style="margin-bottom:2.5rem">
+                    <article class="ai-loc">
+                        <h3>Distrito Federal</h3>
+                        <p><strong>Toda a capital</strong> — isolamento e portas acústicas em todas as RAs.</p>
+                        <span class="ai-pill">Asa Sul</span><span class="ai-pill">Taguatinga</span><span class="ai-pill">Ceilândia</span>
+                    </article>
+                    <article class="ai-loc">
+                        <h3>Valparaíso</h3>
+                        <p>Base operacional e logística para <strong>DF + Entorno Sul</strong>.</p>
+                        <span class="ai-pill">Sede</span>
+                    </article>
+                    <article class="ai-loc">
+                        <h3>RIDE</h3>
+                        <p><strong>Municípios vizinhos</strong> com a mesma equipe.</p>
+                        <span class="ai-pill">Águas Lindas</span><span class="ai-pill">Luziânia</span>
+                    </article>
+                </div>
+                <div class="ai-cta-wide">
+                    <h3>Pronto para silêncio de verdade?</h3>
+                    <p>Portas sob medida e vedações para residência, empresa ou estúdio — <strong>alto padrão</strong> onde você estiver.</p>
+                    <div class="ai-cta-row">
+                        <a href="https://wa.me/5561996305986" class="ai-btn ai-btn--solid">WhatsApp</a>
+                        <a href="tel:+5561996305986" class="ai-btn ai-btn--ghost">Ligar</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer py-16 md:py-20">
-        <div class="site-container">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Company Info -->
-                <div class="lg:col-span-2">
-                    <div class="mb-6">
-                        <h3 class="site-footer__heading text-2xl font-bold mb-2 font-display">Arte Interiores</h3>
-                        <p class="site-footer__muted text-lg">Soluções Acústicas Especializadas</p>
-                    </div>
-                        <p class="site-footer__muted mb-6 max-w-md leading-relaxed">
-                            Especialistas em isolamento acústico com 4 anos de experiência. <strong class="text-stone-800 font-semibold">Trabalhos em toda a Brasília DF e no entorno</strong> — qualidade, confiabilidade e excelência em cada projeto.
-                        </p>
-                    <div class="flex space-x-4">
-                        <a href="https://wa.me/5561996305986" class="w-12 h-12 bg-stone-900 rounded-full flex items-center justify-center text-white hover:bg-stone-800 transition-all duration-300 transform hover:scale-110" aria-label="WhatsApp">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-                            </svg>
-                        </a>
-                    </div>
+    <footer class="ai-footer">
+        <div class="ai-wrap">
+            <div class="ai-footer-grid">
+                <div class="ai-footer-brand">
+                    <h3 class="ai-footer-brand-title">Arte Interiores</h3>
+                    <p class="ai-footer-brand-lead">Isolamento acústico e portas técnicas · <strong>Brasília e entorno</strong>.</p>
+                    <a href="https://wa.me/5561996305986" class="ai-nav-cta ai-footer-cta-inline">WhatsApp</a>
                 </div>
-
-                <!-- Quick Links -->
                 <div>
-                    <h4 class="site-footer__heading text-lg font-semibold mb-6">Links Rápidos</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Início</a></li>
-                        <li><a href="pages/acousticdoor.html" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Portas Acústicas</a></li>
-                        <li><a href="#about" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Sobre Nós</a></li>
-                        <li><a href="#contact" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Contato</a></li>
-                        <li><a href="#testimonials" class="text-stone-600 hover:text-stone-900 transition-colors duration-300 hover:translate-x-1 inline-block">Depoimentos</a></li>
+                    <h4 class="ai-footer-heading">Navegação</h4>
+                    <ul class="ai-footer-list">
+                        <li><a href="/">Início</a></li>
+                        <li><a href="pages/acousticdoor.html">Portas acústicas</a></li>
+                        <li><a href="#craft">Como fazemos</a></li>
+                        <li><a href="#contact">Contato</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
                 <div>
-                    <h4 class="site-footer__heading text-lg font-semibold mb-6">Contato</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 bg-arte rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="site-footer__heading font-semibold">Telefone</p>
-                                <p class="site-footer__muted">(61) 9 96305-986</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-6 h-6 bg-arte rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="site-footer__heading font-semibold">Horário</p>
-                                <p class="site-footer__muted">Seg-Sex: 8h às 18h</p>
-                                <p class="site-footer__muted">Sáb: 8h às 12h</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 class="ai-footer-heading">Atendimento</h4>
+                    <p class="ai-footer-phone">(61) 9 96305-986</p>
+                    <p class="ai-footer-hours">Seg–Sex 8–18h · Sáb 8–12h</p>
                 </div>
             </div>
-
-            <!-- Bottom Bar -->
-            <div class="border-t border-stone-300/80 mt-12 pt-8">
-                <div class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-                    <div class="text-center lg:text-left">
-                        <p class="site-footer__muted text-sm mb-2">
-                            © 2026 Arte Interiores. Todos os direitos reservados.
-                        </p>
-                        <p class="site-footer__muted text-xs">
-                            CNPJ: 59.040.631/0001-87
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap justify-center lg:justify-end space-x-6 text-sm">
-                        <a href="#" class="text-stone-600 hover:text-stone-900 transition-colors duration-300">Política de Privacidade</a>
-                        <a href="#" class="text-stone-600 hover:text-stone-900 transition-colors duration-300">Termos de Uso</a>
-                        <a href="#" class="text-stone-600 hover:text-stone-900 transition-colors duration-300">Garantia</a>
-                    </div>
-                </div>
+            <div class="ai-footer-bar">
+                <span>© 2026 Arte Interiores · CNPJ 59.040.631/0001-87</span>
+                <span><a href="#">Privacidade</a> · <a href="#">Termos</a></span>
             </div>
         </div>
     </footer>
