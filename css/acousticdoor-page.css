@@ -24,6 +24,40 @@
   margin-bottom: 2rem;
 }
 
+.acousticdoor-page .spec-pdf-download-wrap {
+  margin-top: 1.35rem;
+  display: flex;
+  justify-content: center;
+}
+
+.acousticdoor-page .spec-pdf-download {
+  border: none;
+  box-shadow: 0 10px 28px -14px rgba(49, 76, 83, 0.35);
+}
+
+.acousticdoor-page .spec-pdf-download:hover {
+  box-shadow: 0 14px 32px -12px rgba(49, 76, 83, 0.42);
+}
+
+.acousticdoor-page .spec-pdf-download:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px #eef1f4,
+    0 0 0 5px rgba(49, 76, 83, 0.35),
+    0 10px 28px -14px rgba(49, 76, 83, 0.35);
+}
+
+.acousticdoor-page .spec-pdf-download:disabled {
+  opacity: 0.75;
+  cursor: wait;
+  transform: none;
+  pointer-events: none;
+}
+
+.acousticdoor-page .spec-pdf-download__icon {
+  flex-shrink: 0;
+}
+
 .acousticdoor-page .ai-section__head.ai-section__head--center.ai-door-head--chart {
   max-width: 46rem;
   margin-bottom: 1.5rem;

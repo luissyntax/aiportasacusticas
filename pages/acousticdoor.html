@@ -319,12 +319,22 @@
         </section>
 
         <!-- Especificações Técnicas Section -->
-        <section id="especificacoes" class="ai-section ai-section--muted">
-            <div class="ai-wrap">
+        <section id="especificacoes" class="ai-section ai-section--muted" data-pdf-atendimento="(61) 99630-5986 · WhatsApp" data-pdf-site="https://www.aiportasacusticas.com.br/">
+            <div class="ai-wrap" id="especificacoes-pdf-source">
                 <header class="ai-section__head ai-section__head--center ai-door-head--specs">
                     <span class="ai-eyebrow">Documentação</span>
                     <h2 class="ai-h2">Especificações <em>técnicas</em></h2>
                     <p class="ai-prose">Croqui de referência da folha e fichas alinhadas à especificação técnica do produto (Rw por cálculo teórico, indicativo).</p>
+                    <div class="spec-pdf-download-wrap">
+                        <button type="button" id="spec-pdf-download" class="ai-btn ai-btn--solid spec-pdf-download" aria-label="Baixar especificações técnicas em PDF">
+                            <span class="ai-btn__row">
+                                <svg class="spec-pdf-download__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                                </svg>
+                                <span class="spec-pdf-download__label">Baixar PDF</span>
+                            </span>
+                        </button>
+                    </div>
                 </header>
 
                 <!-- Croqui principal da folha -->
@@ -1122,6 +1132,10 @@
       }
     })(window, document);
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/spec-pdf.js"></script>
 </body>
 
 </html>
