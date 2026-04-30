@@ -7,9 +7,15 @@
   var SOURCE_ID = 'especificacoes-pdf-source';
   var BTN_ID = 'spec-pdf-download';
 
-  var HEADER_H_MM = 24;
+  var HEADER_H_MM = 28;
   var FOOTER_H_MM = 26;
   var MARGIN_X_MM = 12;
+  /** Espaço extra (só no clone do PDF) entre a linha do cabeçalho e o conteúdo (“Documentação”, etc.). */
+  var PDF_BODY_TOP_PADDING_PX = 64;
+  /** Caminho relativo ao HTML da página (ex.: pages/acousticdoor.html → ../images/...). */
+  var LOGO_REL_PATH = '../images/logos/logo-preta-transparente.png';
+  /** Proporção aproximada da arte da logo (largura ÷ altura) para dimensionar no PDF. */
+  var LOGO_ASPECT = 168 / 52;
 
   function libsReady() {
     return typeof html2canvas !== 'undefined' && window.jspdf && window.jspdf.jsPDF;
@@ -33,22 +39,50 @@
     return pdfH;
   }
 
-  function drawPdfHeader(pdf, pdfW, meta) {
+  /**
+   * @param {string | null | undefined} logoDataUrl data URL PNG (ou null se falhar o carregamento)
+   */
+  function drawPdfHeader(pdf, pdfW, meta, logoDataUrl) {
     pdf.setFillColor(238, 241, 244);
     pdf.rect(0, 0, pdfW, HEADER_H_MM, 'F');
     pdf.setDrawColor(187, 200, 208);
     pdf.setLineWidth(0.35);
     pdf.line(0, HEADER_H_MM - 0.45, pdfW, HEADER_H_MM - 0.45);
 
-    pdf.setTextColor(40, 55, 60);
-    pdf.setFont('helvetica', 'bold');
-    pdf.setFontSize(11);
-    pdf.text('Arte Interiores — Portas acústicas', MARGIN_X_MM, 9.5);
+    var logoWUsed = 0;
+    var logoH = 13;
+    if (logoDataUrl) {
+      var logoW = logoH * LOGO_ASPECT;
+      logoWUsed = logoW;
+      var logoX = MARGIN_X_MM;
+      var logoY = (HEADER_H_MM - logoH) / 2;
+      try {
+        pdf.addImage(logoDataUrl, 'PNG', logoX, logoY, logoW, logoH);
+      } catch (e) {
+        logoWUsed = 0;
+      }
+    }
 
-    pdf.setFont('helvetica', 'normal');
-    pdf.setFontSize(9.5);
-    pdf.text('Atendimento: ' + meta.phone, MARGIN_X_MM, 16);
-    pdf.text('Site: ' + meta.site, MARGIN_X_MM, 21.5);
+    var gapMm = 5;
+    var textX = pdfW - MARGIN_X_MM;
+    var blockW =
+      logoWUsed > 0
+        ? pdfW - MARGIN_X_MM * 2 - logoWUsed - gapMm
+        : pdfW - MARGIN_X_MM * 2;
+
+    pdf.setTextColor(40, 55, 60);
+    pdf.setFont('times', 'normal');
+    pdf.setFontSize(10);
+    var lineH = 4.9;
+    var linesPhone = pdf.splitTextToSize(meta.phone, blockW);
+    var linesSite = pdf.splitTextToSize(meta.site, blockW);
+    var totalLines = linesPhone.length + linesSite.length;
+    var yStart = Math.max(5.5, (HEADER_H_MM - totalLines * lineH) / 2 + lineH * 0.85);
+
+    var y = yStart;
+    pdf.text(linesPhone, textX, y, { align: 'right', maxWidth: blockW });
+    y += linesPhone.length * lineH;
+    pdf.text(linesSite, textX, y, { align: 'right', maxWidth: blockW });
   }
 
   function drawPdfFooter(pdf, pdfW, pdfH, meta) {
@@ -77,12 +111,39 @@
     pdf.text(brand, MARGIN_X_MM, top + FOOTER_H_MM - 4);
   }
 
+  /** @returns {Promise<string | null>} */
+  function loadLogoAsDataUrl(logoPath) {
+    var path = logoPath || LOGO_REL_PATH;
+    return fetch(path, { credentials: 'same-origin' })
+      .then(function (res) {
+        if (!res.ok) return null;
+        return res.blob();
+      })
+      .then(function (blob) {
+        if (!blob) return null;
+        return new Promise(function (resolve) {
+          var reader = new FileReader();
+          reader.onloadend = function () {
+            resolve(typeof reader.result === 'string' ? reader.result : null);
+          };
+          reader.onerror = function () {
+            resolve(null);
+          };
+          reader.readAsDataURL(blob);
+        });
+      })
+      .catch(function () {
+        return null;
+      });
+  }
+
   /**
    * @param {HTMLCanvasElement} canvas
    * @param {string} fileName
-   * @param {{ phone: string, site: string }} meta
+   * @param {{ phone: string, site: string, logoPath?: string }} meta
+   * @param {string | null | undefined} logoDataUrl
    */
-  function canvasToPagedPdf(canvas, fileName, meta) {
+  function canvasToPagedPdf(canvas, fileName, meta, logoDataUrl) {
     var jsPDF = window.jspdf.jsPDF;
     var pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4', compress: true });
     var pdfW = pdf.internal.pageSize.getWidth();
@@ -130,7 +191,7 @@
       var sliceHeightMm = (slicePx / Ch) * imgHeightMm;
 
       if (isFirst) {
-        drawPdfHeader(pdf, pdfW, meta);
+        drawPdfHeader(pdf, pdfW, meta, logoDataUrl);
       }
 
       var imgY = isFirst ? HEADER_H_MM : 0;
@@ -159,7 +220,8 @@
     var site =
       (section && section.getAttribute('data-pdf-site')) ||
       'https://www.aiportasacusticas.com.br/';
-    return { phone: phone, site: site };
+    var logoPath = section && section.getAttribute('data-pdf-logo');
+    return { phone: phone, site: site, logoPath: logoPath || undefined };
   }
 
   function run() {
@@ -168,6 +230,9 @@
     if (!btn || !source) return;
 
     btn.addEventListener('click', function () {
+      if (window.matchMedia && window.matchMedia('(max-width: 1023px)').matches) {
+        return;
+      }
       if (!libsReady()) {
         window.alert(
           'Não foi possível carregar as bibliotecas de PDF. Verifique a ligação à internet e tente de novo.'
@@ -183,24 +248,37 @@
 
       var scale = pickScale(source);
       var meta = readMetaFromSection(source);
+      var logoPromise = loadLogoAsDataUrl(meta.logoPath);
 
-      html2canvas(source, {
-        scale: scale,
-        useCORS: true,
-        logging: false,
-        backgroundColor: '#eef1f4',
-        onclone: function (doc) {
-          var cloneBtn = doc.getElementById(BTN_ID);
-          if (cloneBtn && cloneBtn.parentElement) {
-            cloneBtn.parentElement.remove();
+      Promise.all([
+        html2canvas(source, {
+          scale: scale,
+          useCORS: true,
+          logging: false,
+          backgroundColor: '#eef1f4',
+          onclone: function (doc) {
+            var cloneBtn = doc.getElementById(BTN_ID);
+            if (cloneBtn && cloneBtn.parentElement) {
+              cloneBtn.parentElement.remove();
+            }
+            var cloneSource = doc.getElementById(SOURCE_ID);
+            if (cloneSource) {
+              cloneSource.style.boxSizing = 'border-box';
+              cloneSource.style.paddingTop = PDF_BODY_TOP_PADDING_PX + 'px';
+              cloneSource.style.backgroundColor = '#eef1f4';
+            }
           }
-        }
-      })
-        .then(function (canvas) {
+        }),
+        logoPromise
+      ])
+        .then(function (results) {
+          var canvas = results[0];
+          var logoDataUrl = results[1];
           canvasToPagedPdf(
             canvas,
             'especificacoes-tecnicas-portas-acusticas-arte-interiores.pdf',
-            meta
+            meta,
+            logoDataUrl
           );
         })
         .catch(function (err) {
