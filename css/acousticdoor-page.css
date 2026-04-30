@@ -302,7 +302,9 @@ button.ai-btn {
 
 .acousticdoor-page .door-spec-table-wrap {
   overflow-x: auto;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   margin: 0 -0.15rem;
   padding: 0 0.15rem;
 }
@@ -339,7 +341,11 @@ button.ai-btn {
   padding: 0.65rem 0.75rem;
   border-bottom: 1px solid rgba(49, 76, 83, 0.08);
   color: #3a3530;
-  max-width: 11rem;
+  max-width: min(11rem, 38vw);
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .acousticdoor-page .door-spec-table tbody td {
@@ -348,6 +354,7 @@ button.ai-btn {
   border-bottom: 1px solid rgba(49, 76, 83, 0.08);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
+  min-width: 0;
 }
 
 .acousticdoor-page .door-spec-table tbody tr:last-child th,
@@ -382,6 +389,148 @@ button.ai-btn {
   .acousticdoor-page .door-spec-table tbody td {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .acousticdoor-page .door-spec-table tbody th {
+    max-width: 13rem;
+  }
+}
+
+/* Tabela em cartões (sem scroll horizontal): telemóveis e ecrãs estreitos */
+@media (max-width: 35.99rem) {
+  .acousticdoor-page .door-spec-table-wrap {
+    overflow-x: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .acousticdoor-page .door-spec-table {
+    min-width: 0;
+    font-size: 0.875rem;
+  }
+
+  .acousticdoor-page .door-spec-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .acousticdoor-page .door-spec-table tbody tr {
+    display: grid;
+    gap: 0.4rem;
+    padding: 0.8rem 0.75rem;
+    margin-bottom: 0.55rem;
+    border: 1px solid rgba(49, 76, 83, 0.12);
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(250, 252, 253, 0.98) 0%, rgba(255, 255, 255, 0.96) 100%);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+  }
+
+  .acousticdoor-page .door-spec-table tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .acousticdoor-page .door-spec-table tbody th,
+  .acousticdoor-page .door-spec-table tbody td {
+    display: block;
+    border: none;
+    padding: 0.2rem 0;
+  }
+
+  .acousticdoor-page .door-spec-table tbody th {
+    max-width: none;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    padding-bottom: 0.45rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid rgba(49, 76, 83, 0.1);
+  }
+
+  .acousticdoor-page .door-spec-table tbody td {
+    text-align: left;
+    white-space: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.65rem 1rem;
+    flex-wrap: wrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .acousticdoor-page .door-spec-table tbody td:nth-child(2)::before,
+  .acousticdoor-page .door-spec-table tbody td:nth-child(3)::before {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ai-sage);
+    flex-shrink: 0;
+    line-height: 1.3;
+  }
+
+  .acousticdoor-page .door-spec-table tbody td:nth-child(2)::before {
+    content: "Linha residencial";
+  }
+
+  .acousticdoor-page .door-spec-table tbody td:nth-child(3)::before {
+    content: "Linha estúdio";
+  }
+
+  .acousticdoor-page .door-spec-table tbody tr:last-child th,
+  .acousticdoor-page .door-spec-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .acousticdoor-page .door-spec-table__last-metric th,
+  .acousticdoor-page .door-spec-table__last-metric td {
+    border-bottom: none;
+  }
+
+  .acousticdoor-page .door-spec-table__first-weight th,
+  .acousticdoor-page .door-spec-table__first-weight td {
+    border-top: none;
+  }
+
+  .acousticdoor-page .door-spec-table tbody tr.door-spec-table__first-weight {
+    margin-top: 0.65rem;
+    padding-top: 0.9rem;
+    border-top: 2px solid rgba(49, 76, 83, 0.14);
+  }
+
+  .acousticdoor-page .door-spec-table-card {
+    padding: clamp(0.85rem, 3.5vw, 1.1rem);
+  }
+
+  .acousticdoor-page .door-spec-table__note {
+    font-size: 0.8rem;
+  }
+}
+
+/* Faixa intermédia: ainda em grelha, mas evita coluna de rótulos demasiado apertada */
+@media (min-width: 36rem) and (max-width: 47.99rem) {
+  .acousticdoor-page .door-spec-table tbody th {
+    max-width: none;
+    width: 38%;
+  }
+
+  .acousticdoor-page .door-spec-table {
+    table-layout: fixed;
+  }
+
+  .acousticdoor-page .door-spec-table thead th:first-child,
+  .acousticdoor-page .door-spec-table tbody th {
+    width: 38%;
+  }
+
+  .acousticdoor-page .door-spec-table thead th:not(:first-child),
+  .acousticdoor-page .door-spec-table tbody td {
+    width: 31%;
   }
 }
 
