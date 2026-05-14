@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de uso interno.">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#314c53">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" href="../images/icons/favicon/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/home-premium.css">
+    <link rel="stylesheet" href="../css/orcamento-page.css">
+
+    <script defer src="../js/header.js"></script>
+
+    <title>Sistema interno</title>
+
+    <!-- Gate de acesso (esconde o conteúdo até validação da senha) -->
+    <style>
+        html.gate-locked body { visibility: hidden !important; }
+        html.gate-locked { background: #f7f8fc; }
+
+        #gate-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2147483647;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(168deg, #f7f8fc 0%, #eef3f6 100%);
+            font-family: "Outfit", system-ui, sans-serif;
+        }
+        html.gate-locked #gate-overlay { display: flex; visibility: visible; }
+
+        #gate-overlay .gate-card {
+            width: min(380px, 90vw);
+            background: #ffffff;
+            border: 1px solid rgba(49, 76, 83, 0.14);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 28px 60px -28px rgba(1, 3, 0, 0.22);
+            text-align: left;
+        }
+        #gate-overlay .gate-eyebrow {
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #5a7f78;
+            margin: 0 0 0.4rem;
+        }
+        #gate-overlay h1 {
+            font-family: "Fraunces", Georgia, serif;
+            font-weight: 500;
+            font-size: 1.4rem;
+            letter-spacing: -0.02em;
+            color: #010300;
+            margin: 0 0 0.4rem;
+        }
+        #gate-overlay p {
+            margin: 0 0 1.25rem;
+            color: #5a7f78;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+        #gate-overlay input[type="password"] {
+            width: 100%;
+            padding: 0.75rem 0.9rem;
+            border: 1px solid rgba(49, 76, 83, 0.18);
+            border-radius: 10px;
+            font: inherit;
+            font-size: 0.95rem;
+            color: #010300;
+            background: #fff;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        #gate-overlay input[type="password"]:focus {
+            outline: none;
+            border-color: #314c53;
+            box-shadow: 0 0 0 3px rgba(49, 76, 83, 0.18);
+        }
+        #gate-overlay button {
+            width: 100%;
+            margin-top: 0.85rem;
+            padding: 0.85rem 1rem;
+            background: #bbdec6;
+            color: #010300;
+            border: 2px solid #bbdec6;
+            border-radius: 9999px;
+            font: inherit;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+        #gate-overlay button:hover { transform: translateY(-2px); filter: brightness(1.05); }
+        #gate-overlay .gate-err {
+            margin-top: 0.6rem;
+            min-height: 1.1rem;
+            font-size: 0.8rem;
+            color: #b3261e;
+        }
+    </style>
+    <script>
+        (function () {
+            'use strict';
+            var EXPECTED_HASH = '7441166c6d3a44c5b86d232da133a48430b28c84cf4e9ee7fbb3e14f333fa60a';
+            var SESSION_KEY = 'ai-orc-gate-ok';
+
+            // Trava imediatamente (antes do <body> carregar)
+            try {
+                if (sessionStorage.getItem(SESSION_KEY) !== '1') {
+                    document.documentElement.classList.add('gate-locked');
+                }
+            } catch (e) {
+                document.documentElement.classList.add('gate-locked');
+            }
+
+            async function sha256(str) {
+                var buf = new TextEncoder().encode(str);
+                var hash = await crypto.subtle.digest('SHA-256', buf);
+                return Array.from(new Uint8Array(hash))
+                    .map(function (b) { return b.toString(16).padStart(2, '0'); })
+                    .join('');
+            }
+
+            function unlock() {
+                try { sessionStorage.setItem(SESSION_KEY, '1'); } catch (e) {}
+                document.documentElement.classList.remove('gate-locked');
+                var ov = document.getElementById('gate-overlay');
+                if (ov && ov.parentNode) ov.parentNode.removeChild(ov);
+            }
+
+            function build() {
+                if (!document.documentElement.classList.contains('gate-locked')) return;
+                var ov = document.createElement('div');
+                ov.id = 'gate-overlay';
+                ov.innerHTML =
+                    '<form class="gate-card" autocomplete="off" novalidate>' +
+                        '<p class="gate-eyebrow">Acesso restrito</p>' +
+                        '<h1>Sistema interno</h1>' +
+                        '<p>Esta área não está disponível ao público. Digite a senha para continuar.</p>' +
+                        '<input id="gate-input" type="password" autocomplete="current-password" required>' +
+                        '<button type="submit">Entrar</button>' +
+                        '<div class="gate-err" id="gate-err" role="alert" aria-live="polite"></div>' +
+                    '</form>';
+                document.body.appendChild(ov);
+
+                var input = ov.querySelector('#gate-input');
+                var err = ov.querySelector('#gate-err');
+                var form = ov.querySelector('form');
+
+                input.focus();
+
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    err.textContent = '';
+                    sha256(input.value)
+                        .then(function (hash) {
+                            if (hash === EXPECTED_HASH) {
+                                unlock();
+                            } else {
+                                err.textContent = 'Senha incorreta.';
+                                input.value = '';
+                                input.focus();
+                            }
+                        })
+                        .catch(function () {
+                            err.textContent = 'Erro ao validar a senha. Tente novamente.';
+                        });
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', build);
+            } else {
+                build();
+            }
+        })();
+    </script>
+</head>
+
+<body class="ai-page orcamento-page">
+    <header class="ai-top">
+        <div class="ai-wrap">
+            <nav class="ai-top__nav" aria-label="Principal">
+                <a href="../index.html" class="ai-brand">
+                    <img src="../images/logos/logo-preta-transparente.png" alt="Arte Interiores" width="168" height="52" decoding="async" fetchpriority="high">
+                    <span class="ai-brand__tag">Brasília &amp;<br>entorno</span>
+                </a>
+                <div class="ai-nav">
+                    <a href="../index.html#craft">Como fazemos</a>
+                    <a href="../index.html#solutions">Soluções</a>
+                    <a href="acousticdoor.html">Portas acústicas</a>
+                    <a href="https://wa.me/5561996305986" class="ai-nav-cta">WhatsApp</a>
+                </div>
+                <button type="button" class="ai-burger" id="mobile-menu-button" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </nav>
+            <div class="ai-mobile hidden" id="mobile-menu">
+                <a href="../index.html">Início</a>
+                <a href="acousticdoor.html">Portas acústicas</a>
+                <a href="https://wa.me/5561996305986" class="ai-nav-cta">WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="ai-section ai-section--muted orc-section">
+            <div class="ai-wrap">
+                <header class="ai-section__head ai-section__head--center orc-head">
+                    <span class="ai-eyebrow">Documento interno</span>
+                    <h1 class="ai-h2">Gerador de <em>orçamento</em></h1>
+                    <p class="ai-prose">Preencha os dados do cliente e os itens da proposta. A pré-visualização ao lado é exatamente o que será impresso no PDF.</p>
+                </header>
+
+                <div class="orc-grid">
+                    <!-- COLUNA: FORMULÁRIO -->
+                    <form class="orc-form" id="orc-form" autocomplete="off" novalidate>
+                        <!-- Cliente -->
+                        <fieldset class="orc-card">
+                            <legend class="orc-card__legend">
+                                <span class="orc-card__step">01</span>
+                                <span class="orc-card__legend-text">
+                                    <span class="orc-eyebrow">Dados</span>
+                                    <span class="orc-card__title">Cliente</span>
+                                </span>
+                            </legend>
+
+                            <div class="orc-grid-2">
+                                <label class="orc-field">
+                                    <span class="orc-field__label">Nome completo</span>
+                                    <input type="text" id="cli-nome" class="orc-input" placeholder="Ex.: Maria Souza" required>
+                                </label>
+                                <label class="orc-field">
+                                    <span class="orc-field__label">CPF</span>
+                                    <input type="text" id="cli-cpf" class="orc-input" placeholder="000.000.000-00" inputmode="numeric" maxlength="14">
+                                </label>
+                                <label class="orc-field orc-field--full">
+                                    <span class="orc-field__label">Endereço</span>
+                                    <input type="text" id="cli-endereco" class="orc-input" placeholder="Rua, número, bairro, cidade — UF">
+                                </label>
+                                <label class="orc-field">
+                                    <span class="orc-field__label">Telefone</span>
+                                    <input type="text" id="cli-telefone" class="orc-input" placeholder="(00) 00000-0000" inputmode="tel">
+                                </label>
+                                <label class="orc-field">
+                                    <span class="orc-field__label">E-mail (opcional)</span>
+                                    <input type="email" id="cli-email" class="orc-input" placeholder="cliente@email.com">
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Itens -->
+                        <fieldset class="orc-card">
+                            <legend class="orc-card__legend">
+                                <span class="orc-card__step">02</span>
+                                <span class="orc-card__legend-text">
+                                    <span class="orc-eyebrow">Composição</span>
+                                    <span class="orc-card__title">Itens do orçamento</span>
+                                </span>
+                            </legend>
+
+                            <div class="orc-items" id="orc-items" aria-live="polite"></div>
+
+                            <button type="button" class="ai-btn ai-btn--ghost-dark orc-add" id="orc-add-item">
+                                <span class="ai-btn__row">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14m-7-7h14"></path></svg>
+                                    <span>Adicionar porta</span>
+                                </span>
+                            </button>
+                        </fieldset>
+
+                        <!-- Adicional -->
+                        <fieldset class="orc-card">
+                            <legend class="orc-card__legend">
+                                <span class="orc-card__step">03</span>
+                                <span class="orc-card__legend-text">
+                                    <span class="orc-eyebrow">Observações</span>
+                                    <span class="orc-card__title">Informações adicionais</span>
+                                </span>
+                            </legend>
+                            <label class="orc-field orc-field--full">
+                                <span class="orc-field__label sr-only">Informações adicionais</span>
+                                <textarea id="orc-adicional" class="orc-input orc-textarea" rows="5" placeholder="Prazo de entrega, condições de pagamento, validade da proposta, observações de instalação…"></textarea>
+                            </label>
+                        </fieldset>
+
+                        <!-- Ações -->
+                        <div class="orc-actions">
+                            <button type="button" class="ai-btn ai-btn--solid orc-generate" id="orc-generate">
+                                <span class="ai-btn__row">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path></svg>
+                                    <span>Baixar PDF</span>
+                                </span>
+                            </button>
+                            <button type="button" class="ai-btn ai-btn--ghost-dark orc-image" id="orc-image">
+                                <span class="ai-btn__row">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    <span>Baixar imagem</span>
+                                </span>
+                            </button>
+                            <button type="reset" class="ai-btn ai-btn--ghost-dark orc-reset" id="orc-reset">
+                                <span class="ai-btn__row">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v6h6M20 20v-6h-6M5 14a7 7 0 0011.7 3M19 10A7 7 0 007.3 7"></path></svg>
+                                    <span>Limpar tudo</span>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- COLUNA: PREVIEW (será capturado em PDF) -->
+                    <aside class="orc-preview-wrap" aria-label="Pré-visualização do orçamento">
+                        <div class="orc-preview-bar">
+                            <span class="orc-eyebrow">Pré-visualização</span>
+                            <span class="orc-preview-bar__hint">Atualiza em tempo real</span>
+                        </div>
+
+                        <article class="orc-preview" id="orc-pdf-source">
+                            <!-- Cabeçalho da empresa -->
+                            <header class="orc-doc-head">
+                                <div class="orc-doc-head__brand">
+                                    <img src="../images/logos/logo-preta-transparente.png" alt="Arte Interiores" class="orc-doc-head__logo" width="181" height="56" crossorigin="anonymous">
+                                    <p class="orc-doc-head__tag">Soluções acústicas · Brasília &amp; entorno</p>
+                                </div>
+                                <div class="orc-doc-head__info">
+                                    <p class="orc-doc-head__company">Arte Interiores</p>
+                                    <ul class="orc-doc-head__list">
+                                        <li><strong>CNPJ:</strong> 59.040.631/0001-87</li>
+                                        <li><strong>Telefone:</strong> (61) 99630-5986 · WhatsApp</li>
+                                        <li><strong>Site:</strong> aiportasacusticas.com.br</li>
+                                    </ul>
+                                </div>
+                            </header>
+
+                            <!-- Linha do documento -->
+                            <div class="orc-doc-meta">
+                                <div>
+                                    <span class="orc-eyebrow">Documento</span>
+                                    <h2 class="orc-doc-meta__title">Proposta de orçamento</h2>
+                                </div>
+                                <dl class="orc-doc-meta__codes">
+                                    <div><dt>Nº</dt><dd id="prev-numero">—</dd></div>
+                                    <div><dt>Data</dt><dd id="prev-data">—</dd></div>
+                                    <div><dt>Validade</dt><dd>7 dias</dd></div>
+                                </dl>
+                            </div>
+
+                            <!-- Cliente -->
+                            <section class="orc-doc-section">
+                                <h3 class="orc-doc-section__title"><span class="orc-doc-section__num">01</span> Cliente</h3>
+                                <dl class="orc-doc-kv">
+                                    <div><dt>Nome</dt><dd id="prev-cli-nome">—</dd></div>
+                                    <div><dt>CPF</dt><dd id="prev-cli-cpf">—</dd></div>
+                                    <div class="orc-doc-kv__full"><dt>Endereço</dt><dd id="prev-cli-endereco">—</dd></div>
+                                    <div><dt>Telefone</dt><dd id="prev-cli-telefone">—</dd></div>
+                                    <div><dt>E-mail</dt><dd id="prev-cli-email">—</dd></div>
+                                </dl>
+                            </section>
+
+                            <!-- Itens -->
+                            <section class="orc-doc-section">
+                                <h3 class="orc-doc-section__title"><span class="orc-doc-section__num">02</span> Itens da proposta</h3>
+                                <div class="orc-doc-items" id="prev-itens"></div>
+                                <div class="orc-doc-total">
+                                    <span class="orc-doc-total__label">Total geral</span>
+                                    <span class="orc-doc-total__value" id="prev-total">R$ 0,00</span>
+                                </div>
+                            </section>
+
+                            <!-- Adicional -->
+                            <section class="orc-doc-section orc-doc-section--note" id="prev-adicional-section">
+                                <h3 class="orc-doc-section__title"><span class="orc-doc-section__num">03</span> Informações adicionais</h3>
+                                <p class="orc-doc-note" id="prev-adicional">—</p>
+                            </section>
+
+                            <!-- Rodapé do documento -->
+                            <footer class="orc-doc-foot">
+                                <div class="orc-doc-foot__sign">
+                                    <span class="orc-doc-foot__line"></span>
+                                    <span>Assinatura · Arte Interiores</span>
+                                </div>
+                                <p class="orc-doc-foot__note">Proposta sujeita à medição em obra. Valores e prazos podem ser ajustados após visita técnica. Garantia de 1 ano sobre fabricação e instalação.</p>
+                            </footer>
+                        </article>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Template de item (clonado pelo JS) -->
+    <template id="orc-item-template">
+        <article class="orc-item" data-orc-item>
+            <header class="orc-item__head">
+                <span class="orc-item__num" data-orc-item-num>01</span>
+                <h4 class="orc-item__title">Porta acústica</h4>
+                <button type="button" class="orc-item__remove" aria-label="Remover item" data-orc-remove>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </header>
+
+            <div class="orc-grid-2">
+                <label class="orc-field">
+                    <span class="orc-field__label">Modelo</span>
+                    <select class="orc-input" data-orc-modelo>
+                        <option value="Linha residencial — folha 42 mm (Rw ≈ 30 dB)">Linha residencial — 42 mm (Rw ≈ 30 dB)</option>
+                        <option value="Linha estúdio — folha ≈ 50 mm (Rw 35–38 dB)">Linha estúdio — ≈ 50 mm (Rw 35–38 dB)</option>
+                        <option value="Personalizada — sob projeto">Personalizada — sob projeto</option>
+                    </select>
+                </label>
+                <label class="orc-field">
+                    <span class="orc-field__label">Cor / acabamento</span>
+                    <input type="text" class="orc-input" placeholder="Ex.: Carvalho natural" data-orc-cor>
+                </label>
+
+                <label class="orc-field">
+                    <span class="orc-field__label">Largura (mm)</span>
+                    <input type="number" class="orc-input" placeholder="900" min="0" step="1" data-orc-larg>
+                </label>
+                <label class="orc-field">
+                    <span class="orc-field__label">Altura (mm)</span>
+                    <input type="number" class="orc-input" placeholder="2100" min="0" step="1" data-orc-alt>
+                </label>
+
+                <label class="orc-field">
+                    <span class="orc-field__label">Quantidade</span>
+                    <input type="number" class="orc-input" placeholder="1" min="1" step="1" value="1" data-orc-qtd>
+                </label>
+                <label class="orc-field">
+                    <span class="orc-field__label">Valor unitário (R$)</span>
+                    <input type="text" class="orc-input" placeholder="0,00" inputmode="decimal" data-orc-unit>
+                </label>
+            </div>
+
+            <div class="orc-color-upload">
+                <label class="orc-color-upload__field">
+                    <span class="orc-field__label">Imagem do revestimento</span>
+                    <input type="file" accept="image/*" class="orc-color-upload__input" data-orc-img>
+                    <span class="orc-color-upload__cta">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5l4.5-4.5 3 3 6-6L21 13.5M3 19.5h18M3 4.5h18"></path></svg>
+                        <span data-orc-img-name>Escolher imagem da cor…</span>
+                    </span>
+                </label>
+                <div class="orc-color-upload__preview" data-orc-img-preview aria-hidden="true"></div>
+            </div>
+
+            <div class="orc-item__foot">
+                <span class="orc-item__foot-label">Subtotal</span>
+                <span class="orc-item__foot-value" data-orc-subtotal>R$ 0,00</span>
+            </div>
+        </article>
+    </template>
+
+    <!-- jsPDF — geração do PDF nativamente no navegador (texto vetorial + imagens) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- html2canvas — usado apenas pelo botão “Baixar imagem” (screenshot do preview) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/orcamento.js"></script>
+</body>
+
+</html>
