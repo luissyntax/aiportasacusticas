@@ -20,7 +20,7 @@
   var COMPANY = {
     name: 'Arte Interiores',
     cnpj: '59.040.631/0001-87',
-    phone: '(61) 99630-5986 · WhatsApp',
+    phone: '(61) 99346-0719 · WhatsApp',
     site: 'https://www.aiportasacusticas.com.br/',
     siteShort: 'aiportasacusticas.com.br'
   };
