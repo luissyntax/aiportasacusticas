@@ -216,7 +216,7 @@
     var section = source.closest && source.closest('section#especificacoes');
     var phone =
       (section && section.getAttribute('data-pdf-atendimento')) ||
-      '(61) 99630-5986 · WhatsApp';
+      '(61) 99346-0719 · WhatsApp';
     var site =
       (section && section.getAttribute('data-pdf-site')) ||
       'https://www.aiportasacusticas.com.br/';
