@@ -62,9 +62,9 @@ aiportasacusticas/
 
 ### 📞 Contato
 
-- **Telefone**: (61) 9 93460719
+- **Telefone**: (61) 99630-5986
 - **Localização**: Valparaíso de Goiás / Goiás
-- **WhatsApp**: [Clique aqui para contato direto](https://wa.me/5561993460719)
+- **WhatsApp**: [Clique aqui para contato direto](https://wa.me/5561996305986)
 
 ---
 
